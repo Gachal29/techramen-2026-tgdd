@@ -1,0 +1,68 @@
+# テストデータのプルリクエスト (claude-YYYY-MM-DD-hh ブランチ) を検査し、問題がなければ自動でマージする
+#
+# 検査に使うツールは、プルリクエストの側ではなく main のものを使う
+# （プルリクエストでツールを書き換えて、検査をすり抜けられないようにする）
+name: テストデータの検査
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: validate-test-data-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # フォークからのプルリクエストは対象にしない
+    if: >-
+      startsWith(github.head_ref, 'claude-') &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: ${{ github.head_ref }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: main を取得（検査のツール）
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+          persist-credentials: false
+
+      - name: プルリクエストを取得（検査の対象）
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: 変更がテストデータの追加 1 つだけであること
+        id: changes
+        run: |
+          file=$(git -C pr diff --name-status --no-renames "$BASE_SHA...$HEAD_SHA" \
+            | python3 base/tools/check_pr_changes.py "$BRANCH")
+          echo "file=$file" >> "$GITHUB_OUTPUT"
+
+      - name: テストデータの検査
+        working-directory: base
+        env:
+          FILE: ${{ steps.changes.outputs.file }}
+        run: |
+          uv sync --locked
+          uv run python tools/validate_test_data.py "../pr/$FILE"
+
+      - name: マージ
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh pr merge "$PR_NUMBER" --squash --delete-branch --match-head-commit "$HEAD_SHA"

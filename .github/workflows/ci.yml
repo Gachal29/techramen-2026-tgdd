@@ -1,0 +1,22 @@
+# ふだんの変更の確認: テストの仕組みのテストと、再発を見つけるテスト
+# テストガチャ (tests/test_gacha.py) は失敗することが正常なので、ここでは実行しない
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # テストデータのプルリクエストは validate-test-data.yml で確かめる
+    if: github.event_name == 'push' || !startsWith(github.head_ref, 'claude-')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - run: uv run pytest --ignore=tests/test_gacha.py

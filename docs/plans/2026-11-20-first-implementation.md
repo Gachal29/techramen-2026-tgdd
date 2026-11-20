@@ -148,6 +148,12 @@ pyproject.toml                依存: pytest・jsonschema（uv で管理）
 - `test_helpers.py` と `test_regression.py` を実行する。失敗したら、仕組みか過去の修正が壊れているので、テストガチャに進まずに止める
 - `test_gacha.py` を実行し、`notify_discord.py` を実行する。テストガチャの失敗ではワークフローを失敗にしない（考慮漏れの発見は正常な結果のため）
 
+### 4.3 `ci.yml`
+
+- `main` への push と、`claude-*` 以外のプルリクエストで動く
+- テストガチャ以外のテスト（テストの仕組み、ツール、再発を見つけるテスト）を実行する
+- `target.py` やテストの仕組みを直したときに、壊していないことを確かめる
+
 ## 5. テストデータの生成（Claude のスケジュールタスク）
 
 - 毎時 00 分に、`tests/test_data/YYYY-MM-DD-hh.json` を 1 つ作り、`claude-YYYY-MM-DD-hh` ブランチに push してプルリクエストを作る

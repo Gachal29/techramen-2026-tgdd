@@ -1,0 +1,53 @@
+# テストガチャ: テストデータ 1 ファイルでテスト対象を確かめ、考慮漏れの候補を Discord に通知する
+name: テストガチャ
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_data:
+        description: テストデータのファイル名（例 2026-11-20-09.json）。省略すると最新のもの
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  gacha:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+
+      # 仕組みか過去の修正が壊れていたら、テストガチャの結果を信用できないので止める
+      - name: テストの仕組みと再発のテスト
+        run: uv run pytest --ignore=tests/test_gacha.py
+
+      - name: テストガチャ
+        env:
+          TGDD_TEST_DATA: ${{ inputs.test_data }}
+        run: |
+          set +e
+          uv run pytest tests/test_gacha.py
+          code=$?
+          set -e
+          # 0: すべて通過、1: 失敗したテストがある（考慮漏れの候補。正常な結果）
+          # それ以外は、テストを実行できていない
+          if [ "$code" -ne 0 ] && [ "$code" -ne 1 ]; then
+            echo "::error::テストガチャを実行できなかった（pytest の終了コード $code）"
+            exit "$code"
+          fi
+
+      - name: 通知
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: uv run python tools/notify_discord.py gacha-result.json
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gacha-result
+          path: gacha-result.json
+          if-no-files-found: ignore
