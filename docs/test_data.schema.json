@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TGDD テストデータ",
+  "description": "test_gacha.py が読み込むテストデータファイル (tests/test_data/YYYY-MM-DD-hh.json) のスキーマ。1ファイルにテストデータの配列を格納する。",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "$ref": "#/$defs/testData"
+  },
+  "$defs": {
+    "testData": {
+      "title": "テストデータ",
+      "description": "1件分のテストデータ。",
+      "type": "object",
+      "required": [
+        "test_data_id",
+        "input_text",
+        "expected_page_group",
+        "expected_slideir_page"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "test_data_id": {
+          "description": "テストデータを識別するID。テスト結果の集計や、test_regression.py への移植時に参照する。",
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "input_text": {
+          "description": "作業メモ (整形されていないテキストデータ)。text_to_page_grouper() の入力。空文字も考慮漏れを探すケースとして許容する。",
+          "type": "string"
+        },
+        "expected_page_group": {
+          "description": "text_to_page_grouper() の期待値。ページごとに分割されたテキストの配列。",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_slideir_page": {
+          "description": "page_to_slideir_page() の期待値。expected_page_group の各要素を変換した SlideIR のページ (名前空間なしの XML の断片) の配列。expected_page_group と同じ順序・同じ要素数にする。ページの中身の検査は tools/validate_test_data.py で行う。",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^\\s*<(Cover|Heading|General|Body|Figure)Page\\s[\\s\\S]*</(Cover|Heading|General|Body|Figure)Page>\\s*$"
+          }
+        }
+      }
+    }
+  }
+}

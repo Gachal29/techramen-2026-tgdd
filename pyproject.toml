@@ -1,0 +1,19 @@
+[project]
+name = "techramen-2026-tgdd"
+version = "0.1.0"
+description = "TGDD (テストガチャ駆動開発) の検証用コード"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "jsonschema>=4.23",
+    "pytest>=8.3",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "tests"]
+testpaths = ["tests"]
+markers = [
+    "gacha(target): テストガチャのテストケース。target はテスト対象の関数名",
+]

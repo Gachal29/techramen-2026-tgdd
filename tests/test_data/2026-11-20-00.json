@@ -1,0 +1,62 @@
+[
+  {
+    "test_data_id": "seed-0001",
+    "input_text": "## やったこと\n- テストデータを毎時つくる\n- 失敗したら通知する\n",
+    "expected_page_group": [
+      "## やったこと\n- テストデータを毎時つくる\n- 失敗したら通知する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>やったこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>テストデータを毎時つくる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>失敗したら通知する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "seed-0002",
+    "input_text": "## 考慮漏れは偶然見つかる\n\n## 仕組み\n- ガチャを回す\n\n## まとめ\n",
+    "expected_page_group": [
+      "## 考慮漏れは偶然見つかる",
+      "## 仕組み\n- ガチャを回す",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Str>考慮漏れは偶然見つかる</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>仕組み</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ガチャを回す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "seed-0003",
+    "input_text": "# TGDDやってみた\n\n## 自己紹介\n- つじなが\n\n## おわり\n",
+    "expected_page_group": [
+      "# TGDDやってみた",
+      "## 自己紹介\n- つじなが",
+      "## おわり"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>TGDDやってみた</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>自己紹介</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>つじなが</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>おわり</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "seed-0004",
+    "input_text": "## 工夫したところ\n- 期待値は**人が判断**する\n  - 機械で弾けない誤りがある\n- 比較は正規化してから\n",
+    "expected_page_group": [
+      "## 工夫したところ\n- 期待値は**人が判断**する\n  - 機械で弾けない誤りがある\n- 比較は正規化してから"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>工夫したところ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>期待値は</Str><Strong><Str>人が判断</Str></Strong><Str>する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>機械で弾けない誤りがある</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>比較は正規化してから</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "seed-0005",
+    "input_text": "![構成図](https://example.com/images/architecture.png)\n\n## 仕組み\nテストデータは毎時つくる\n- 失敗したら Discord に通知\n",
+    "expected_page_group": [
+      "![構成図](https://example.com/images/architecture.png)",
+      "## 仕組み\nテストデータは毎時つくる\n- 失敗したら Discord に通知"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/images/architecture.png\" alt=\"構成図\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>仕組み</Str></title><blocks><TextBlock><Paragraph><Str>テストデータは毎時つくる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>失敗したら Discord に通知</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
