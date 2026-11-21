@@ -1,0 +1,116 @@
+[
+    {
+        "test_data_id": "2026112112-01",
+        "input_text": "# Terraform で本番を消した話\n\n## 発端\nstate を手で書き換えた\n- plan を読まなかった\n- レビューもなかった\n\n## 教訓\n- apply の前に差分を見る\n- state はロックする\n\n## ご清聴ありがとうございました\n",
+        "expected_page_group": [
+            "# Terraform で本番を消した話",
+            "## 発端\nstate を手で書き換えた\n- plan を読まなかった\n- レビューもなかった",
+            "## 教訓\n- apply の前に差分を見る\n- state はロックする",
+            "## ご清聴ありがとうございました"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>Terraform で本番を消した話</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>発端</Str></title><blocks><TextBlock><Paragraph><Str>state を手で書き換えた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>plan を読まなかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>レビューもなかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>教訓</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>apply の前に差分を見る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>state はロックする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>ご清聴ありがとうございました</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-02",
+        "input_text": "![](https://example.com/dash.png)\n\n## 監視の話\nアラートが鳴らなかった\n原因は閾値の設定ミス\n",
+        "expected_page_group": [
+            "![](https://example.com/dash.png)",
+            "## 監視の話\nアラートが鳴らなかった\n原因は閾値の設定ミス"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/dash.png\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>監視の話</Str></title><blocks><TextBlock><Paragraph><Str>アラートが鳴らなかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>原因は閾値の設定ミス</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-03",
+        "input_text": "## 登壇の準備\n## 資料づくり\n- **構成**を先に決める\n- 1 枚に 1 メッセージ\n## 練習\n- 声に出して読む\n",
+        "expected_page_group": [
+            "## 登壇の準備",
+            "## 資料づくり\n- **構成**を先に決める\n- 1 枚に 1 メッセージ",
+            "## 練習\n- 声に出して読む"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Str>登壇の準備</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p2\"><title><Str>資料づくり</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>構成</Str></Strong><Str>を先に決める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>1 枚に 1 メッセージ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p3\"><title><Str>練習</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>声に出して読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-04",
+        "input_text": "##   間隔が広い\n- 項目\n",
+        "expected_page_group": [
+            "##   間隔が広い\n- 項目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>間隔が広い</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-05",
+        "input_text": "## 勉強会の運営  \n- 場所を決める  \n- 告知する \n",
+        "expected_page_group": [
+            "## 勉強会の運営\n- 場所を決める\n- 告知する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>勉強会の運営</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>場所を決める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>告知する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-06",
+        "input_text": "## 構成\n- 親\n    - 子\n        - 孫\n- 次の親\n",
+        "expected_page_group": [
+            "## 構成\n- 親\n    - 子\n        - 孫\n- 次の親"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>次の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-07",
+        "input_text": "## 資料\nhttps://example.com/slides\n- 質問は Discord へ\n",
+        "expected_page_group": [
+            "## 資料\nhttps://example.com/slides\n- 質問は Discord へ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>資料</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/slides</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>質問は Discord へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-08",
+        "input_text": "![A&B の構成](https://example.com/a.png?w=800&h=600)\n## 解説\n- 図のとおり\n",
+        "expected_page_group": [
+            "![A&B の構成](https://example.com/a.png?w=800&h=600)",
+            "## 解説\n- 図のとおり"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/a.png?w=800&amp;h=600\" alt=\"A&amp;B の構成\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>解説</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>図のとおり</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-09",
+        "input_text": "## 注意\n- **太字を閉じ忘れた\n- 普通の項目\n",
+        "expected_page_group": [
+            "## 注意\n- **太字を閉じ忘れた\n- 普通の項目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>**太字を閉じ忘れた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>普通の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112112-10",
+        "input_text": "## 手順\n- 準備\n  1. clone する\n  2. sync する\n- 実行\n",
+        "expected_page_group": [
+            "## 手順\n- 準備\n  1. clone する\n  2. sync する\n- 実行"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>clone する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>sync する</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
