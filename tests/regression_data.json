@@ -134,5 +134,25 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>要点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112113-04",
+    "input_text": "## 買い物\n- 牛乳\n\n- 卵\n\n- パン\n",
+    "expected_page_group": [
+      "## 買い物\n- 牛乳\n\n- 卵\n\n- パン"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>買い物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>牛乳</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>卵</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>パン</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-10",
+    "input_text": "## 体制\n- 親\n　- 子\n　　- 孫\n- 別の親\n",
+    "expected_page_group": [
+      "## 体制\n- 親\n　- 子\n　　- 孫\n- 別の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>体制</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>別の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
