@@ -1,0 +1,144 @@
+[
+  {
+    "test_data_id": "2026112204-01",
+    "input_text": "# 家計簿アプリを作った話\n\n![画面](https://example.com/app.png)\n\n## きっかけ\n毎月の出費が見えなかった\n\n## 作ったもの\n- 入力は 3 タップ\n- 集計は自動\n\n## 次\n",
+    "expected_page_group": [
+      "# 家計簿アプリを作った話",
+      "![画面](https://example.com/app.png)",
+      "## きっかけ\n毎月の出費が見えなかった",
+      "## 作ったもの\n- 入力は 3 タップ\n- 集計は自動",
+      "## 次"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>家計簿アプリを作った話</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/app.png\" alt=\"画面\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>きっかけ</Str></title><blocks><TextBlock><Paragraph><Str>毎月の出費が見えなかった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>作ったもの</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>入力は 3 タップ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>集計は自動</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p4\"><title><Str>次</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-02",
+    "input_text": "## 手順\n1. 土台を作る\n2. 壁を立てる\n3. 屋根をのせる\n\n## 補足\n雨の日は作業しない\n- 養生シートを使う\n",
+    "expected_page_group": [
+      "## 手順\n1. 土台を作る\n2. 壁を立てる\n3. 屋根をのせる",
+      "## 補足\n雨の日は作業しない\n- 養生シートを使う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>土台を作る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>壁を立てる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>屋根をのせる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>補足</Str></title><blocks><TextBlock><Paragraph><Str>雨の日は作業しない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>養生シートを使う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-03",
+    "input_text": "# 発表の流れ\n\n## 導入\n\n## 本編\n\n![](https://example.com/end.png)\n",
+    "expected_page_group": [
+      "# 発表の流れ",
+      "## 導入",
+      "## 本編",
+      "![](https://example.com/end.png)"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>発表の流れ</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>導入</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>本編</Str></title></HeadingPage>",
+      "<FigurePage id=\"p3\"><ImageFigure src=\"https://example.com/end.png\" /></FigurePage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-04",
+    "input_text": "# 夏休みの自由研究\n![成果物](https://example.com/result.png)\n## 結果\n- 発芽した\n- 育たなかった\n",
+    "expected_page_group": [
+      "# 夏休みの自由研究",
+      "![成果物](https://example.com/result.png)",
+      "## 結果\n- 発芽した\n- 育たなかった"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>夏休みの自由研究</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/result.png\" alt=\"成果物\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>発芽した</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>育たなかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-05",
+    "input_text": "## 反省\n- 計画が甘かった\nこれは毎回言っている\n- 見積もりを倍にする\n",
+    "expected_page_group": [
+      "## 反省\n- 計画が甘かった\nこれは毎回言っている\n- 見積もりを倍にする"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>反省</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>計画が甘かった</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>これは毎回言っている</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>見積もりを倍にする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-06",
+    "input_text": "## 1. 背景\n- 月末に集中する\n\n## 2. 課題\n- 手作業が多い\n",
+    "expected_page_group": [
+      "## 1. 背景\n- 月末に集中する",
+      "## 2. 課題\n- 手作業が多い"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>1. 背景</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>月末に集中する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>2. 課題</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>手作業が多い</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-07",
+    "input_text": "## 項目1\n## 項目2\n## 項目3\n## 項目4\n## 項目5\n## 項目6\n## 項目7\n## 項目8\n## 項目9\n## 項目10\n## 項目11\n",
+    "expected_page_group": [
+      "## 項目1",
+      "## 項目2",
+      "## 項目3",
+      "## 項目4",
+      "## 項目5",
+      "## 項目6",
+      "## 項目7",
+      "## 項目8",
+      "## 項目9",
+      "## 項目10",
+      "## 項目11"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Str>項目1</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>項目2</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p3\"><title><Str>項目3</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p4\"><title><Str>項目4</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p5\"><title><Str>項目5</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p6\"><title><Str>項目6</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p7\"><title><Str>項目7</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p8\"><title><Str>項目8</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p9\"><title><Str>項目9</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p10\"><title><Str>項目10</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p11\"><title><Str>項目11</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-08",
+    "input_text": "## 強調の位置\n*重要*な点だけ話す\n- 細かい話は省く\n",
+    "expected_page_group": [
+      "## 強調の位置\n*重要*な点だけ話す\n- 細かい話は省く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>強調の位置</Str></title><blocks><TextBlock><Paragraph><Em><Str>重要</Str></Em><Str>な点だけ話す</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>細かい話は省く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-09",
+    "input_text": "## 計算量\n$O(n^2)$ が $O(n)$ になった\n- 実測は $n=10^6$ で 2 秒\n",
+    "expected_page_group": [
+      "## 計算量\n$O(n^2)$ が $O(n)$ になった\n- 実測は $n=10^6$ で 2 秒"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>計算量</Str></title><blocks><TextBlock><Paragraph><Str>$O(n^2)$ が $O(n)$ になった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>実測は $n=10^6$ で 2 秒</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112204-10",
+    "input_text": "＃＃ 振り返り\n- 良かった点\n- 直したい点\n",
+    "expected_page_group": [
+      "＃＃ 振り返り\n- 良かった点\n- 直したい点"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>振り返り</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>良かった点</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>直したい点</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
