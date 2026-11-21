@@ -1,1 +1,108 @@
-[]
+[
+  {
+    "test_data_id": "seed-0003",
+    "input_text": "# TGDDやってみた\n\n## 自己紹介\n- つじなが\n\n## おわり\n",
+    "expected_page_group": [
+      "# TGDDやってみた",
+      "## 自己紹介\n- つじなが",
+      "## おわり"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>TGDDやってみた</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>自己紹介</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>つじなが</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>おわり</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "seed-0004",
+    "input_text": "## 工夫したところ\n- 期待値は**人が判断**する\n  - 機械で弾けない誤りがある\n- 比較は正規化してから\n",
+    "expected_page_group": [
+      "## 工夫したところ\n- 期待値は**人が判断**する\n  - 機械で弾けない誤りがある\n- 比較は正規化してから"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>工夫したところ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>期待値は</Str><Strong><Str>人が判断</Str></Strong><Str>する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>機械で弾けない誤りがある</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>比較は正規化してから</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "seed-0005",
+    "input_text": "![構成図](https://example.com/images/architecture.png)\n\n## 仕組み\nテストデータは毎時つくる\n- 失敗したら Discord に通知\n",
+    "expected_page_group": [
+      "![構成図](https://example.com/images/architecture.png)",
+      "## 仕組み\nテストデータは毎時つくる\n- 失敗したら Discord に通知"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/images/architecture.png\" alt=\"構成図\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>仕組み</Str></title><blocks><TextBlock><Paragraph><Str>テストデータは毎時つくる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>失敗したら Discord に通知</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112110-01",
+    "input_text": "# LT準備で詰まった話\n\n## 背景\n1. 締切が近い\n2. ネタが決まらない\n\n## 結論\n",
+    "expected_page_group": [
+      "# LT準備で詰まった話",
+      "## 背景\n1. 締切が近い\n2. ネタが決まらない",
+      "## 結論"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>LT準備で詰まった話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>締切が近い</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ネタが決まらない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>結論</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112110-02",
+    "input_text": "![](https://example.com/a.png)\n![ログ画面](https://example.com/b.png)\n## ふりかえり\n- *次回*は`pytest`で試す\n- 詳細は[ブログ](https://example.com/blog)\n",
+    "expected_page_group": [
+      "![](https://example.com/a.png)",
+      "![ログ画面](https://example.com/b.png)",
+      "## ふりかえり\n- *次回*は`pytest`で試す\n- 詳細は[ブログ](https://example.com/blog)"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/a.png\" /></FigurePage>",
+      "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/b.png\" alt=\"ログ画面\" /></FigurePage>",
+      "<GeneralPage id=\"p3\"><title><Str>ふりかえり</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Em><Str>次回</Str></Em><Str>は</Str><Code>pytest</Code><Str>で試す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>詳細は</Str><Anchor href=\"https://example.com/blog\"><Str>ブログ</Str></Anchor></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112110-03",
+    "input_text": "## uv の紹介\nPython のパッケージ管理ツール\n- 高速\n  - Rust 製\n    - ~~pip~~ より速い\n- 設定が少ない\n",
+    "expected_page_group": [
+      "## uv の紹介\nPython のパッケージ管理ツール\n- 高速\n  - Rust 製\n    - ~~pip~~ より速い\n- 設定が少ない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>uv の紹介</Str></title><blocks><TextBlock><Paragraph><Str>Python のパッケージ管理ツール</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>高速</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Rust 製</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Strike><Str>pip</Str></Strike><Str> より速い</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>設定が少ない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112110-07",
+    "input_text": "## 強調\n**重要: *必ず* テストする**\n",
+    "expected_page_group": [
+      "## 強調\n**重要: *必ず* テストする**"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>強調</Str></title><blocks><TextBlock><Paragraph><Strong><Str>重要: </Str><Em><Str>必ず</Str></Em><Str> テストする</Str></Strong></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112110-08",
+    "input_text": "## はじめに\n- 概要\n\n＃＃　失敗談\n- 夜中に気づいた\n",
+    "expected_page_group": [
+      "## はじめに\n- 概要",
+      "＃＃　失敗談\n- 夜中に気づいた"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>はじめに</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>概要</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>失敗談</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>夜中に気づいた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112110-09",
+    "input_text": "## 道具\n* ペン\n+ ノート\n- PC\n",
+    "expected_page_group": [
+      "## 道具\n* ペン\n+ ノート\n- PC"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ペン</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ノート</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>PC</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
