@@ -32,6 +32,9 @@ BULLET_RE = re.compile(
 # 対になった括弧（1 段まで）は URL の一部にする
 _URL_PATTERN = r"(?:[^()\s]|\([^()\s]*\))+"
 IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>" + _URL_PATTERN + r")\)\s*$")
+# コードブロックの囲み（```・~~~ を 3 つ以上）。開きの後には言語名などを書ける。
+# 閉じは、開きと同じ記号を開きと同じ数以上並べ、後ろに何も書かない行
+FENCE_RE = re.compile(r"^[ \t　]*(?P<fence>`{3,}|~{3,})(?P<info>.*)$")
 
 
 # テキストの先頭のバイト順マーク（BOM, U+FEFF）。ほかのアプリで保存したメモの先頭に付くことがある。
@@ -60,6 +63,27 @@ def _is_image(line: str) -> bool:
     return IMAGE_RE.match(_strip_bom(line)) is not None
 
 
+def _fence_open(line: str) -> str | None:
+    """コードブロックの開きの行なら、その囲みの記号を返す"""
+    match = FENCE_RE.match(_strip_bom(line))
+    if match is None:
+        return None
+    # ``` の開きの後ろ（言語名など）に ` は書けない（インラインのコードと区別する）
+    if match["fence"][0] == "`" and "`" in match["info"]:
+        return None
+    return match["fence"]
+
+
+def _is_fence_close(line: str, fence: str) -> bool:
+    match = FENCE_RE.match(_strip_bom(line))
+    return (
+        match is not None
+        and match["fence"][0] == fence[0]
+        and len(match["fence"]) >= len(fence)
+        and not match["info"].strip()
+    )
+
+
 def text_to_page_grouper(raw_text: str) -> list[str]:
     """作業メモを、ページごとのテキストに分ける
 
@@ -69,18 +93,30 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
     3. 見出しより前（または表紙の直後）にある図だけの行は、それだけで 1 ページ
     4. 見出しより前にあるそれ以外の行は、図だけの行を除き、続く行をまとめて 1 ページ（見出しのないページ）
     5. 行末の空白は除く。ページの前後の空行は除き、ページの途中の空行はそのまま残す
+    6. コードブロック（```・~~~ で囲んだ行）の中は、見出し・表紙・図の行として扱わず、
+       開きの行と同じページに入れる（コードの中の `## ` でページを分けない）
     """
     pages: list[list[str]] = []
     # 今のページの種類: "heading"（見出しのページ）、"body"（見出しのない本文のページ）、None（足せない）
     current: str | None = None
     # まだどのページにも入れていない空行の数（続く行が同じページに入るときだけ足す）
     pending_blanks = 0
+    # 開いているコードブロックの囲みの記号（開いていなければ None）
+    fence: str | None = None
     for raw_line in raw_text.splitlines():
         line = raw_line.rstrip()
         if not _strip_bom(line).strip():
             pending_blanks += 1
             continue
         blanks, pending_blanks = pending_blanks, 0
+        if fence is not None and current is not None:
+            # コードブロックの中の行は、閉じの行も含めて、今のページに足す
+            pages[-1].extend([""] * blanks)
+            pages[-1].append(line)
+            if _is_fence_close(line, fence):
+                fence = None
+            continue
+        fence = _fence_open(line)
         if current is not None and not _is_cover(line) and not _is_heading(line):
             if current == "heading" or (current == "body" and not _is_image(line)):
                 pages[-1].extend([""] * blanks)

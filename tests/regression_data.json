@@ -234,5 +234,17 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎日続ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112207-04",
+    "input_text": "## 設定例\n```\n## これは見出しではない\nkey = value\n```\n- 保存して再起動する\n\n## 次\n",
+    "expected_page_group": [
+      "## 設定例\n```\n## これは見出しではない\nkey = value\n```\n- 保存して再起動する",
+      "## 次"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>設定例</Str></title><blocks><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>## これは見出しではない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>key = value</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>保存して再起動する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>次</Str></title></HeadingPage>"
+    ]
   }
 ]
