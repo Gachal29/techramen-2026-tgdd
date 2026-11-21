@@ -1,0 +1,112 @@
+[
+  {
+    "test_data_id": "2026112206-01",
+    "input_text": "# 付け焼き刃の Rust 入門\n\n## 動機\n仕事で CLI を作ることになった\n\n## 学んだこと\n- 所有権\n- 借用\n  - 可変参照は同時に 1 つ\n- ライフタイム\n\n## 結論\n",
+    "expected_page_group": [
+      "# 付け焼き刃の Rust 入門",
+      "## 動機\n仕事で CLI を作ることになった",
+      "## 学んだこと\n- 所有権\n- 借用\n  - 可変参照は同時に 1 つ\n- ライフタイム",
+      "## 結論"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>付け焼き刃の Rust 入門</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>動機</Str></title><blocks><TextBlock><Paragraph><Str>仕事で CLI を作ることになった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>学んだこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>所有権</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>借用</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>可変参照は同時に 1 つ</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>ライフタイム</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>結論</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-02",
+    "input_text": "## 振り返りの型\n**Keep** と *Problem* と ~~Try~~ ではなく [KPT](https://example.com/kpt) を使う\n1. 事実を出す\n2. 原因を考える\n",
+    "expected_page_group": [
+      "## 振り返りの型\n**Keep** と *Problem* と ~~Try~~ ではなく [KPT](https://example.com/kpt) を使う\n1. 事実を出す\n2. 原因を考える"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>振り返りの型</Str></title><blocks><TextBlock><Paragraph><Strong><Str>Keep</Str></Strong><Str> と </Str><Em><Str>Problem</Str></Em><Str> と </Str><Strike><Str>Try</Str></Strike><Str> ではなく </Str><Anchor href=\"https://example.com/kpt\"><Str>KPT</Str></Anchor><Str> を使う</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>事実を出す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>原因を考える</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-03",
+    "input_text": "# ライブラリ選定の記録\n\n![比較表](https://example.com/cmp.png)\n",
+    "expected_page_group": [
+      "# ライブラリ選定の記録",
+      "![比較表](https://example.com/cmp.png)"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ライブラリ選定の記録</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/cmp.png\" alt=\"比較表\" /></FigurePage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-04",
+    "input_text": "## 余白が   多い   見出し\n- 内側の空白は残す\n",
+    "expected_page_group": [
+      "## 余白が   多い   見出し\n- 内側の空白は残す"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>余白が   多い   見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>内側の空白は残す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-05",
+    "input_text": "## 🎉 リリース\n- 🚀 公開した\n- 👏 反応があった\n",
+    "expected_page_group": [
+      "## 🎉 リリース\n- 🚀 公開した\n- 👏 反応があった"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>🎉 リリース</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>🚀 公開した</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>👏 反応があった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-06",
+    "input_text": "# R&D と A&B の話\n\n## 狙い\n- x > y を示す\n- a < b & c\n",
+    "expected_page_group": [
+      "# R&D と A&B の話",
+      "## 狙い\n- x > y を示す\n- a < b & c"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>R&amp;D と A&amp;B の話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>狙い</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>x &gt; y を示す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>a &lt; b &amp; c</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-07",
+    "input_text": "![A&B の比較](https://example.com/ab.png?x=1&y=2)\n",
+    "expected_page_group": [
+      "![A&B の比較](https://example.com/ab.png?x=1&y=2)"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/ab.png?x=1&amp;y=2\" alt=\"A&amp;B の比較\" /></FigurePage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-08",
+    "input_text": "## `uv` を入れる\n- Python の管理が楽になる\n",
+    "expected_page_group": [
+      "## `uv` を入れる\n- Python の管理が楽になる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Code>uv</Code><Str> を入れる</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Python の管理が楽になる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-09",
+    "input_text": "##　全角空白の見出し\n- 項目\n",
+    "expected_page_group": [
+      "##　全角空白の見出し\n- 項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>全角空白の見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112206-10",
+    "input_text": "## 持ち物\n－ 水筒\n－ タオル\n",
+    "expected_page_group": [
+      "## 持ち物\n－ 水筒\n－ タオル"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水筒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タオル</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
