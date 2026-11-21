@@ -184,5 +184,15 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>資料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/doc\"><Str>https://example.com/doc</Str></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Str>質問は Discord へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112120-09",
+    "input_text": "## 持ち物\n• 財布\n• 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n• 財布\n• 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
