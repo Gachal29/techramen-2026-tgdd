@@ -104,5 +104,35 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ペン</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ノート</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>PC</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112111-04",
+    "input_text": "## 反省 ##\n- 金曜にデプロイしない\n",
+    "expected_page_group": [
+      "## 反省 ##\n- 金曜にデプロイしない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>反省</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>金曜にデプロイしない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-06",
+    "input_text": "## 持ち物\n－ 財布\n－ 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n－ 財布\n－ 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-09",
+    "input_text": "##要点\n- 小さく始める\n",
+    "expected_page_group": [
+      "##要点\n- 小さく始める"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>要点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]

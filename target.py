@@ -9,10 +9,18 @@ import xml.etree.ElementTree as ET
 
 # 半角・全角の `#` と、その後の半角・全角の空白を受け付ける
 COVER_RE = re.compile(r"^[#＃][ \t　]+(?P<text>.*\S)\s*$")
-HEADING_RE = re.compile(r"^[#＃]{2}[ \t　]+(?P<text>.*\S)\s*$")
-# `-`・`*`・`+` は箇条書き、`1.`・`1)` は番号付き。字下げは半角空白 2 つで 1 段
-BULLET_RE = re.compile(r"^(?P<indent>[ \t]*)(?:(?P<mark>[-*+])|(?P<number>\d+)[.)])[ \t　]+(?P<text>.*)$")
+# 見出しは `##` の後の空白がなくてもよい（`##見出し`）。`###` は見出しにしない
+HEADING_RE = re.compile(r"^[#＃]{2}(?![#＃])[ \t　]*(?P<text>.*\S)\s*$")
+# 見出しの末尾の、空白に続く閉じの `#`（`## 見出し ##`）
+CLOSING_HASHES_RE = re.compile(r"[ \t　]+[#＃]+$")
+# `-`・`*`・`+`（全角の `－`・`＊`・`＋` も）は箇条書き、`1.`・`1)` は番号付き。字下げは半角空白 2 つで 1 段
+BULLET_RE = re.compile(r"^(?P<indent>[ \t]*)(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+(?P<text>.*)$")
 IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>[^)\s]+)\)\s*$")
+
+
+def _heading_text(text: str) -> str:
+    """見出しの文字から、閉じの `#` と前後の空白を除く"""
+    return CLOSING_HASHES_RE.sub("", text.strip()).strip()
 
 
 def _is_cover(line: str) -> bool:
@@ -232,14 +240,14 @@ def page_to_slideir_page(page_text: str, page_id: str) -> str:
     cover = COVER_RE.match(lines[0])
     if cover:
         page = ET.Element("CoverPage", {"id": page_id})
-        _append_inlines(ET.SubElement(page, "title"), cover["text"].strip())
+        _append_inlines(ET.SubElement(page, "title"), _heading_text(cover["text"]))
         return ET.tostring(page, encoding="unicode")
 
     heading = HEADING_RE.match(lines[0])
     if heading:
         blocks = _build_blocks(lines[1:])
         page = ET.Element("GeneralPage" if len(blocks) else "HeadingPage", {"id": page_id})
-        _append_inlines(ET.SubElement(page, "title"), heading["text"].strip())
+        _append_inlines(ET.SubElement(page, "title"), _heading_text(heading["text"]))
         if len(blocks):
             page.append(blocks)
         return ET.tostring(page, encoding="unicode")
