@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112120-01",
+    "input_text": "# 家計簿アプリを作った話\n\n## 作った動機\n- 毎月の支出が見えない\n- 既存アプリは入力が面倒\n\n## 工夫\n1. 入力は 3 タップ以内\n2. グラフは月ごと\n\n## ありがとうございました\n",
+    "expected_page_group": [
+      "# 家計簿アプリを作った話",
+      "## 作った動機\n- 毎月の支出が見えない\n- 既存アプリは入力が面倒",
+      "## 工夫\n1. 入力は 3 タップ以内\n2. グラフは月ごと",
+      "## ありがとうございました"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>家計簿アプリを作った話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>作った動機</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎月の支出が見えない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>既存アプリは入力が面倒</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>工夫</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>入力は 3 タップ以内</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>グラフは月ごと</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>ありがとうございました</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-02",
+    "input_text": "## セットアップ\n- `uv sync` で [依存](https://example.com/deps) を *まとめて* 入れる\n- `make run` で起動\n",
+    "expected_page_group": [
+      "## セットアップ\n- `uv sync` で [依存](https://example.com/deps) を *まとめて* 入れる\n- `make run` で起動"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>セットアップ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Code>uv sync</Code><Str> で </Str><Anchor href=\"https://example.com/deps\"><Str>依存</Str></Anchor><Str> を </Str><Em><Str>まとめて</Str></Em><Str> 入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>make run</Code><Str> で起動</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-03",
+    "input_text": "# 引っ越しの手順書\n\n## 荷造り\n**重い物**は小さい箱に\n- 本\n- 食器\n\n## 搬入\n業者は 9 時に来る\n",
+    "expected_page_group": [
+      "# 引っ越しの手順書",
+      "## 荷造り\n**重い物**は小さい箱に\n- 本\n- 食器",
+      "## 搬入\n業者は 9 時に来る"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>引っ越しの手順書</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>荷造り</Str></title><blocks><TextBlock><Paragraph><Strong><Str>重い物</Str></Strong><Str>は小さい箱に</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>本</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>食器</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>搬入</Str></title><blocks><TextBlock><Paragraph><Str>業者は 9 時に来る</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-04",
+    "input_text": "## 前提\n## 方針\n## 次の一歩\n- 公開する\n",
+    "expected_page_group": [
+      "## 前提",
+      "## 方針",
+      "## 次の一歩\n- 公開する"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Str>前提</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>方針</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p3\"><title><Str>次の一歩</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>公開する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-05",
+    "input_text": "## まとめ   \n- 一つ目  \n- 二つ目\t\n",
+    "expected_page_group": [
+      "## まとめ\n- 一つ目\n- 二つ目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-06",
+    "input_text": "## 注意\n**未完の太字\n- 箇条書きの `コード\n- 普通の項目\n",
+    "expected_page_group": [
+      "## 注意\n**未完の太字\n- 箇条書きの `コード\n- 普通の項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Str>**未完の太字</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>箇条書きの `コード</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>普通の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-07",
+    "input_text": "## [公式サイト](https://example.com/) の紹介\n- 無料で使える\n",
+    "expected_page_group": [
+      "## [公式サイト](https://example.com/) の紹介\n- 無料で使える"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Anchor href=\"https://example.com/\"><Str>公式サイト</Str></Anchor><Str> の紹介</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>無料で使える</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-08",
+    "input_text": "## 参考\nhttps://example.com/guide\n- 詳しくは上のページ\n",
+    "expected_page_group": [
+      "## 参考\nhttps://example.com/guide\n- 詳しくは上のページ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/guide</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>詳しくは上のページ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-09",
+    "input_text": "## 持ち物\n• 財布\n• 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n• 財布\n• 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-10",
+    "input_text": "##\t会場\n- オンラインで開催\n",
+    "expected_page_group": [
+      "##\t会場\n- オンラインで開催"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>会場</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>オンラインで開催</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
