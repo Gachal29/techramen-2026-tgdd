@@ -13,8 +13,9 @@ COVER_RE = re.compile(r"^[#＃][ \t　]+(?P<text>.*\S)\s*$")
 HEADING_RE = re.compile(r"^[#＃]{2}(?![#＃])[ \t　]*(?P<text>.*\S)\s*$")
 # 見出しの末尾の、空白に続く閉じの `#`（`## 見出し ##`）
 CLOSING_HASHES_RE = re.compile(r"[ \t　]+[#＃]+$")
-# `-`・`*`・`+`（全角の `－`・`＊`・`＋` も）は箇条書き、`1.`・`1)` は番号付き。字下げは半角空白 2 つで 1 段
-BULLET_RE = re.compile(r"^(?P<indent>[ \t]*)(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+(?P<text>.*)$")
+# `-`・`*`・`+`（全角の `－`・`＊`・`＋` も）は箇条書き、`1.`・`1)` は番号付き。
+# 字下げは半角空白 2 つ（全角空白なら 1 つ）で 1 段
+BULLET_RE = re.compile(r"^(?P<indent>[ \t　]*)(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+(?P<text>.*)$")
 IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>[^)\s]+)\)\s*$")
 
 
@@ -43,15 +44,22 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
     2. `## ` で始まる行から、次の見出し（`# `・`## `）の前までを 1 ページにする
     3. 見出しより前（または表紙の直後）にある図だけの行は、それだけで 1 ページ
     4. 見出しより前にあるそれ以外の行は、図だけの行を除き、続く行をまとめて 1 ページ（見出しのないページ）
-    5. 空行は読み飛ばし、行末の空白は除く
+    5. 行末の空白は除く。ページの前後の空行は除き、ページの途中の空行はそのまま残す
     """
     pages: list[list[str]] = []
     # 今のページの種類: "heading"（見出しのページ）、"body"（見出しのない本文のページ）、None（足せない）
     current: str | None = None
+    # まだどのページにも入れていない空行の数（続く行が同じページに入るときだけ足す）
+    pending_blanks = 0
     for raw_line in raw_text.splitlines():
         line = raw_line.rstrip()
         if not line.strip():
+            pending_blanks += 1
             continue
+        blanks, pending_blanks = pending_blanks, 0
+        if current is not None and not _is_cover(line) and not _is_heading(line):
+            if current == "heading" or (current == "body" and not _is_image(line)):
+                pages[-1].extend([""] * blanks)
         if _is_cover(line):
             pages.append([line])
             current = None
@@ -187,7 +195,8 @@ def _image_figure(parent: ET.Element, line: str) -> None:
 
 
 def _indent_level(indent: str) -> int:
-    return len(indent.expandtabs(2)) // 2
+    # 全角空白は半角空白 2 つ分の幅として数える
+    return len(indent.replace("　", "  ").expandtabs(2)) // 2
 
 
 def _build_blocks(lines: list[str]) -> ET.Element:
