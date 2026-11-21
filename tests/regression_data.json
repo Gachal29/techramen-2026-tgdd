@@ -224,5 +224,15 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>BOM 付きの見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112205-10",
+    "input_text": "## 方針\n-小さく始める\n-毎日続ける\n",
+    "expected_page_group": [
+      "## 方針\n-小さく始める\n-毎日続ける"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎日続ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
