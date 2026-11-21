@@ -38,6 +38,7 @@ Claude のスケジュールタスク（毎時 00 分）が、この文書に従
 | [test_data.schema.json](./test_data.schema.json) | テストデータの形 |
 | `tests/test_data/` の新しいほうから 5 ファイル、`tests/test_regression.py` | すでに試した観点。同じ観点を繰り返さない |
 | **`target.py`** | **読まない。** 実装に合わせた期待値や、実装が通るように選んだ入力にしないため |
+| **`slide-demo/`** | **読まない。** LT のスライドの原稿（`slide-demo/memo.md`）をなぞったテストデータにしないため |
 
 ## 3. 変えてよいもの
 

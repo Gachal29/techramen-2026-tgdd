@@ -59,6 +59,8 @@ Claude のスケジュールタスク（毎時）が、この文書に従って�
     | `tests/excluded_test_data.json` | 期待値の誤りの除外 |
 
 - テストデータ（`tests/test_data/`）、テストの仕組み（`tests/*.py`・`tools/`）、ワークフロー、文書は変更しない。直す必要があると考えたら、プルリクエストの本文に書く
+- **`slide-demo/` を読まない・変更しない。** LT のスライドの原稿（`slide-demo/memo.md`）に合わせた修正をしないため
+- `target.py` の 2 つの関数の名前と引数（`text_to_page_grouper(raw_text)`・`page_to_slideir_page(page_text, page_id)`）は変えない。過去の版と比べられなくなる
 - **入力ごとの場合分けで通さない。** `test_data_id` や特定の文字列を見て結果を返すような修正はしない。同じ種類の書き方すべてに効く規則として直す
 - 1 つの原因で失敗しているテストデータは、まとめて 1 つの修正にする
 - 修正したら、その原因を代表するテストデータを `tests/regression_data.json` に写す（そのままの形で追記。1 つの原因につき 1〜2 件）

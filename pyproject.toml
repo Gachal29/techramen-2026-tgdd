@@ -12,7 +12,7 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
-pythonpath = [".", "tests"]
+pythonpath = [".", "tests", "slide-demo"]
 testpaths = ["tests"]
 markers = [
     "gacha(target): テストガチャのテストケース。target はテスト対象の関数名",

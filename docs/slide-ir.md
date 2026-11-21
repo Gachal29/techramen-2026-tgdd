@@ -124,6 +124,7 @@ SlideIR（Slide Intermediate Representation）は、LTooL のスライドの内�
 
 ### LTooL に適用するときの作業
 
+- ファイルの拡張子を `.sir` から `.ltool` に変える（仕様の 5 章）
 - バージョンは 0.1 のまま変える。古い型名のデータとバージョンでは見分けられないので、保存済みのデータは一度に全部移行し、古い型名の XML（書き出したものなど）が外に残っていないか確かめる
 - 保存済みの `Slide.page_pool` を書き換えるデータ移行
     - `type` の値: `claim` → `heading`、`info` → `body`、`visual` → `figure`

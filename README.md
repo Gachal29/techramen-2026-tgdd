@@ -23,6 +23,31 @@ uv run python tools/notify_discord.py gacha-result.json --dry-run
 uv run python tools/validate_test_data.py tests/test_data/2026-11-20-00.json
 ```
 
+## スライドをつくる
+
+LT のスライドは、作業メモ（`slide-demo/memo.md`）から `target.py` でつくる。
+
+```bash
+git pull origin main
+uv run python slide-demo/build.py
+open slide-demo/dist/index.html
+```
+
+- `target.py` を変更したコミットごとに 1 つの版ができる。考慮漏れの修正がマージされるたびに、版が増える
+- `slide-demo/dist/slides/` に、版ごとの SlideIR（`.ltool`）と生成の記録（`.report.json`）ができる
+- 変換できなかったページは、原文をそのまま載せた代わりのスライドになる
+
+| キー | 動作 |
+|---|---|
+| `←` `→` | ページ送り |
+| `↑` `↓` | `target.py` の版を切り替える |
+| `s` | 原文（作業メモ）を並べて表示する |
+| `x` | SlideIR の XML を表示する |
+| `g` | 版ごとの推移（テストガチャの通過率、原文の再現率） |
+| `f` | 全画面 |
+
+URL の `?v=<コミット>#<ページ>` で、版とページを指定できる。
+
 ## ファイル説明
 
 | ファイル | 内容 |
@@ -46,6 +71,8 @@ uv run python tools/validate_test_data.py tests/test_data/2026-11-20-00.json
 | `docs/test-data-generation.md` | テストデータを作るスケジュールタスクへの指示 |
 | `docs/fix-instructions.md` | 考慮漏れを修正するスケジュールタスクへの指示 |
 | `docs/slide-ir.md` | SlideIR の Page 型 |
+| `slide-demo/` | 作業メモからスライドをつくる仕組みと、LT の原稿（`memo.md`） |
+| `tests/test_slide_demo.py` | スライドをつくる仕組みのテスト |
 | `docs/plans/` | 実装計画書 |
 
 ## GitHub の設定

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TGDD スライド</title>
+<style>
+  :root { --bg: #14161a; --fg: #f3f1ea; --muted: #9aa0a8; --accent: #f2b23a; --warn: #ff8a5c; --paper: #fdfcf8; --ink: #1d2126; --line: #d9d5c8; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; background: var(--bg); color: var(--fg); font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif; overflow: hidden; }
+  #stage { position: absolute; inset: 0 0 44px 0; display: flex; align-items: center; justify-content: center; gap: 16px; padding: 16px; }
+  #frame { width: 1280px; height: 720px; flex: none; transform-origin: center; position: relative; }
+  #slide { width: 1280px; height: 720px; background: var(--paper); color: var(--ink); border-radius: 6px; overflow: hidden; position: relative; }
+  #slide.overflow { overflow-y: auto; }
+  #slide.overflow::after { content: ""; position: sticky; display: block; bottom: 0; height: 60px; margin-top: -60px; background: linear-gradient(transparent, var(--paper)); pointer-events: none; }
+  .page { min-height: 720px; padding: 56px 72px; display: flex; flex-direction: column; font-size: calc(34px * var(--shrink, 1)); line-height: 1.5; }
+  .page h1 { font-size: 1.5em; line-height: 1.3; margin: 0 0 .6em; overflow-wrap: anywhere; }
+  .page p { margin: 0 0 .4em; overflow-wrap: anywhere; }
+  .page ul, .page ol { margin: 0 0 .4em; padding-left: 1.3em; }
+  .page li.nested { list-style: none; }
+  .page li > p { margin: 0 0 .15em; }
+  .page code { font-family: "SF Mono", Menlo, Consolas, monospace; background: #ece8dc; border-radius: 4px; padding: 0 .25em; font-size: .9em; }
+  .page a { color: #0b62c4; }
+  .page mark { background: #ffe58a; }
+  .page table { border-collapse: collapse; margin-bottom: .4em; }
+  .page th, .page td { border: 1px solid var(--line); padding: .2em .6em; text-align: left; }
+  .page th { background: #f0ece0; }
+  .page img { max-width: 100%; max-height: 420px; object-fit: contain; }
+  .page .placeholder, .page .file { display: inline-block; border: 2px dashed var(--line); border-radius: 8px; padding: .5em 1em; color: #666; }
+  .page.cover, .page.heading { align-items: center; justify-content: center; text-align: center; }
+  .page.cover h1 { font-size: 2.2em; margin: 0; }
+  .page.cover .subtitle { font-size: 1.1em; color: #555; margin-top: .8em; }
+  .page.heading h1 { font-size: 1.9em; margin: 0; }
+  .page.body { justify-content: center; }
+  .page.figure { align-items: center; justify-content: center; }
+  .page.figure img { max-height: 600px; }
+  .page.fallback { padding: 0; font-size: calc(22px * var(--shrink, 1)); background: repeating-linear-gradient(135deg, #fff7ee, #fff7ee 18px, #fdeede 18px, #fdeede 36px); }
+  .fallback-head { background: #b23c17; color: #fff; padding: 14px 28px; display: flex; gap: 20px; align-items: baseline; }
+  .fallback-head strong { font-size: 1.2em; white-space: nowrap; }
+  .fallback-head span { font-size: .8em; opacity: .9; overflow-wrap: anywhere; }
+  .page.fallback pre { margin: 0; padding: 24px 28px; white-space: pre-wrap; overflow-wrap: anywhere; font-family: "SF Mono", Menlo, Consolas, monospace; line-height: 1.6; }
+  .side { width: 420px; max-height: 100%; flex: none; display: none; flex-direction: column; background: #1f2329; border-radius: 6px; overflow: hidden; }
+  .side h2 { margin: 0; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--muted); background: #262b32; letter-spacing: .05em; }
+  .side pre { margin: 0; padding: 14px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 14px; line-height: 1.6; }
+  body.show-source #source, body.show-xml #xml { display: flex; }
+  #bar { position: absolute; left: 0; right: 0; bottom: 0; height: 44px; display: flex; align-items: center; gap: 18px; padding: 0 16px; background: #0d0f12; font-size: 14px; white-space: nowrap; overflow: hidden; }
+  #bar .version { color: var(--accent); }
+  #bar .notes { color: var(--warn); overflow: hidden; text-overflow: ellipsis; }
+  #bar .keys { margin-left: auto; color: #5d646d; font-size: 12px; }
+  #trend { position: absolute; inset: 0; background: var(--bg); display: none; padding: 32px 48px; overflow: auto; }
+  body.show-trend #trend { display: block; }
+  #trend h2 { margin: 0 0 20px; font-size: 26px; }
+  #trend svg { width: 100%; max-width: 1100px; height: 280px; display: block; margin-bottom: 24px; }
+  #trend table { border-collapse: collapse; font-size: 15px; }
+  #trend th, #trend td { padding: 6px 14px; border-bottom: 1px solid #2c3138; text-align: right; }
+  #trend th:nth-child(-n+3), #trend td:nth-child(-n+3) { text-align: left; }
+  #trend tr.current td { color: var(--accent); }
+  #trend tbody tr { cursor: pointer; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="side" id="source"><h2>原文（作業メモ）</h2><pre></pre></div>
+  <div id="frame"><div id="slide"></div></div>
+  <div class="side" id="xml"><h2>SlideIR</h2><pre></pre></div>
+</div>
+<div id="bar">
+  <span class="position"></span><span class="version"></span><span class="gacha"></span><span class="notes"></span>
+  <span class="keys">←→ ページ　↑↓ 版　s 原文　x XML　g 推移　f 全画面</span>
+</div>
+<div id="trend"></div>
+<script>
+const DATA = /*__DATA__*/null;
+const versions = DATA.versions;
+const params = new URLSearchParams(location.search);
+let v = versions.findIndex(version => version.commit === params.get("v"));
+if (v < 0) v = versions.length - 1;
+let p = Math.max(0, (parseInt(location.hash.slice(1), 10) || 1) - 1);
+const $ = selector => document.querySelector(selector);
+const escapeHtml = text => String(text).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+function fit() {
+  const stage = $("#stage");
+  const sides = document.querySelectorAll(".side");
+  let used = 32;
+  sides.forEach(side => { if (getComputedStyle(side).display !== "none") used += side.offsetWidth + 16; });
+  const scale = Math.min((stage.clientWidth - used) / 1280, (stage.clientHeight - 32) / 720);
+  const frame = $("#frame");
+  frame.style.transform = `scale(${scale})`;
+  frame.style.margin = `${-(720 - 720 * scale) / 2}px ${-(1280 - 1280 * scale) / 2}px`;
+  sides.forEach(side => { side.style.maxHeight = `${720 * scale}px`; });
+}
+
+function show() {
+  const version = versions[v];
+  p = Math.min(p, version.pages.length - 1);
+  const page = version.pages[p];
+  const slide = $("#slide");
+  slide.classList.remove("overflow");
+  slide.scrollTop = 0;
+  slide.innerHTML = page.html;
+  // はみ出すときは文字を縮め、それでも収まらなければ注意を出す
+  const section = slide.firstElementChild;
+  let shrink = 1;
+  while (section.scrollHeight > 720 && shrink > 0.5) { shrink -= 0.05; section.style.setProperty("--shrink", shrink); }
+  const overflow = section.scrollHeight > 720;
+  slide.classList.toggle("overflow", overflow);
+
+  $("#source pre").textContent = page.source;
+  $("#xml pre").textContent = page.xml || "（SlideIR はありません）";
+  $("#bar .position").textContent = `${p + 1} / ${version.pages.length}`;
+  const latest = v === versions.length - 1 ? "（最新）" : "";
+  $("#bar .version").textContent = `v${version.number} ${version.commit}${latest}`;
+  $("#bar .gacha").textContent = version.gacha ? `テスト ${version.gacha.passed} / ${version.gacha.total} 通過` : "テスト 実行できず";
+  const notes = [...page.notes];
+  if (page.stage === "A") notes.unshift("変換できない");
+  if (page.stage === "B") notes.unshift("SlideIR として正しくない");
+  if (overflow) notes.push("はみ出し");
+  $("#bar .notes").textContent = notes.length ? "⚠ " + notes.join(" ／ ") : "";
+  history.replaceState(null, "", `?v=${version.commit}#${p + 1}`);
+  fit();
+}
+
+function trend() {
+  const rate = version => version.gacha && version.gacha.total ? version.gacha.passed / version.gacha.total : 0;
+  const width = 1100, height = 280, left = 50, bottom = 36, top = 16;
+  const x = index => left + (versions.length === 1 ? 0 : index * (width - left - 20) / (versions.length - 1));
+  const y = value => top + (1 - value) * (height - top - bottom);
+  let svg = `<svg viewBox="0 0 ${width} ${height}">`;
+  for (const value of [0, 0.5, 1]) {
+    svg += `<line x1="${left}" x2="${width - 20}" y1="${y(value)}" y2="${y(value)}" stroke="#2c3138"/>`;
+    svg += `<text x="${left - 8}" y="${y(value) + 5}" fill="#9aa0a8" font-size="13" text-anchor="end">${value * 100}%</text>`;
+  }
+  const line = (value, color) => `<polyline fill="none" stroke="${color}" stroke-width="3" points="${versions.map((version, index) => `${x(index)},${y(value(version))}`).join(" ")}"/>` +
+    versions.map((version, index) => `<circle cx="${x(index)}" cy="${y(value(version))}" r="${index === v ? 7 : 4}" fill="${color}"/>`).join("");
+  svg += line(rate, "#f2b23a") + line(version => version.stats.coverage / 100, "#5cc8ff");
+  versions.forEach((version, index) => { svg += `<text x="${x(index)}" y="${height - 12}" fill="#9aa0a8" font-size="13" text-anchor="middle">v${version.number}</text>`; });
+  svg += `</svg><p style="font-size:14px;color:#9aa0a8;margin:-12px 0 20px"><span style="color:#f2b23a">■</span> テストガチャの通過率（現在の全テストデータ）　<span style="color:#5cc8ff">■</span> 原文の再現率（作業メモ）</p>`;
+  let rows = "";
+  versions.forEach((version, index) => {
+    rows += `<tr data-index="${index}" class="${index === v ? "current" : ""}"><td>v${version.number}</td><td>${escapeHtml(version.commit)}</td><td>${escapeHtml(version.message)}</td>` +
+      `<td>${version.gacha ? `${version.gacha.passed} / ${version.gacha.total}` : "—"}</td><td>${version.stats.pages}</td><td>${version.stats.flagged}</td><td>${version.stats.coverage}%</td></tr>`;
+  });
+  $("#trend").innerHTML = `<h2>版ごとの推移</h2>${svg}<table><thead><tr><th>版</th><th>コミット</th><th>内容</th><th>テスト通過</th><th>ページ数</th><th>注意のあるページ</th><th>原文の再現率</th></tr></thead><tbody>${rows}</tbody></table>`;
+  $("#trend").querySelectorAll("tbody tr").forEach(row => row.addEventListener("click", () => { v = Number(row.dataset.index); document.body.classList.remove("show-trend"); show(); }));
+}
+
+function move(step) { p = Math.max(0, Math.min(versions[v].pages.length - 1, p + step)); show(); }
+function switchVersion(step) { v = Math.max(0, Math.min(versions.length - 1, v + step)); show(); if (document.body.classList.contains("show-trend")) trend(); }
+
+document.addEventListener("keydown", event => {
+  if (event.metaKey || event.ctrlKey || event.altKey) return;
+  const key = event.key;
+  if (key === "ArrowRight" || key === " " || key === "PageDown") move(1);
+  else if (key === "ArrowLeft" || key === "PageUp") move(-1);
+  else if (key === "ArrowUp") switchVersion(-1);
+  else if (key === "ArrowDown") switchVersion(1);
+  else if (key === "s") { document.body.classList.toggle("show-source"); fit(); }
+  else if (key === "x") { document.body.classList.toggle("show-xml"); fit(); }
+  else if (key === "g") { document.body.classList.toggle("show-trend"); trend(); }
+  else if (key === "Escape") document.body.classList.remove("show-trend");
+  else if (key === "f") { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); }
+  else return;
+  event.preventDefault();
+});
+$("#frame").addEventListener("click", event => { if (!event.target.closest("a")) move(event.offsetX < 400 ? -1 : 1); });
+window.addEventListener("resize", fit);
+show();
+</script>
+</body>
+</html>
