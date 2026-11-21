@@ -1,0 +1,108 @@
+[
+  {
+    "test_data_id": "2026112118-01",
+    "input_text": "# 読書会を 3 年続けた\n\n## 始めた理由\n同僚と技術書を読みたかった\n毎月 1 回、昼休みに集まる\n\n## 続けるコツ\n- 本は持ち回りで選ぶ\n- 感想は 1 行だけ\n\n## ありがとうございました\n",
+    "expected_page_group": [
+      "# 読書会を 3 年続けた",
+      "## 始めた理由\n同僚と技術書を読みたかった\n毎月 1 回、昼休みに集まる",
+      "## 続けるコツ\n- 本は持ち回りで選ぶ\n- 感想は 1 行だけ",
+      "## ありがとうございました"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>読書会を 3 年続けた</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>始めた理由</Str></title><blocks><TextBlock><Paragraph><Str>同僚と技術書を読みたかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎月 1 回、昼休みに集まる</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>続けるコツ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>本は持ち回りで選ぶ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>感想は 1 行だけ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>ありがとうございました</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-02",
+    "input_text": "![設計図](https://example.com/design.png)\n\n## 設計の方針\n- 層を分ける\n  - UI\n  - ロジック\n- 依存は一方向\n",
+    "expected_page_group": [
+      "![設計図](https://example.com/design.png)",
+      "## 設計の方針\n- 層を分ける\n  - UI\n  - ロジック\n- 依存は一方向"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/design.png\" alt=\"設計図\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>設計の方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>層を分ける</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>UI</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ロジック</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>依存は一方向</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-03",
+    "input_text": "# 技術書典の振り返り\n## 結果\n**完売**した\n- *想定の*2 倍売れた\n",
+    "expected_page_group": [
+      "# 技術書典の振り返り",
+      "## 結果\n**完売**した\n- *想定の*2 倍売れた"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>技術書典の振り返り</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>結果</Str></title><blocks><TextBlock><Paragraph><Strong><Str>完売</Str></Strong><Str>した</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Em><Str>想定の</Str></Em><Str>2 倍売れた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-04",
+    "input_text": "",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112118-05",
+    "input_text": "## 環境構築\n1. 準備\n  - clone する\n  - sync する\n2. 実行\n",
+    "expected_page_group": [
+      "## 環境構築\n1. 準備\n  - clone する\n  - sync する\n2. 実行"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>環境構築</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>clone する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>sync する</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-06",
+    "input_text": "## 記法メモ\n`**` は太字、`*` は斜体、`~~` は打ち消し\n",
+    "expected_page_group": [
+      "## 記法メモ\n`**` は太字、`*` は斜体、`~~` は打ち消し"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法メモ</Str></title><blocks><TextBlock><Paragraph><Code>**</Code><Str> は太字、</Str><Code>*</Code><Str> は斜体、</Str><Code>~~</Code><Str> は打ち消し</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-07",
+    "input_text": "## 見積もり\nコストは 2 * 3 * 4 = 24 時間\n- 単価は 5 * 10 円\n",
+    "expected_page_group": [
+      "## 見積もり\nコストは 2 * 3 * 4 = 24 時間\n- 単価は 5 * 10 円"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>見積もり</Str></title><blocks><TextBlock><Paragraph><Str>コストは 2 * 3 * 4 = 24 時間</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>単価は 5 * 10 円</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-08",
+    "input_text": "## 廃止\n- ~~**旧**手順~~は廃止\n- 新手順を使う\n",
+    "expected_page_group": [
+      "## 廃止\n- ~~**旧**手順~~は廃止\n- 新手順を使う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>廃止</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strike><Strong><Str>旧</Str></Strong><Str>手順</Str></Strike><Str>は廃止</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>新手順を使う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-09",
+    "input_text": "## 記法の補足\nここが __大事__ な点。 _先に_ 書く\n",
+    "expected_page_group": [
+      "## 記法の補足\nここが __大事__ な点。 _先に_ 書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法の補足</Str></title><blocks><TextBlock><Paragraph><Str>ここが </Str><Strong><Str>大事</Str></Strong><Str> な点。 </Str><Em><Str>先に</Str></Em><Str> 書く</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-10",
+    "input_text": "## 資料\n- <https://example.com/doc>\n- 質問は Discord へ\n",
+    "expected_page_group": [
+      "## 資料\n- <https://example.com/doc>\n- 質問は Discord へ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>資料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/doc\"><Str>https://example.com/doc</Str></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Str>質問は Discord へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
