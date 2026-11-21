@@ -86,8 +86,16 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
 
 # -- インラインの記法 --
 
-_DELIMITERS = [("**", "Strong"), ("~~", "Strike"), ("*", "Em")]
+_DELIMITERS = [("**", "Strong"), ("__", "Strong"), ("~~", "Strike"), ("*", "Em"), ("_", "Em")]
 _LINK_RE = re.compile(r"\[(?P<text>[^\]]+)\]\((?P<href>[^)\s]+)\)")
+# 自動リンク `<https://example.com>`（`<` と `>` で囲んだ、スキームのある URL）
+_AUTOLINK_RE = re.compile(r"<(?P<href>[A-Za-z][A-Za-z0-9+.\-]{1,31}:[^<>\s]+)>")
+# `_`・`__` は、英数字に挟まれた位置（`snake_case` など）では強調の記号にしない
+_ASCII_WORD_RE = re.compile(r"[A-Za-z0-9]")
+
+
+def _is_ascii_word(char: str) -> bool:
+    return _ASCII_WORD_RE.fullmatch(char) is not None
 
 
 def _find_closing(text: str, delimiter: str, start: int) -> int:
@@ -100,14 +108,19 @@ def _find_closing(text: str, delimiter: str, start: int) -> int:
         position = text.find(delimiter, position)
         if position == -1:
             return -1
-        if delimiter == "*":
-            # `**` の一部なら、ひとまとまりで読み飛ばす（入れ子の太字）
-            if text.startswith("**", position):
-                closing = _find_closing(text, "**", position + 2)
+        if len(delimiter) == 1:
+            # `**`・`__` の一部なら、ひとまとまりで読み飛ばす（入れ子の太字）
+            double = delimiter * 2
+            if text.startswith(double, position):
+                closing = _find_closing(text, double, position + 2)
                 if closing == -1:
                     return -1
                 position = closing + 2
                 continue
+        end = position + len(delimiter)
+        if delimiter[0] == "_" and end < len(text) and _is_ascii_word(text[end]):
+            position = end
+            continue
         if position > start and not text[position - 1].isspace():
             return position
         position += len(delimiter)
@@ -144,9 +157,18 @@ def _parse_inline(text: str) -> list[tuple]:
                 nodes.append(("Anchor", (link["href"], _parse_inline(link["text"]))))
                 index = link.end()
                 continue
+        if char == "<":
+            autolink = _AUTOLINK_RE.match(text, index)
+            if autolink:
+                flush()
+                nodes.append(("Anchor", (autolink["href"], [("Str", autolink["href"])])))
+                index = autolink.end()
+                continue
         matched = False
         for delimiter, kind in _DELIMITERS:
             if not text.startswith(delimiter, index):
+                continue
+            if delimiter[0] == "_" and index > 0 and _is_ascii_word(text[index - 1]):
                 continue
             inner_start = index + len(delimiter)
             if inner_start >= len(text) or text[inner_start].isspace():

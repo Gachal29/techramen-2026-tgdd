@@ -164,5 +164,25 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112118-09",
+    "input_text": "## 記法の補足\nここが __大事__ な点。 _先に_ 書く\n",
+    "expected_page_group": [
+      "## 記法の補足\nここが __大事__ な点。 _先に_ 書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法の補足</Str></title><blocks><TextBlock><Paragraph><Str>ここが </Str><Strong><Str>大事</Str></Strong><Str> な点。 </Str><Em><Str>先に</Str></Em><Str> 書く</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-10",
+    "input_text": "## 資料\n- <https://example.com/doc>\n- 質問は Discord へ\n",
+    "expected_page_group": [
+      "## 資料\n- <https://example.com/doc>\n- 質問は Discord へ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>資料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/doc\"><Str>https://example.com/doc</Str></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Str>質問は Discord へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
