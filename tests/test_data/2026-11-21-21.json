@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112121-01",
+    "input_text": "# 社内勉強会を回すコツ\n\n## 続ける工夫\n担当は持ち回りにした\n- 資料は前日までに共有\n- 録画は残す\n\n## 失敗談\n\n## まとめ\n- 無理をしない\n",
+    "expected_page_group": [
+      "# 社内勉強会を回すコツ",
+      "## 続ける工夫\n担当は持ち回りにした\n- 資料は前日までに共有\n- 録画は残す",
+      "## 失敗談",
+      "## まとめ\n- 無理をしない"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>社内勉強会を回すコツ</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>続ける工夫</Str></title><blocks><TextBlock><Paragraph><Str>担当は持ち回りにした</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>資料は前日までに共有</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>録画は残す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>失敗談</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p3\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>無理をしない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-02",
+    "input_text": "![売上の推移](https://example.com/sales.png)\n\n## 反省点\n- 計測していなかった\n  - ログが無い\n  - 指標が無い\n- 共有が遅れた\n\n## 次にやること\n1. 計測を入れる\n2. 週次で共有する\n",
+    "expected_page_group": [
+      "![売上の推移](https://example.com/sales.png)",
+      "## 反省点\n- 計測していなかった\n  - ログが無い\n  - 指標が無い\n- 共有が遅れた",
+      "## 次にやること\n1. 計測を入れる\n2. 週次で共有する"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/sales.png\" alt=\"売上の推移\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>反省点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>計測していなかった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ログが無い</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>指標が無い</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>共有が遅れた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>次にやること</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>計測を入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>週次で共有する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-03",
+    "input_text": "# LT 前夜の過ごし方\n\n## 睡眠\n8 時間寝る\nカフェインは控える\n\n## おわり\n",
+    "expected_page_group": [
+      "# LT 前夜の過ごし方",
+      "## 睡眠\n8 時間寝る\nカフェインは控える",
+      "## おわり"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>LT 前夜の過ごし方</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>睡眠</Str></title><blocks><TextBlock><Paragraph><Str>8 時間寝る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>カフェインは控える</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>おわり</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-04",
+    "input_text": "## C# の話\n- .NET を使う\n- 型が強い\n",
+    "expected_page_group": [
+      "## C# の話\n- .NET を使う\n- 型が強い"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>C# の話</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>.NET を使う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>型が強い</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-05",
+    "input_text": "## 構成\n- 親\n    - 子\n        - 孫\n- 次の親\n",
+    "expected_page_group": [
+      "## 構成\n- 親\n    - 子\n        - 孫\n- 次の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>次の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-06",
+    "input_text": "## 構造\n- 親\n\n  - 子\n- 次の親\n",
+    "expected_page_group": [
+      "## 構造\n- 親\n\n  - 子\n- 次の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>構造</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>次の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-07",
+    "input_text": "## 参考リンク\n- 詳細は [Wikipedia](https://ja.wikipedia.org/wiki/Python_(言語)) を参照\n",
+    "expected_page_group": [
+      "## 参考リンク\n- 詳細は [Wikipedia](https://ja.wikipedia.org/wiki/Python_(言語)) を参照"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考リンク</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://ja.wikipedia.org/wiki/Python_(言語)\"><Str>Wikipedia</Str></Anchor><Str> を参照</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-08",
+    "input_text": "![図 1: A & B の関係](https://example.com/ab.png)\n\n## 説明\n- A が B を呼ぶ\n",
+    "expected_page_group": [
+      "![図 1: A & B の関係](https://example.com/ab.png)",
+      "## 説明\n- A が B を呼ぶ"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/ab.png\" alt=\"図 1: A &amp; B の関係\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>説明</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>A が B を呼ぶ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-09",
+    "input_text": "## 命名\n変数名は snake_case にする\n- my_var_name のように書く\n",
+    "expected_page_group": [
+      "## 命名\n変数名は snake_case にする\n- my_var_name のように書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>命名</Str></title><blocks><TextBlock><Paragraph><Str>変数名は snake_case にする</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>my_var_name のように書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-10",
+    "input_text": "## 手順\n1) 設定を開く\n2) 保存する\n",
+    "expected_page_group": [
+      "## 手順\n1) 設定を開く\n2) 保存する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>設定を開く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>保存する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
