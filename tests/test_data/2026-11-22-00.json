@@ -1,0 +1,118 @@
+[
+    {
+        "test_data_id": "2026112200-01",
+        "input_text": "# 転職活動のふりかえり\n\n## 始めた理由\n成長が止まったと感じた\n- 面談を月 3 回\n  - 先輩に相談\n- 職務経歴書を更新\n\n## 結果\n",
+        "expected_page_group": [
+            "# 転職活動のふりかえり",
+            "## 始めた理由\n成長が止まったと感じた\n- 面談を月 3 回\n  - 先輩に相談\n- 職務経歴書を更新",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>転職活動のふりかえり</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>始めた理由</Str></title><blocks><TextBlock><Paragraph><Str>成長が止まったと感じた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>面談を月 3 回</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>先輩に相談</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>職務経歴書を更新</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-02",
+        "input_text": "# 読書会の運営メモ\n\n## 進め方\n1. 事前に章を決める\n2. 当日は 5 分で要約する\n\n## 注意\n**遅刻**する人は先に連絡\n\n## 以上\n",
+        "expected_page_group": [
+            "# 読書会の運営メモ",
+            "## 進め方\n1. 事前に章を決める\n2. 当日は 5 分で要約する",
+            "## 注意\n**遅刻**する人は先に連絡",
+            "## 以上"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>読書会の運営メモ</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>進め方</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>事前に章を決める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>当日は 5 分で要約する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Strong><Str>遅刻</Str></Strong><Str>する人は先に連絡</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>以上</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-03",
+        "input_text": "![ロゴ](https://example.com/logo.svg)\n\n# 発表タイトル\n\n## 概要\n- 3 分で話す\n",
+        "expected_page_group": [
+            "![ロゴ](https://example.com/logo.svg)",
+            "# 発表タイトル",
+            "## 概要\n- 3 分で話す"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/logo.svg\" alt=\"ロゴ\" /></FigurePage>",
+            "<CoverPage id=\"cover\"><title><Str>発表タイトル</Str></title></CoverPage>",
+            "<GeneralPage id=\"p2\"><title><Str>概要</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>3 分で話す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-04",
+        "input_text": "## 🎉 リリース\n- 🚀 本番に反映した\n- 😅 すぐ切り戻した\n",
+        "expected_page_group": [
+            "## 🎉 リリース\n- 🚀 本番に反映した\n- 😅 すぐ切り戻した"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>🎉 リリース</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>🚀 本番に反映した</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>😅 すぐ切り戻した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-05",
+        "input_text": "## 背景\n\n\n\n古い仕組みを置き換えたい\n\n\n- 理由は保守性\n\n\n\n## 方針\n- 段階的に移す\n",
+        "expected_page_group": [
+            "## 背景\n\n\n\n古い仕組みを置き換えたい\n\n\n- 理由は保守性",
+            "## 方針\n- 段階的に移す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>古い仕組みを置き換えたい</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>理由は保守性</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>段階的に移す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-06",
+        "input_text": "## 強調の書き方\n- _斜体_ も使う\n- __太字__ も使う\n",
+        "expected_page_group": [
+            "## 強調の書き方\n- _斜体_ も使う\n- __太字__ も使う"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>強調の書き方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Em><Str>斜体</Str></Em><Str> も使う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>太字</Str></Strong><Str> も使う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-07",
+        "input_text": "## 手順\n- issue #42 を直す\n- PR #43 をレビューする\n",
+        "expected_page_group": [
+            "## 手順\n- issue #42 を直す\n- PR #43 をレビューする"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>issue #42 を直す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>PR #43 をレビューする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-08",
+        "input_text": "## 記号の扱い\n- 5 * 3 = 15\n- snake_case_name は変数名\n- 100 ~ 200 件\n",
+        "expected_page_group": [
+            "## 記号の扱い\n- 5 * 3 = 15\n- snake_case_name は変数名\n- 100 ~ 200 件"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>記号の扱い</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>5 * 3 = 15</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>snake_case_name は変数名</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>100 ~ 200 件</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-09",
+        "input_text": "## 注意事項\n※ 当日は雨の予報\n- 傘を持つ\n",
+        "expected_page_group": [
+            "## 注意事項\n※ 当日は雨の予報\n- 傘を持つ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>注意事項</Str></title><blocks><TextBlock><Paragraph><Str>※ 当日は雨の予報</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>傘を持つ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112200-10",
+        "input_text": "## 階層\n* 親\n  * 子\n* 次の親\n",
+        "expected_page_group": [
+            "## 階層\n* 親\n  * 子\n* 次の親"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>階層</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>次の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
