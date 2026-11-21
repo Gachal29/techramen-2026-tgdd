@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112205-01",
+    "input_text": "# 夜間バッチが止まった話\n\n## 発端\n朝になっても通知が来なかった\nログも空だった\n\n## 原因\n- cron の設定漏れ\n  - タイムゾーンが UTC\n- 監視の抜け\n\n## まとめ\n",
+    "expected_page_group": [
+      "# 夜間バッチが止まった話",
+      "## 発端\n朝になっても通知が来なかった\nログも空だった",
+      "## 原因\n- cron の設定漏れ\n  - タイムゾーンが UTC\n- 監視の抜け",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>夜間バッチが止まった話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>発端</Str></title><blocks><TextBlock><Paragraph><Str>朝になっても通知が来なかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ログも空だった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>原因</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>cron の設定漏れ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>タイムゾーンが UTC</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>監視の抜け</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-02",
+    "input_text": "## Q&A の進め方\n質問は <3 件までにする\n- 挙手してもらう\n\n## 締め\n",
+    "expected_page_group": [
+      "## Q&A の進め方\n質問は <3 件までにする\n- 挙手してもらう",
+      "## 締め"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>Q&amp;A の進め方</Str></title><blocks><TextBlock><Paragraph><Str>質問は &lt;3 件までにする</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>挙手してもらう</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>締め</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-03",
+    "input_text": "# 輪読会の進め方\n## 準備\n- 課題本を決める\n## 当日\n- 1 人 10 分で発表",
+    "expected_page_group": [
+      "# 輪読会の進め方",
+      "## 準備\n- 課題本を決める",
+      "## 当日\n- 1 人 10 分で発表"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>輪読会の進め方</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>課題本を決める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>当日</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>1 人 10 分で発表</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-04",
+    "input_text": "## 構成\n- 親\n\t- 子\n\t\t- 孫\n- 次の親\n",
+    "expected_page_group": [
+      "## 構成\n- 親\n\t- 子\n\t\t- 孫\n- 次の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>次の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-05",
+    "input_text": "## 書き方\n`## 見出し` と書くと見出しになる\n`#` は題名用\n- 行頭以外では効かない\n",
+    "expected_page_group": [
+      "## 書き方\n`## 見出し` と書くと見出しになる\n`#` は題名用\n- 行頭以外では効かない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>書き方</Str></title><blocks><TextBlock><Paragraph><Code>## 見出し</Code><Str> と書くと見出しになる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>#</Code><Str> は題名用</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>行頭以外では効かない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-06",
+    "input_text": "## **結論** から言うと\n- 続ける価値はある\n",
+    "expected_page_group": [
+      "## **結論** から言うと\n- 続ける価値はある"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strong><Str>結論</Str></Strong><Str> から言うと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>続ける価値はある</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-07",
+    "input_text": "## 参考\nhttps://example.com/docs\n- 公式ドキュメント\n",
+    "expected_page_group": [
+      "## 参考\nhttps://example.com/docs\n- 公式ドキュメント"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/docs</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>公式ドキュメント</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-08",
+    "input_text": "## 背景\n- 理由\n   \n\t\n## 次\n- 続き\n",
+    "expected_page_group": [
+      "## 背景\n- 理由",
+      "## 次\n- 続き"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>理由</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>次</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>続き</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-09",
+    "input_text": "## 最初\n- 一つ目\n\n ## 二つ目\n- 二つ目の項目\n",
+    "expected_page_group": [
+      "## 最初\n- 一つ目",
+      " ## 二つ目\n- 二つ目の項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>最初</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>二つ目</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>二つ目の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-10",
+    "input_text": "## 方針\n-小さく始める\n-毎日続ける\n",
+    "expected_page_group": [
+      "## 方針\n-小さく始める\n-毎日続ける"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎日続ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
