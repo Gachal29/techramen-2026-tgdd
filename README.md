@@ -11,6 +11,7 @@ uv sync
 # テストガチャ（考慮漏れを探す）。結果は gacha-result.json にも出る
 uv run pytest tests/test_gacha.py
 TGDD_TEST_DATA=2026-11-20-00.json uv run pytest tests/test_gacha.py  # テストデータを指定する
+uv run python tools/run_all_gacha.py --verbose   # すべてのテストデータで実行する
 
 # テストの仕組みのテストと、再発を見つけるテスト
 uv run pytest --ignore=tests/test_gacha.py
@@ -28,7 +29,8 @@ uv run python tools/validate_test_data.py tests/test_data/2026-11-20-00.json
 |---|---|
 | `target.py` | テスト対象のモジュール |
 | `tests/test_gacha.py` | 考慮漏れを見つけるためのテスト。テストデータ 1 ファイルを読んで実行する |
-| `tests/test_regression.py` | 発見・修正した考慮漏れの再発を見つけるためのテスト |
+| `tests/test_regression.py`・`tests/regression_data.json` | 発見・修正した考慮漏れの再発を見つけるためのテストと、そのデータ |
+| `tests/excluded_test_data.json` | 期待値の誤りと判断して、テストガチャから除外するテストデータ |
 | `tests/test_helpers.py` | テストの仕組み（比較・検査・集計）そのもののテスト |
 | `tests/helpers.py`・`tests/conftest.py` | XML の比較、テストデータの検査、結果の集計 |
 | `tests/test_data/YYYY-MM-DD-hh.json` | Claude のスケジュールタスクで作成されるテストデータ |
@@ -40,6 +42,9 @@ uv run python tools/validate_test_data.py tests/test_data/2026-11-20-00.json
 | `.github/workflows/gacha.yml` | テストガチャの実行（手動）と通知 |
 | `.github/workflows/validate-test-data.yml` | `claude-*` ブランチのテストデータの検査と自動マージ |
 | `docs/test_data.schema.json` | テストデータの JSON Schema |
+| `tools/run_all_gacha.py` | すべてのテストデータでテストガチャを実行する |
+| `docs/test-data-generation.md` | テストデータを作るスケジュールタスクへの指示 |
+| `docs/fix-instructions.md` | 考慮漏れを修正するスケジュールタスクへの指示 |
 | `docs/slide-ir.md` | SlideIR の Page 型 |
 | `docs/plans/` | 実装計画書 |
 

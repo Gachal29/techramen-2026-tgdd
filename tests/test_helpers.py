@@ -314,8 +314,15 @@ def page_to_slideir_page(page_text, page_id):
 }
 
 
-def _run_gacha(tmp_path: Path, target: str, cases: list[dict[str, Any]] = CASES) -> tuple[int, dict[str, Any] | None]:
+def _run_gacha(
+    tmp_path: Path,
+    target: str,
+    cases: list[dict[str, Any]] = CASES,
+    excluded: list[dict[str, str]] | None = None,
+) -> tuple[int, dict[str, Any] | None]:
     (tmp_path / f"fake_{target}.py").write_text(FAKE_TARGETS[target], encoding="utf-8")
+    excluded_file = tmp_path / "excluded.json"
+    excluded_file.write_text(json.dumps(excluded or [], ensure_ascii=False), encoding="utf-8")
     data = tmp_path / "2026-01-01-00.json"
     data.write_text(json.dumps(cases, ensure_ascii=False), encoding="utf-8")
     result_file = tmp_path / "result.json"
@@ -324,6 +331,7 @@ def _run_gacha(tmp_path: Path, target: str, cases: list[dict[str, Any]] = CASES)
         "TGDD_TEST_DATA": str(data),
         "TGDD_RESULT_FILE": str(result_file),
         "TGDD_TARGET_MODULE": f"fake_{target}",
+        "TGDD_EXCLUDED_FILE": str(excluded_file),
         "PYTHONPATH": str(tmp_path),
     }
     completed = subprocess.run(
@@ -381,3 +389,26 @@ def test_gacha_continues_after_exceptions(tmp_path: Path):
     ]
     assert result["failed_test_data"] == 2
     assert any("boom" in entry["message"] for entry in result["failed"])
+
+
+def test_gacha_skips_excluded_test_data(tmp_path: Path):
+    """除外したテストデータは実行せず、結果にも数えない"""
+    code, result = _run_gacha(tmp_path, "wrong_grouper", excluded=[{"test_data_id": "two", "reason": "期待値の誤り"}])
+    assert code == 0
+    assert result == {"test_data_file": "2026-01-01-00.json", "total": 1, "failed_test_data": 0, "failed": []}
+
+
+def test_committed_excluded_and_regression_data_are_well_formed():
+    """除外の一覧は test_data_id と理由を持ち、再発のテストのデータはテストデータと同じ検査を通る"""
+    excluded = json.loads((ROOT / "tests" / "excluded_test_data.json").read_text(encoding="utf-8"))
+    assert isinstance(excluded, list)
+    for entry in excluded:
+        assert set(entry) == {"test_data_id", "reason"}, entry
+        assert entry["test_data_id"] and entry["reason"].strip(), entry
+    ids = [entry["test_data_id"] for entry in excluded]
+    assert len(ids) == len(set(ids))
+
+    regression = json.loads((ROOT / "tests" / "regression_data.json").read_text(encoding="utf-8"))
+    assert isinstance(regression, list)
+    if regression:
+        assert validate_test_data(regression, SCHEMA) == []

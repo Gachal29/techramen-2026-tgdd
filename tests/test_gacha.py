@@ -5,6 +5,9 @@
 - TGDD_TEST_DATA: テストデータのファイル（パスか、tests/test_data/ の中のファイル名）。
   省略時は tests/test_data/ の中でファイル名が最も新しいもの
 - TGDD_TARGET_MODULE: テスト対象のモジュール名（省略時は target）。テストの仕組みのテストで差し替える
+- TGDD_EXCLUDED_FILE: 除外するテストデータの一覧（省略時は tests/excluded_test_data.json）
+
+期待値が誤っていると人が判断したテストデータは、除外の一覧に test_data_id と理由を書くと実行しない
 """
 
 import importlib
@@ -37,7 +40,26 @@ if DATA_FILE is None:
 
 CASES: list[dict[str, Any]] = json.loads(DATA_FILE.read_text(encoding="utf-8"))
 
-pytestmark = pytest.mark.parametrize("case", CASES, ids=[case["test_data_id"] for case in CASES])
+_excluded_file = Path(os.environ.get("TGDD_EXCLUDED_FILE") or Path(__file__).parent / "excluded_test_data.json")
+EXCLUDED: dict[str, str] = (
+    {entry["test_data_id"]: entry["reason"] for entry in json.loads(_excluded_file.read_text(encoding="utf-8"))}
+    if _excluded_file.exists()
+    else {}
+)
+
+pytestmark = pytest.mark.parametrize(
+    "case",
+    [
+        pytest.param(
+            case,
+            id=case["test_data_id"],
+            marks=[pytest.mark.skip(reason=f"除外: {EXCLUDED[case['test_data_id']]}")]
+            if case["test_data_id"] in EXCLUDED
+            else [],
+        )
+        for case in CASES
+    ],
+)
 
 
 @pytest.fixture(scope="module")
