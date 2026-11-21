@@ -214,5 +214,15 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>先頭に空白のある見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>見出しとして扱いたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112201-05",
+    "input_text": "﻿## BOM 付きの見出し\n- 項目\n",
+    "expected_page_group": [
+      "﻿## BOM 付きの見出し\n- 項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>BOM 付きの見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]

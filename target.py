@@ -29,21 +29,30 @@ _URL_PATTERN = r"(?:[^()\s]|\([^()\s]*\))+"
 IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>" + _URL_PATTERN + r")\)\s*$")
 
 
+# テキストの先頭のバイト順マーク（BOM, U+FEFF）。ほかのアプリで保存したメモの先頭に付くことがある。
+# 見えない文字なので、行の種類の判定と変換では無視する（ページに分けるときは元のテキストのまま残す）
+BOM = "\ufeff"
+
+
+def _strip_bom(line: str) -> str:
+    return line.lstrip(BOM)
+
+
 def _heading_text(text: str) -> str:
     """見出しの文字から、閉じの `#` と前後の空白を除く"""
     return CLOSING_HASHES_RE.sub("", text.strip()).strip()
 
 
 def _is_cover(line: str) -> bool:
-    return COVER_RE.match(line) is not None
+    return COVER_RE.match(_strip_bom(line)) is not None
 
 
 def _is_heading(line: str) -> bool:
-    return HEADING_RE.match(line) is not None
+    return HEADING_RE.match(_strip_bom(line)) is not None
 
 
 def _is_image(line: str) -> bool:
-    return IMAGE_RE.match(line) is not None
+    return IMAGE_RE.match(_strip_bom(line)) is not None
 
 
 def text_to_page_grouper(raw_text: str) -> list[str]:
@@ -63,7 +72,7 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
     pending_blanks = 0
     for raw_line in raw_text.splitlines():
         line = raw_line.rstrip()
-        if not line.strip():
+        if not _strip_bom(line).strip():
             pending_blanks += 1
             continue
         blanks, pending_blanks = pending_blanks, 0
@@ -274,7 +283,8 @@ def page_to_slideir_page(page_text: str, page_id: str) -> str:
     2. `## ` の見出しがあり、本文があれば GeneralPage、なければ HeadingPage
     3. 見出しがなく、本文が図 1 つだけなら FigurePage、それ以外は BodyPage
     """
-    lines = [line.rstrip() for line in page_text.splitlines() if line.strip()]
+    lines = [_strip_bom(line).rstrip() for line in page_text.splitlines()]
+    lines = [line for line in lines if line.strip()]
     if not lines:
         raise ValueError("空のページは作らない")
 
