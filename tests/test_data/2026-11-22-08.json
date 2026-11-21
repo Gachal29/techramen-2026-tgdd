@@ -1,0 +1,118 @@
+[
+    {
+        "test_data_id": "2026112208-01",
+        "input_text": "# 読書会を半年続けた振り返り\n\n## 始めた理由\n一人だと積読が減らない\n\n## 続いた工夫\n- 担当を持ち回りにする\n  - 次回の担当は前回の最後に決める\n- 場所は固定\n\n## 次の半年\n",
+        "expected_page_group": [
+            "# 読書会を半年続けた振り返り",
+            "## 始めた理由\n一人だと積読が減らない",
+            "## 続いた工夫\n- 担当を持ち回りにする\n  - 次回の担当は前回の最後に決める\n- 場所は固定",
+            "## 次の半年"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>読書会を半年続けた振り返り</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>始めた理由</Str></title><blocks><TextBlock><Paragraph><Str>一人だと積読が減らない</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>続いた工夫</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>担当を持ち回りにする</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次回の担当は前回の最後に決める</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>場所は固定</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>次の半年</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-02",
+        "input_text": "![構成図](https://example.com/arch.png)\n\n## 構成\nサーバは **2 台** で動く\n- 前段は `nginx`\n- 後段は `gunicorn`\n",
+        "expected_page_group": [
+            "![構成図](https://example.com/arch.png)",
+            "## 構成\nサーバは **2 台** で動く\n- 前段は `nginx`\n- 後段は `gunicorn`"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/arch.png\" alt=\"構成図\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>構成</Str></title><blocks><TextBlock><Paragraph><Str>サーバは </Str><Strong><Str>2 台</Str></Strong><Str> で動く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>前段は </Str><Code>nginx</Code></Paragraph></TextBlock><TextBlock><Paragraph><Str>後段は </Str><Code>gunicorn</Code></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-03",
+        "input_text": "# 引っ越しの段取り\n\n## 手順\n1. 業者を決める\n2. 荷造りをする\n3. 届け出を出す\n\n## 持ち物\n- 通帳\n- 印鑑\n",
+        "expected_page_group": [
+            "# 引っ越しの段取り",
+            "## 手順\n1. 業者を決める\n2. 荷造りをする\n3. 届け出を出す",
+            "## 持ち物\n- 通帳\n- 印鑑"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>引っ越しの段取り</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>業者を決める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>荷造りをする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>届け出を出す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>通帳</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>印鑑</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-04",
+        "input_text": "## 買い物\n* 牛乳\n* 卵\n\n## 予定\n+ 掃除\n+ 洗濯\n",
+        "expected_page_group": [
+            "## 買い物\n* 牛乳\n* 卵",
+            "## 予定\n+ 掃除\n+ 洗濯"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>買い物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>牛乳</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>卵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>予定</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>掃除</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>洗濯</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-05",
+        "input_text": "##設計の方針\n- 小さく作る\n- 早く試す\n",
+        "expected_page_group": [
+            "##設計の方針\n- 小さく作る\n- 早く試す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>設計の方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく作る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>早く試す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-06",
+        "input_text": "## 結論 ##\n- 続ける価値はある\n",
+        "expected_page_group": [
+            "## 結論 ##\n- 続ける価値はある"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>結論</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>続ける価値はある</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-07",
+        "input_text": "![前](https://example.com/before.png)\n![後](https://example.com/after.png)\n",
+        "expected_page_group": [
+            "![前](https://example.com/before.png)",
+            "![後](https://example.com/after.png)"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/before.png\" alt=\"前\" /></FigurePage>",
+            "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/after.png\" alt=\"後\" /></FigurePage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-08",
+        "input_text": "## 注意\n**重要 は閉じていない\n- 続きを読む\n",
+        "expected_page_group": [
+            "## 注意\n**重要 は閉じていない\n- 続きを読む"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Str>**重要 は閉じていない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>続きを読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-09",
+        "input_text": "## 持ち物リスト\n・水筒\n・タオル\n・帽子\n",
+        "expected_page_group": [
+            "## 持ち物リスト\n・水筒\n・タオル\n・帽子"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>持ち物リスト</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水筒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タオル</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>帽子</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112208-10",
+        "input_text": "## 注意点\n - 一つ目\n - 二つ目\n",
+        "expected_page_group": [
+            "## 注意点\n - 一つ目\n - 二つ目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
