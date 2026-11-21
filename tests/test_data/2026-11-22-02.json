@@ -1,0 +1,118 @@
+[
+    {
+        "test_data_id": "2026112202-01",
+        "input_text": "# 自宅サーバー運用の振り返り\n\n## 構成\n古いノートPCを再利用している\n- OS は Debian\n  - 更新は月 1 回\n  - 再起動は手動\n- 電源は UPS 経由\n\n## 反省\n",
+        "expected_page_group": [
+            "# 自宅サーバー運用の振り返り",
+            "## 構成\n古いノートPCを再利用している\n- OS は Debian\n  - 更新は月 1 回\n  - 再起動は手動\n- 電源は UPS 経由",
+            "## 反省"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>自宅サーバー運用の振り返り</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><TextBlock><Paragraph><Str>古いノートPCを再利用している</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>OS は Debian</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>更新は月 1 回</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>再起動は手動</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>電源は UPS 経由</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>反省</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-02",
+        "input_text": "![アーキテクチャ図](https://example.com/arch.png)\n\n## 順番\n1. 計画する\n2. 作る\n3. 公開する\n\n## 感想\n",
+        "expected_page_group": [
+            "![アーキテクチャ図](https://example.com/arch.png)",
+            "## 順番\n1. 計画する\n2. 作る\n3. 公開する",
+            "## 感想"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/arch.png\" alt=\"アーキテクチャ図\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>順番</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>計画する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>作る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>公開する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>感想</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-03",
+        "input_text": "# 登壇の準備記録\n\n## 時間配分\n持ち時間は 5 分\n1 枚あたり 30 秒を目安にする\n- 導入は短く\n\n## 練習\n声に出して通す\n",
+        "expected_page_group": [
+            "# 登壇の準備記録",
+            "## 時間配分\n持ち時間は 5 分\n1 枚あたり 30 秒を目安にする\n- 導入は短く",
+            "## 練習\n声に出して通す"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>登壇の準備記録</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>時間配分</Str></title><blocks><TextBlock><Paragraph><Str>持ち時間は 5 分</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>1 枚あたり 30 秒を目安にする</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>導入は短く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>練習</Str></title><blocks><TextBlock><Paragraph><Str>声に出して通す</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-04",
+        "input_text": "## 見出しの末尾に記号 ##\n- 閉じの # は表示しない\n",
+        "expected_page_group": [
+            "## 見出しの末尾に記号 ##\n- 閉じの # は表示しない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>見出しの末尾に記号</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>閉じの # は表示しない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-05",
+        "input_text": "![前](https://example.com/before.png)\n![後](https://example.com/after.png)\n\n## 比較\n- 見た目が変わった\n",
+        "expected_page_group": [
+            "![前](https://example.com/before.png)",
+            "![後](https://example.com/after.png)",
+            "## 比較\n- 見た目が変わった"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/before.png\" alt=\"前\" /></FigurePage>",
+            "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/after.png\" alt=\"後\" /></FigurePage>",
+            "<GeneralPage id=\"p3\"><title><Str>比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>見た目が変わった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-06",
+        "input_text": "## 閉じていない **強調\n- 項目\n",
+        "expected_page_group": [
+            "## 閉じていない **強調\n- 項目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>閉じていない **強調</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-07",
+        "input_text": "## 順位\n9. 九番目\n10. 十番目\n11. 十一番目\n",
+        "expected_page_group": [
+            "## 順位\n9. 九番目\n10. 十番目\n11. 十一番目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>順位</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>九番目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>十番目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>十一番目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-08",
+        "input_text": "## 入れ子\n- **太字と*斜体*の入れ子**です\n",
+        "expected_page_group": [
+            "## 入れ子\n- **太字と*斜体*の入れ子**です"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>入れ子</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>太字と</Str><Em><Str>斜体</Str></Em><Str>の入れ子</Str></Strong><Str>です</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-09",
+        "input_text": "## 道具\n・ハンマー\n・くぎ\n・のこぎり\n",
+        "expected_page_group": [
+            "## 道具\n・ハンマー\n・くぎ\n・のこぎり"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ハンマー</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>くぎ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>のこぎり</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112202-10",
+        "input_text": "## 連絡先\n東京都千代田区  \n1-1-1  \n",
+        "expected_page_group": [
+            "## 連絡先\n東京都千代田区  \n1-1-1"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>連絡先</Str></title><blocks><TextBlock><Paragraph><Str>東京都千代田区</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>1-1-1</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    }
+]
