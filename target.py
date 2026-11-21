@@ -22,7 +22,10 @@ BULLET_RE = re.compile(
     r"(?:(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+|(?P<dot>[・･•◦‣])[ \t　]*)"
     r"(?P<text>.*)$"
 )
-IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>[^)\s]+)\)\s*$")
+# リンク・画像の URL。`https://ja.wikipedia.org/wiki/Python_(言語)` のように、URL の中の
+# 対になった括弧（1 段まで）は URL の一部にする
+_URL_PATTERN = r"(?:[^()\s]|\([^()\s]*\))+"
+IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>" + _URL_PATTERN + r")\)\s*$")
 
 
 def _heading_text(text: str) -> str:
@@ -88,7 +91,7 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
 # -- インラインの記法 --
 
 _DELIMITERS = [("**", "Strong"), ("__", "Strong"), ("~~", "Strike"), ("*", "Em"), ("_", "Em")]
-_LINK_RE = re.compile(r"\[(?P<text>[^\]]+)\]\((?P<href>[^)\s]+)\)")
+_LINK_RE = re.compile(r"\[(?P<text>[^\]]+)\]\((?P<href>" + _URL_PATTERN + r")\)")
 # 自動リンク `<https://example.com>`（`<` と `>` で囲んだ、スキームのある URL）
 _AUTOLINK_RE = re.compile(r"<(?P<href>[A-Za-z][A-Za-z0-9+.\-]{1,31}:[^<>\s]+)>")
 # `_`・`__` は、英数字に挟まれた位置（`snake_case` など）では強調の記号にしない

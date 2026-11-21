@@ -194,5 +194,15 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112121-07",
+    "input_text": "## 参考リンク\n- 詳細は [Wikipedia](https://ja.wikipedia.org/wiki/Python_(言語)) を参照\n",
+    "expected_page_group": [
+      "## 参考リンク\n- 詳細は [Wikipedia](https://ja.wikipedia.org/wiki/Python_(言語)) を参照"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考リンク</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://ja.wikipedia.org/wiki/Python_(言語)\"><Str>Wikipedia</Str></Anchor><Str> を参照</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
