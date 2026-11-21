@@ -1,0 +1,114 @@
+[
+    {
+        "test_data_id": "2026112123-01",
+        "input_text": "# ペアプロで学んだこと\n\n## 始めた経緯\n新人と一緒に書く時間をとった\n- 週 2 回、午前中に実施\n- 役割は交代制\n\n## 気づき\n- 説明すると自分も理解が深まる\n\n## まとめ\n",
+        "expected_page_group": [
+            "# ペアプロで学んだこと",
+            "## 始めた経緯\n新人と一緒に書く時間をとった\n- 週 2 回、午前中に実施\n- 役割は交代制",
+            "## 気づき\n- 説明すると自分も理解が深まる",
+            "## まとめ"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>ペアプロで学んだこと</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>始めた経緯</Str></title><blocks><TextBlock><Paragraph><Str>新人と一緒に書く時間をとった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>週 2 回、午前中に実施</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>役割は交代制</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>気づき</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>説明すると自分も理解が深まる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-02",
+        "input_text": "![障害時のグラフ](https://example.com/graph.png?w=800&h=600)\n\n## 原因\nキャッシュの期限切れが重なった\n",
+        "expected_page_group": [
+            "![障害時のグラフ](https://example.com/graph.png?w=800&h=600)",
+            "## 原因\nキャッシュの期限切れが重なった"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/graph.png?w=800&amp;h=600\" alt=\"障害時のグラフ\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>原因</Str></title><blocks><TextBlock><Paragraph><Str>キャッシュの期限切れが重なった</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-03",
+        "input_text": "## 参考にした資料\n- **公式ガイド**を最初に読む\n- ~~古いブログ~~ は読まない\n- [検索](https://example.com/s?q=tgdd&lang=ja) で探す\n",
+        "expected_page_group": [
+            "## 参考にした資料\n- **公式ガイド**を最初に読む\n- ~~古いブログ~~ は読まない\n- [検索](https://example.com/s?q=tgdd&lang=ja) で探す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参考にした資料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>公式ガイド</Str></Strong><Str>を最初に読む</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strike><Str>古いブログ</Str></Strike><Str> は読まない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://example.com/s?q=tgdd&amp;lang=ja\"><Str>検索</Str></Anchor><Str> で探す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-04",
+        "input_text": "# **LT** の準備メモ\n\n## 流れ\n- ネタ出し\n- 構成\n",
+        "expected_page_group": [
+            "# **LT** の準備メモ",
+            "## 流れ\n- ネタ出し\n- 構成"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Strong><Str>LT</Str></Strong><Str> の準備メモ</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>流れ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ネタ出し</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>構成</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-05",
+        "input_text": "## 作業の順番\n1. 設計する\n2. 実装する\n- 余裕があれば最適化\n- なければ後回し\n",
+        "expected_page_group": [
+            "## 作業の順番\n1. 設計する\n2. 実装する\n- 余裕があれば最適化\n- なければ後回し"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>作業の順番</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>設計する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実装する</Str></Paragraph></TextBlock></Cluster><Cluster marker=\"true\"><TextBlock><Paragraph><Str>余裕があれば最適化</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>なければ後回し</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-06",
+        "input_text": "## 小ネタ\n-5 度でも動くと言い張る\n#LT #tgdd をつけて投稿する\n",
+        "expected_page_group": [
+            "## 小ネタ\n-5 度でも動くと言い張る\n#LT #tgdd をつけて投稿する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>小ネタ</Str></title><blocks><TextBlock><Paragraph><Str>-5 度でも動くと言い張る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>#LT #tgdd をつけて投稿する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-07",
+        "input_text": "## ~~旧~~ 新方式\n- 手作業をやめた\n",
+        "expected_page_group": [
+            "## ~~旧~~ 新方式\n- 手作業をやめた"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Strike><Str>旧</Str></Strike><Str> 新方式</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>手作業をやめた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-08",
+        "input_text": "## 準備\n-  余白を空けた項目\n- 普通の項目\n\n## 手順\n1.  最初にやること\n2. 次にやること\n",
+        "expected_page_group": [
+            "## 準備\n-  余白を空けた項目\n- 普通の項目",
+            "## 手順\n1.  最初にやること\n2. 次にやること"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>余白を空けた項目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>普通の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>最初にやること</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>次にやること</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-09",
+        "input_text": "## 持ち物\n－ 水筒\n－ タオル\n",
+        "expected_page_group": [
+            "## 持ち物\n－ 水筒\n－ タオル"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水筒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タオル</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112123-10",
+        "input_text": "## 構成\n- 親\n\t- 子\n\t\t- 孫\n- 次の親\n",
+        "expected_page_group": [
+            "## 構成\n- 親\n\t- 子\n\t\t- 孫\n- 次の親"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>次の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
