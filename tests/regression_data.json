@@ -154,5 +154,15 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>体制</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>別の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112115-09",
+    "input_text": "## 持ち物\n・財布\n・鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n・財布\n・鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
