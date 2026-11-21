@@ -1,0 +1,108 @@
+[
+  {
+    "test_data_id": "2026112122-01",
+    "input_text": "# ライブラリ移行で燃えた話\n\n## 背景\n古い HTTP クライアントのサポートが終わった\n\n## 移行で起きたこと\n- 型が変わって呼び出し側が全滅\n  - 戻り値が辞書からオブジェクトになった\n- テストは通ったが本番で落ちた\n\n## 教訓\n",
+    "expected_page_group": [
+      "# ライブラリ移行で燃えた話",
+      "## 背景\n古い HTTP クライアントのサポートが終わった",
+      "## 移行で起きたこと\n- 型が変わって呼び出し側が全滅\n  - 戻り値が辞書からオブジェクトになった\n- テストは通ったが本番で落ちた",
+      "## 教訓"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ライブラリ移行で燃えた話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>古い HTTP クライアントのサポートが終わった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>移行で起きたこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>型が変わって呼び出し側が全滅</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>戻り値が辞書からオブジェクトになった</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>テストは通ったが本番で落ちた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>教訓</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-02",
+    "input_text": "## 計測結果\n1. ビルド時間は **12 分**から 4 分になった\n2. キャッシュの命中率は 90%\n3. 詳細は [ダッシュボード](https://example.com/dash) を見る\n\n## 以上\n",
+    "expected_page_group": [
+      "## 計測結果\n1. ビルド時間は **12 分**から 4 分になった\n2. キャッシュの命中率は 90%\n3. 詳細は [ダッシュボード](https://example.com/dash) を見る",
+      "## 以上"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>計測結果</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>ビルド時間は </Str><Strong><Str>12 分</Str></Strong><Str>から 4 分になった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>キャッシュの命中率は 90%</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://example.com/dash\"><Str>ダッシュボード</Str></Anchor><Str> を見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>以上</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-03",
+    "input_text": "![ログ画面のスクリーンショット](https://example.com/log.png)\n\n## 原因の調査\n再現しなかったので、ログを一行ずつ読んだ\n- 時刻がずれていた\n- 夏時間の切り替え日だった\n",
+    "expected_page_group": [
+      "![ログ画面のスクリーンショット](https://example.com/log.png)",
+      "## 原因の調査\n再現しなかったので、ログを一行ずつ読んだ\n- 時刻がずれていた\n- 夏時間の切り替え日だった"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/log.png\" alt=\"ログ画面のスクリーンショット\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>原因の調査</Str></title><blocks><TextBlock><Paragraph><Str>再現しなかったので、ログを一行ずつ読んだ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>時刻がずれていた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>夏時間の切り替え日だった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-04",
+    "input_text": "## 手順\r\n- 準備する\r\n  - 依存を入れる\r\n- 実行する\r\n",
+    "expected_page_group": [
+      "## 手順\n- 準備する\n  - 依存を入れる\n- 実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存を入れる</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-05",
+    "input_text": " ## 先頭に空白のある見出し\n- 見出しとして扱いたい\n",
+    "expected_page_group": [
+      " ## 先頭に空白のある見出し\n- 見出しとして扱いたい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>先頭に空白のある見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>見出しとして扱いたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-06",
+    "input_text": "   \n\n\t\n  \n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112122-07",
+    "input_text": "## `uv` の使い方\n- 依存は `uv sync` で入れる\n",
+    "expected_page_group": [
+      "## `uv` の使い方\n- 依存は `uv sync` で入れる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Code>uv</Code><Str> の使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存は </Str><Code>uv sync</Code><Str> で入れる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-08",
+    "input_text": "## AT&T と R&D\n- 3 < 5 かつ 5 > 3 を確認した\n",
+    "expected_page_group": [
+      "## AT&T と R&D\n- 3 < 5 かつ 5 > 3 を確認した"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>AT&amp;T と R&amp;D</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>3 &lt; 5 かつ 5 &gt; 3 を確認した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-09",
+    "input_text": "メモ: 明日までに資料を出す\nレビューは金曜\nリハーサルは来週",
+    "expected_page_group": [
+      "メモ: 明日までに資料を出す\nレビューは金曜\nリハーサルは来週"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>メモ: 明日までに資料を出す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>レビューは金曜</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>リハーサルは来週</Str></Paragraph></TextBlock></blocks></BodyPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-10",
+    "input_text": "## まとめ　\n- 一つ目　\n- 二つ目\n",
+    "expected_page_group": [
+      "## まとめ\n- 一つ目\n- 二つ目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
