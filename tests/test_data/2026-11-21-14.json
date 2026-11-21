@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112114-01",
+    "input_text": "# dotfiles 管理を見直した\n\n## きっかけ\n\n## 現状\nホームディレクトリが散らかっている\n- .zshrc が 600 行ある\n- 設定の出所がわからない\n",
+    "expected_page_group": [
+      "# dotfiles 管理を見直した",
+      "## きっかけ",
+      "## 現状\nホームディレクトリが散らかっている\n- .zshrc が 600 行ある\n- 設定の出所がわからない"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>dotfiles 管理を見直した</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>きっかけ</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>現状</Str></title><blocks><TextBlock><Paragraph><Str>ホームディレクトリが散らかっている</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>.zshrc が 600 行ある</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>設定の出所がわからない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-02",
+    "input_text": "## ripgrep の紹介\n1. `rg` で検索する\n2. `.gitignore` を自動で読む\n\n## 使い方\n詳しくは [公式](https://github.com/BurntSushi/ripgrep) を見る\n",
+    "expected_page_group": [
+      "## ripgrep の紹介\n1. `rg` で検索する\n2. `.gitignore` を自動で読む",
+      "## 使い方\n詳しくは [公式](https://github.com/BurntSushi/ripgrep) を見る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>ripgrep の紹介</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Code>rg</Code><Str> で検索する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>.gitignore</Code><Str> を自動で読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>使い方</Str></title><blocks><TextBlock><Paragraph><Str>詳しくは </Str><Anchor href=\"https://github.com/BurntSushi/ripgrep\"><Str>公式</Str></Anchor><Str> を見る</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-03",
+    "input_text": "## 反省会\n今日の発表は時間が足りなかった\n\n次はスライドを減らす\n- 1 枚 1 分で数える\n",
+    "expected_page_group": [
+      "## 反省会\n今日の発表は時間が足りなかった\n次はスライドを減らす\n- 1 枚 1 分で数える"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>反省会</Str></title><blocks><TextBlock><Paragraph><Str>今日の発表は時間が足りなかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>次はスライドを減らす</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>1 枚 1 分で数える</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-04",
+    "input_text": "![](https://example.com/1.png)\n![](https://example.com/2.png)\n![](https://example.com/3.png)\n## 画像の説明\n- 3 枚とも本番の画面\n",
+    "expected_page_group": [
+      "![](https://example.com/1.png)",
+      "![](https://example.com/2.png)",
+      "![](https://example.com/3.png)",
+      "## 画像の説明\n- 3 枚とも本番の画面"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/1.png\" /></FigurePage>",
+      "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/2.png\" /></FigurePage>",
+      "<FigurePage id=\"p3\"><ImageFigure src=\"https://example.com/3.png\" /></FigurePage>",
+      "<GeneralPage id=\"p4\"><title><Str>画像の説明</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>3 枚とも本番の画面</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-05",
+    "input_text": "![ロゴ](https://example.com/logo.png)\n# 社内勉強会の LT\n## 話すこと\n- 3 分で終わる\n",
+    "expected_page_group": [
+      "![ロゴ](https://example.com/logo.png)",
+      "# 社内勉強会の LT",
+      "## 話すこと\n- 3 分で終わる"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/logo.png\" alt=\"ロゴ\" /></FigurePage>",
+      "<CoverPage id=\"cover\"><title><Str>社内勉強会の LT</Str></title></CoverPage>",
+      "<GeneralPage id=\"p2\"><title><Str>話すこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>3 分で終わる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-06",
+    "input_text": "## `pytest` と *mypy* の併用\n- 先に型を通す\n",
+    "expected_page_group": [
+      "## `pytest` と *mypy* の併用\n- 先に型を通す"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Code>pytest</Code><Str> と </Str><Em><Str>mypy</Str></Em><Str> の併用</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>先に型を通す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-07",
+    "input_text": "## 注意\n**必ず `uv sync` してから** 実行する\n",
+    "expected_page_group": [
+      "## 注意\n**必ず `uv sync` してから** 実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Strong><Str>必ず </Str><Code>uv sync</Code><Str> してから</Str></Strong><Str> 実行する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-08",
+    "input_text": "# 3 分で話す LT  \n",
+    "expected_page_group": [
+      "# 3 分で話す LT"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>3 分で話す LT</Str></title></CoverPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-09",
+    "input_text": "## 日程\n- 11/21（土）福岡 → 東京\n- ※ 雨天決行「詳細は後日」\n",
+    "expected_page_group": [
+      "## 日程\n- 11/21（土）福岡 → 東京\n- ※ 雨天決行「詳細は後日」"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>日程</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>11/21（土）福岡 → 東京</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>※ 雨天決行「詳細は後日」</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112114-10",
+    "input_text": "## 持ち込み\n - 資料\n - 名札\n - 変換アダプタ\n",
+    "expected_page_group": [
+      "## 持ち込み\n - 資料\n - 名札\n - 変換アダプタ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち込み</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>資料</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>名札</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>変換アダプタ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
