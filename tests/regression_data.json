@@ -204,5 +204,15 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>参考リンク</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://ja.wikipedia.org/wiki/Python_(言語)\"><Str>Wikipedia</Str></Anchor><Str> を参照</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112122-05",
+    "input_text": " ## 先頭に空白のある見出し\n- 見出しとして扱いたい\n",
+    "expected_page_group": [
+      " ## 先頭に空白のある見出し\n- 見出しとして扱いたい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>先頭に空白のある見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>見出しとして扱いたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
