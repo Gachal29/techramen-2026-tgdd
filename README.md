@@ -64,8 +64,8 @@ URL の `?v=<コミット>#<ページ>` で、版とページを指定できる�
 | `tools/check_pr_changes.py` | プルリクエストの変更が、テストデータの追加 1 つだけであることの確認 |
 | `tools/notify_discord.py` | テストガチャの結果を Discord に通知する |
 | `.github/workflows/ci.yml` | ふだんの変更の確認（テストガチャ以外のテスト） |
-| `.github/workflows/gacha.yml` | テストガチャの実行（手動）と通知 |
-| `.github/workflows/validate-test-data.yml` | `claude-*` ブランチのテストデータの検査と自動マージ |
+| `.github/workflows/gacha.yml` | テストガチャの実行と通知。テストデータのマージの後に自動で動く。手動でも実行できる |
+| `.github/workflows/validate-test-data.yml` | `claude-*` ブランチのテストデータの検査と自動マージ。マージの後にテストガチャを呼び出す |
 | `docs/test_data.schema.json` | テストデータの JSON Schema |
 | `tools/run_all_gacha.py` | すべてのテストデータでテストガチャを実行する |
 | `docs/test-data-generation.md` | テストデータを作るスケジュールタスクへの指示 |

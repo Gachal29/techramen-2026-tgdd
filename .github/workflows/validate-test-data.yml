@@ -1,4 +1,5 @@
 # テストデータのプルリクエスト (claude-YYYY-MM-DD-hh ブランチ) を検査し、問題がなければ自動でマージする
+# マージの後に、そのテストデータでテストガチャを実行する
 #
 # 検査に使うツールは、プルリクエストの側ではなく main のものを使う
 # （プルリクエストでツールを書き換えて、検査をすり抜けられないようにする）
@@ -23,6 +24,8 @@ jobs:
       startsWith(github.head_ref, 'claude-') &&
       github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    outputs:
+      file: ${{ steps.changes.outputs.file }}
     env:
       BRANCH: ${{ github.head_ref }}
       BASE_SHA: ${{ github.event.pull_request.base.sha }}
@@ -66,3 +69,13 @@ jobs:
           GH_REPO: ${{ github.repository }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: gh pr merge "$PR_NUMBER" --squash --delete-branch --match-head-commit "$HEAD_SHA"
+
+  # GITHUB_TOKEN によるマージでは、ほかのワークフローが動かないので、ここから呼び出す
+  gacha:
+    needs: validate
+    uses: ./.github/workflows/gacha.yml
+    with:
+      test_data: ${{ needs.validate.outputs.file }}
+      ref: main
+    secrets:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}

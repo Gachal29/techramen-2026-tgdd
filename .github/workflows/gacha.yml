@@ -2,12 +2,29 @@
 name: テストガチャ
 
 on:
+  # 手動で実行する
   workflow_dispatch:
     inputs:
       test_data:
         description: テストデータのファイル名（例 2026-11-20-09.json）。省略すると最新のもの
         required: false
         default: ""
+  # テストデータのマージの後に、validate-test-data.yml から呼び出す
+  workflow_call:
+    inputs:
+      test_data:
+        description: テストデータのファイル（パスかファイル名）。省略すると最新のもの
+        type: string
+        required: false
+        default: ""
+      ref:
+        description: 取得するブランチ。省略すると、呼び出し元のイベントの既定のもの
+        type: string
+        required: false
+        default: ""
+    secrets:
+      DISCORD_WEBHOOK_URL:
+        required: false
 
 permissions:
   contents: read
@@ -17,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
       - uses: astral-sh/setup-uv@v6
       - run: uv sync --locked
 
