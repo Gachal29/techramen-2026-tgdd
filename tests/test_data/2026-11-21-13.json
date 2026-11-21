@@ -1,0 +1,108 @@
+[
+  {
+    "test_data_id": "2026112113-01",
+    "input_text": "# 個人開発 3 年の振り返り\n\n## きっかけ\n家計簿アプリが欲しかった\n\n## 作ったもの\n- 家計簿アプリ\n- 通知 bot\n\n## 次にやること\n",
+    "expected_page_group": [
+      "# 個人開発 3 年の振り返り",
+      "## きっかけ\n家計簿アプリが欲しかった",
+      "## 作ったもの\n- 家計簿アプリ\n- 通知 bot",
+      "## 次にやること"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>個人開発 3 年の振り返り</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>きっかけ</Str></title><blocks><TextBlock><Paragraph><Str>家計簿アプリが欲しかった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>作ったもの</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>家計簿アプリ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>通知 bot</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>次にやること</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-02",
+    "input_text": "![全体像](https://example.com/overview.svg)\n",
+    "expected_page_group": [
+      "![全体像](https://example.com/overview.svg)"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/overview.svg\" alt=\"全体像\" /></FigurePage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-03",
+    "input_text": "## 使ったツール\n- [uv](https://docs.astral.sh/uv/)\n- *pytest*\n- ~~tox~~\n",
+    "expected_page_group": [
+      "## 使ったツール\n- [uv](https://docs.astral.sh/uv/)\n- *pytest*\n- ~~tox~~"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>使ったツール</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://docs.astral.sh/uv/\"><Str>uv</Str></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>pytest</Str></Em></Paragraph></TextBlock><TextBlock><Paragraph><Strike><Str>tox</Str></Strike></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-04",
+    "input_text": "## 買い物\n- 牛乳\n\n- 卵\n\n- パン\n",
+    "expected_page_group": [
+      "## 買い物\n- 牛乳\n\n- 卵\n\n- パン"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>買い物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>牛乳</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>卵</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>パン</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-05",
+    "input_text": "## F# と C# の話\n- 型推論が好き\n",
+    "expected_page_group": [
+      "## F# と C# の話\n- 型推論が好き"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>F# と C# の話</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>型推論が好き</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-06",
+    "input_text": "## 長い説明\n今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。\n",
+    "expected_page_group": [
+      "## 長い説明\n今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>長い説明</Str></title><blocks><TextBlock><Paragraph><Str>今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。今回の発表では、小さな個人開発の経験から得た学びを、失敗した点も含めてできるだけ正直に共有したいと考えています。</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-07",
+    "input_text": "## 注意点\n<br> タグは表示されない\n- <b>太字</b> のつもりのタグ\n",
+    "expected_page_group": [
+      "## 注意点\n<br> タグは表示されない\n- <b>太字</b> のつもりのタグ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><TextBlock><Paragraph><Str>&lt;br&gt; タグは表示されない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>&lt;b&gt;太字&lt;/b&gt; のつもりのタグ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-08",
+    "input_text": "## 手順\n1. 準備\n2. 実行\n10. 後片付け\n",
+    "expected_page_group": [
+      "## 手順\n1. 準備\n2. 実行\n10. 後片付け"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>後片付け</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-09",
+    "input_text": "##\t学んだこと\n- 小さく作る\n",
+    "expected_page_group": [
+      "##\t学んだこと\n- 小さく作る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>学んだこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく作る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112113-10",
+    "input_text": "## 体制\n- 親\n　- 子\n　　- 孫\n- 別の親\n",
+    "expected_page_group": [
+      "## 体制\n- 親\n　- 子\n　　- 孫\n- 別の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>体制</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>別の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
