@@ -1,0 +1,114 @@
+[
+  {
+    "test_data_id": "2026112207-01",
+    "input_text": "# 勉強会の運営\n\n## 開催頻度\n月 1 回、第 2 水曜に開く\n\n## 続ける工夫\n- 参加費は無料\n  - 会場は社内の会議室\n- 議事録は残さない\n\n## まとめ\n",
+    "expected_page_group": [
+      "# 勉強会の運営",
+      "## 開催頻度\n月 1 回、第 2 水曜に開く",
+      "## 続ける工夫\n- 参加費は無料\n  - 会場は社内の会議室\n- 議事録は残さない",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>勉強会の運営</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>開催頻度</Str></title><blocks><TextBlock><Paragraph><Str>月 1 回、第 2 水曜に開く</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>続ける工夫</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>参加費は無料</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>会場は社内の会議室</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>議事録は残さない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-02",
+    "input_text": "ここまでの結論\n- 小さく始める\n- 毎日続ける\n\n## 次の一歩\n- 記録をつける\n",
+    "expected_page_group": [
+      "ここまでの結論\n- 小さく始める\n- 毎日続ける",
+      "## 次の一歩\n- 記録をつける"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>ここまでの結論</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎日続ける</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>",
+      "<GeneralPage id=\"p2\"><title><Str>次の一歩</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>記録をつける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-03",
+    "input_text": "## 結果\n**優勝**した\n- チーム 4 人\n\n## 賞品\n",
+    "expected_page_group": [
+      "## 結果\n**優勝**した\n- チーム 4 人",
+      "## 賞品"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>結果</Str></title><blocks><TextBlock><Paragraph><Strong><Str>優勝</Str></Strong><Str>した</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>チーム 4 人</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>賞品</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-04",
+    "input_text": "## 設定例\n```\n## これは見出しではない\nkey = value\n```\n- 保存して再起動する\n\n## 次\n",
+    "expected_page_group": [
+      "## 設定例\n```\n## これは見出しではない\nkey = value\n```\n- 保存して再起動する",
+      "## 次"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>設定例</Str></title><blocks><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>## これは見出しではない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>key = value</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>保存して再起動する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>次</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-05",
+    "input_text": "## 手順\r\n- 開く\r\n- 閉じる\r\n\r\n## 確認\r\n問題なければ終わり\r\n",
+    "expected_page_group": [
+      "## 手順\n- 開く\n- 閉じる",
+      "## 確認\n問題なければ終わり"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>開く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>閉じる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>確認</Str></title><blocks><TextBlock><Paragraph><Str>問題なければ終わり</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-06",
+    "input_text": "   \n\n  \n\t\n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112207-07",
+    "input_text": "## 長い段落\nこの手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。\n- 要点だけ覚える\n",
+    "expected_page_group": [
+      "## 長い段落\nこの手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。\n- 要点だけ覚える"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>長い段落</Str></title><blocks><TextBlock><Paragraph><Str>この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。この手順は何度も見直したが、そのたびに抜けが見つかり、結局は実際に動かして確かめるのが一番早いという結論に落ち着いた。</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>要点だけ覚える</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-08",
+    "input_text": "## 配布物\n- **[資料](https://example.com/doc)** を共有する\n- 質問は *Slack* へ\n",
+    "expected_page_group": [
+      "## 配布物\n- **[資料](https://example.com/doc)** を共有する\n- 質問は *Slack* へ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>配布物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Anchor href=\"https://example.com/doc\"><Str>資料</Str></Anchor></Strong><Str> を共有する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>質問は </Str><Em><Str>Slack</Str></Em><Str> へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-09",
+    "input_text": "## 余白の確認   \n- 項目   \n\n## 末尾\n- 終わり   ",
+    "expected_page_group": [
+      "## 余白の確認\n- 項目",
+      "## 末尾\n- 終わり"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>余白の確認</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>末尾</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>終わり</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-10",
+    "input_text": "## 起動の順序\n1) 電源を入れる\n2) ログインする\n3) 画面を確認する\n",
+    "expected_page_group": [
+      "## 起動の順序\n1) 電源を入れる\n2) ログインする\n3) 画面を確認する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>起動の順序</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>電源を入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ログインする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>画面を確認する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
