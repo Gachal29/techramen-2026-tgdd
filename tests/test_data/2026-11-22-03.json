@@ -1,0 +1,114 @@
+[
+    {
+        "test_data_id": "2026112203-01",
+        "input_text": "# CI を速くした話\n\n## 現状\n毎回 20 分かかっていた\n\n## 対策\n- キャッシュを入れる\n  - 依存の取得を省く\n- 並列にする\n\n## 以上\n",
+        "expected_page_group": [
+            "# CI を速くした話",
+            "## 現状\n毎回 20 分かかっていた",
+            "## 対策\n- キャッシュを入れる\n  - 依存の取得を省く\n- 並列にする",
+            "## 以上"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>CI を速くした話</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>現状</Str></title><blocks><TextBlock><Paragraph><Str>毎回 20 分かかっていた</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>キャッシュを入れる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存の取得を省く</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>並列にする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>以上</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-02",
+        "input_text": "# 障害対応の記録\n\n![タイムライン](https://example.com/timeline.png)\n\n## 教訓\n- 手順書を更新する\n- 連絡網を直す\n",
+        "expected_page_group": [
+            "# 障害対応の記録",
+            "![タイムライン](https://example.com/timeline.png)",
+            "## 教訓\n- 手順書を更新する\n- 連絡網を直す"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>障害対応の記録</Str></title></CoverPage>",
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/timeline.png\" alt=\"タイムライン\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>教訓</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>手順書を更新する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>連絡網を直す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-03",
+        "input_text": "## ツール紹介\nripgrep は高速な検索ツール\n`rg` コマンドで使う\n公式は [GitHub](https://github.com/BurntSushi/ripgrep) にある\n\n## 結論\nまず入れてみる\n",
+        "expected_page_group": [
+            "## ツール紹介\nripgrep は高速な検索ツール\n`rg` コマンドで使う\n公式は [GitHub](https://github.com/BurntSushi/ripgrep) にある",
+            "## 結論\nまず入れてみる"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>ツール紹介</Str></title><blocks><TextBlock><Paragraph><Str>ripgrep は高速な検索ツール</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>rg</Code><Str> コマンドで使う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>公式は </Str><Anchor href=\"https://github.com/BurntSushi/ripgrep\"><Str>GitHub</Str></Anchor><Str> にある</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>結論</Str></title><blocks><TextBlock><Paragraph><Str>まず入れてみる</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-04",
+        "input_text": "## [公式サイト](https://example.com) を読む\n- 最初に目を通す\n",
+        "expected_page_group": [
+            "## [公式サイト](https://example.com) を読む\n- 最初に目を通す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Anchor href=\"https://example.com\"><Str>公式サイト</Str></Anchor><Str> を読む</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>最初に目を通す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-05",
+        "input_text": "＃ 登壇までの道のり\n\n## 応募\n- 締切を確認\n",
+        "expected_page_group": [
+            "＃ 登壇までの道のり",
+            "## 応募\n- 締切を確認"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>登壇までの道のり</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>応募</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>締切を確認</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-06",
+        "input_text": "## 一\n- a\n## 二\n- b",
+        "expected_page_group": [
+            "## 一\n- a",
+            "## 二\n- b"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>一</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>a</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>二</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>b</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-07",
+        "input_text": "## 設定\n- パターンは `**/*.py` と書く\n- 除外は `!tests/**` にする\n",
+        "expected_page_group": [
+            "## 設定\n- パターンは `**/*.py` と書く\n- 除外は `!tests/**` にする"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>設定</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>パターンは </Str><Code>**/*.py</Code><Str> と書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>除外は </Str><Code>!tests/**</Code><Str> にする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-08",
+        "input_text": "## 手順\n1. 準備\n  - 依存を入れる\n  - 設定する\n2. 実行\n",
+        "expected_page_group": [
+            "## 手順\n1. 準備\n  - 依存を入れる\n  - 設定する\n2. 実行"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存を入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>設定する</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-09",
+        "input_text": "## 注意\n<br>で改行しない\n- <div> は使わない\n",
+        "expected_page_group": [
+            "## 注意\n<br>で改行しない\n- <div> は使わない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Str>&lt;br&gt;で改行しない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>&lt;div&gt; は使わない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112203-10",
+        "input_text": "",
+        "expected_page_group": [],
+        "expected_slideir_page": []
+    }
+]
