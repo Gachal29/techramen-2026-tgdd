@@ -1,0 +1,112 @@
+[
+  {
+    "test_data_id": "2026112111-01",
+    "input_text": "# CI を速くした話\n\n## 背景\n- ビルドが 20 分かかる\n- 毎回依存を入れ直している\n\n## 対策\nキャッシュを使う\n- 依存のキャッシュ\n- Docker レイヤー\n\n## まとめ\n",
+    "expected_page_group": [
+      "# CI を速くした話",
+      "## 背景\n- ビルドが 20 分かかる\n- 毎回依存を入れ直している",
+      "## 対策\nキャッシュを使う\n- 依存のキャッシュ\n- Docker レイヤー",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>CI を速くした話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ビルドが 20 分かかる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎回依存を入れ直している</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>対策</Str></title><blocks><TextBlock><Paragraph><Str>キャッシュを使う</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存のキャッシュ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>Docker レイヤー</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-02",
+    "input_text": "## 手順\n1. リポジトリを clone\n2. `uv sync` を実行\n3. **必ず** テストする\n",
+    "expected_page_group": [
+      "## 手順\n1. リポジトリを clone\n2. `uv sync` を実行\n3. **必ず** テストする"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>リポジトリを clone</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>uv sync</Code><Str> を実行</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>必ず</Str></Strong><Str> テストする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-03",
+    "input_text": "# 失敗談 LT\n## 事件\n金曜の夜にデプロイした。詳しくは[事後検証](https://example.com/postmortem)を参照\n",
+    "expected_page_group": [
+      "# 失敗談 LT",
+      "## 事件\n金曜の夜にデプロイした。詳しくは[事後検証](https://example.com/postmortem)を参照"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>失敗談 LT</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>事件</Str></title><blocks><TextBlock><Paragraph><Str>金曜の夜にデプロイした。詳しくは</Str><Anchor href=\"https://example.com/postmortem\"><Str>事後検証</Str></Anchor><Str>を参照</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-04",
+    "input_text": "## 反省 ##\n- 金曜にデプロイしない\n",
+    "expected_page_group": [
+      "## 反省 ##\n- 金曜にデプロイしない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>反省</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>金曜にデプロイしない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-05",
+    "input_text": "## 構成\n- サーバー\n\t- API\n\t- DB\n- クライアント\n",
+    "expected_page_group": [
+      "## 構成\n- サーバー\n\t- API\n\t- DB\n- クライアント"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>サーバー</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>API</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>DB</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>クライアント</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-06",
+    "input_text": "## 持ち物\n－ 財布\n－ 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n－ 財布\n－ 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-07",
+    "input_text": "## **重要** な[お知らせ](https://example.com/news)\n- 来週から変更\n",
+    "expected_page_group": [
+      "## **重要** な[お知らせ](https://example.com/news)\n- 来週から変更"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strong><Str>重要</Str></Strong><Str> な</Str><Anchor href=\"https://example.com/news\"><Str>お知らせ</Str></Anchor></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>来週から変更</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-08",
+    "input_text": "## 🎉 リリース\n- 🚀 v1.0 公開\n",
+    "expected_page_group": [
+      "## 🎉 リリース\n- 🚀 v1.0 公開"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>🎉 リリース</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>🚀 v1.0 公開</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-09",
+    "input_text": "##要点\n- 小さく始める\n",
+    "expected_page_group": [
+      "##要点\n- 小さく始める"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>要点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112111-10",
+    "input_text": "＃ LTの題名\n\n## 概要\n- 話すこと\n",
+    "expected_page_group": [
+      "＃ LTの題名",
+      "## 概要\n- 話すこと"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>LTの題名</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>話すこと</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
