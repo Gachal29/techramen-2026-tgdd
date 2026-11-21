@@ -1,0 +1,108 @@
+[
+  {
+    "test_data_id": "2026112117-01",
+    "input_text": "# 障害対応の振り返り\n\n![タイムライン](https://example.com/timeline.png)\n\n## 経緯\n- 深夜にアラートが鳴った\n  - 原因は証明書の期限切れ\n- 朝までに復旧した\n\n## 再発防止\n",
+    "expected_page_group": [
+      "# 障害対応の振り返り",
+      "![タイムライン](https://example.com/timeline.png)",
+      "## 経緯\n- 深夜にアラートが鳴った\n  - 原因は証明書の期限切れ\n- 朝までに復旧した",
+      "## 再発防止"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>障害対応の振り返り</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/timeline.png\" alt=\"タイムライン\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>経緯</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>深夜にアラートが鳴った</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>原因は証明書の期限切れ</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>朝までに復旧した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>再発防止</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-02",
+    "input_text": "## 導入したツール\nlinter を入れた\n1. `ruff` で静的解析\n2. 詳細は [公式](https://docs.astral.sh/ruff/) へ\n",
+    "expected_page_group": [
+      "## 導入したツール\nlinter を入れた\n1. `ruff` で静的解析\n2. 詳細は [公式](https://docs.astral.sh/ruff/) へ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>導入したツール</Str></title><blocks><TextBlock><Paragraph><Str>linter を入れた</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Code>ruff</Code><Str> で静的解析</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://docs.astral.sh/ruff/\"><Str>公式</Str></Anchor><Str> へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-03",
+    "input_text": "障害は誰にでも起きる\n- 慌てない\n  - まず状況を確認\n    - ログを見る\n- 記録を残す\n\n最後に: 手順書は更新する\n",
+    "expected_page_group": [
+      "障害は誰にでも起きる\n- 慌てない\n  - まず状況を確認\n    - ログを見る\n- 記録を残す\n最後に: 手順書は更新する"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>障害は誰にでも起きる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>慌てない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>まず状況を確認</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ログを見る</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>記録を残す</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>最後に: 手順書は更新する</Str></Paragraph></TextBlock></blocks></BodyPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-04",
+    "input_text": "## 振り返り ##\n- 良かった点\n",
+    "expected_page_group": [
+      "## 振り返り ##\n- 良かった点"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>振り返り</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>良かった点</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-05",
+    "input_text": "##見出しの後に空白がない\n- 自然に見出しにしたい\n",
+    "expected_page_group": [
+      "##見出しの後に空白がない\n- 自然に見出しにしたい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>見出しの後に空白がない</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>自然に見出しにしたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-06",
+    "input_text": "## 構成\n- 親\n\t- 子\n- 次\n",
+    "expected_page_group": [
+      "## 構成\n- 親\n\t- 子\n- 次"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>次</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-07",
+    "input_text": "## 買い出し\n+ 肉\n+ 野菜\n",
+    "expected_page_group": [
+      "## 買い出し\n+ 肉\n+ 野菜"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>買い出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>肉</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>野菜</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-08",
+    "input_text": "## 持ち物\n－ 財布\n－ 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n－ 財布\n－ 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-09",
+    "input_text": "## 🎉 発表終了\n- ✅ 完了\n- ❌ 未達\n",
+    "expected_page_group": [
+      "## 🎉 発表終了\n- ✅ 完了\n- ❌ 未達"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>🎉 発表終了</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>✅ 完了</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>❌ 未達</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112117-10",
+    "input_text": "## **重要** なお知らせ\n- 明日は休み\n",
+    "expected_page_group": [
+      "## **重要** なお知らせ\n- 明日は休み"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strong><Str>重要</Str></Strong><Str> なお知らせ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>明日は休み</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
