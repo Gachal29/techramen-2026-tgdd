@@ -1,0 +1,106 @@
+[
+  {
+    "test_data_id": "2026112116-01",
+    "input_text": "# ライブコーディングで燃えた話\n\n## 状況\n- 画面共有中だった\n  - 通知が全部見えた\n  - 秘密の URL も映った\n- 声が裏返った\n\n## 学び\n事前にデモ環境を用意する\n",
+    "expected_page_group": [
+      "# ライブコーディングで燃えた話",
+      "## 状況\n- 画面共有中だった\n  - 通知が全部見えた\n  - 秘密の URL も映った\n- 声が裏返った",
+      "## 学び\n事前にデモ環境を用意する"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ライブコーディングで燃えた話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>状況</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>画面共有中だった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>通知が全部見えた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>秘密の URL も映った</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>声が裏返った</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>学び</Str></title><blocks><TextBlock><Paragraph><Str>事前にデモ環境を用意する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-02",
+    "input_text": "1. 台本を書く\n2. 時間を計る\n3. 人に聞いてもらう\n",
+    "expected_page_group": [
+      "1. 台本を書く\n2. 時間を計る\n3. 人に聞いてもらう"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>台本を書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>時間を計る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>人に聞いてもらう</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-03",
+    "input_text": "![](https://example.com/slide1.png)\n## ふりかえり\n**良かった**: 時間内に終わった\n- 次は *デモ動画* を用意\n",
+    "expected_page_group": [
+      "![](https://example.com/slide1.png)",
+      "## ふりかえり\n**良かった**: 時間内に終わった\n- 次は *デモ動画* を用意"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/slide1.png\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>ふりかえり</Str></title><blocks><TextBlock><Paragraph><Strong><Str>良かった</Str></Strong><Str>: 時間内に終わった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次は </Str><Em><Str>デモ動画</Str></Em><Str> を用意</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-04",
+    "input_text": "## 振り返り\r\n- 良かった点\r\n- 改善点\r\n\r\n## 次回\r\n日程は未定\r\n",
+    "expected_page_group": [
+      "## 振り返り\n- 良かった点\n- 改善点",
+      "## 次回\n日程は未定"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>振り返り</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>良かった点</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>改善点</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>次回</Str></title><blocks><TextBlock><Paragraph><Str>日程は未定</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-05",
+    "input_text": "## 結論\n結論は一つだけ\n\n\n\n- 理由は二つある\n- 理由はこれだ",
+    "expected_page_group": [
+      "## 結論\n結論は一つだけ\n- 理由は二つある\n- 理由はこれだ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>結論</Str></title><blocks><TextBlock><Paragraph><Str>結論は一つだけ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>理由は二つある</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>理由はこれだ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-06",
+    "input_text": "## 道具\n* ペン\n* ノート\n* タイマー\n",
+    "expected_page_group": [
+      "## 道具\n* ペン\n* ノート\n* タイマー"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ペン</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ノート</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タイマー</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-07",
+    "input_text": "## 損益 & 利益\n- 速度 < 1ms\n- メモリ > 1GB\n- Q&A あり\n",
+    "expected_page_group": [
+      "## 損益 & 利益\n- 速度 < 1ms\n- メモリ > 1GB\n- Q&A あり"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>損益 &amp; 利益</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>速度 &lt; 1ms</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>メモリ &gt; 1GB</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>Q&amp;A あり</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-08",
+    "input_text": "## 書式\n**太字と *斜体* の入れ子**になる\n",
+    "expected_page_group": [
+      "## 書式\n**太字と *斜体* の入れ子**になる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>書式</Str></title><blocks><TextBlock><Paragraph><Strong><Str>太字と </Str><Em><Str>斜体</Str></Em><Str> の入れ子</Str></Strong><Str>になる</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-09",
+    "input_text": "＃＃ 発表のコツ\n- 結論から話す\n- 時間を守る\n",
+    "expected_page_group": [
+      "＃＃ 発表のコツ\n- 結論から話す\n- 時間を守る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>発表のコツ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>結論から話す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>時間を守る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112116-10",
+    "input_text": "  \n\n \t\n   \n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  }
+]
