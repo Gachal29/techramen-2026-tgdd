@@ -1,0 +1,112 @@
+[
+    {
+        "test_data_id": "2026112222-01",
+        "input_text": "# dotfiles を育てる\n\n## きっかけ\n新しいPCで環境が再現できなかった\n\n## 運用\n- 変更は小さくコミットする\n- 秘密情報は含めない\n\n## おわり\n",
+        "expected_page_group": [
+            "# dotfiles を育てる",
+            "## きっかけ\n新しいPCで環境が再現できなかった",
+            "## 運用\n- 変更は小さくコミットする\n- 秘密情報は含めない",
+            "## おわり"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>dotfiles を育てる</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>きっかけ</Str></title><blocks><TextBlock><Paragraph><Str>新しいPCで環境が再現できなかった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>運用</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>変更は小さくコミットする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>秘密情報は含めない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>おわり</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-02",
+        "input_text": "![構成図](https://example.com/arch.png)\n\n## 構成\n1. 入口\n2. 処理\n3. 出力\n",
+        "expected_page_group": [
+            "![構成図](https://example.com/arch.png)",
+            "## 構成\n1. 入口\n2. 処理\n3. 出力"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/arch.png\" alt=\"構成図\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>構成</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>入口</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>処理</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>出力</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-03",
+        "input_text": "## 運用ルール\n**必ず** レビューを受ける\n*できれば* 二人で見る\n- `git blame` で経緯を追う\n- 詳細は [手順書](https://example.com/guide)\n",
+        "expected_page_group": [
+            "## 運用ルール\n**必ず** レビューを受ける\n*できれば* 二人で見る\n- `git blame` で経緯を追う\n- 詳細は [手順書](https://example.com/guide)"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>運用ルール</Str></title><blocks><TextBlock><Paragraph><Strong><Str>必ず</Str></Strong><Str> レビューを受ける</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>できれば</Str></Em><Str> 二人で見る</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>git blame</Code><Str> で経緯を追う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://example.com/guide\"><Str>手順書</Str></Anchor></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-04",
+        "input_text": "## [公式サイト](https://example.com)\n- 入口はここ\n",
+        "expected_page_group": [
+            "## [公式サイト](https://example.com)\n- 入口はここ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Anchor href=\"https://example.com\"><Str>公式サイト</Str></Anchor></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>入口はここ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-05",
+        "input_text": "## A & B の比較\n- x < y かつ y > z\n- R&D 部門\n",
+        "expected_page_group": [
+            "## A & B の比較\n- x < y かつ y > z\n- R&D 部門"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>A &amp; B の比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>x &lt; y かつ y &gt; z</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>R&amp;D 部門</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-06",
+        "input_text": "## 🚀 立ち上げ\n- 初日に動かす\n",
+        "expected_page_group": [
+            "## 🚀 立ち上げ\n- 初日に動かす"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>🚀 立ち上げ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>初日に動かす</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-07",
+        "input_text": "## 長い話\nこれは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。\n",
+        "expected_page_group": [
+            "## 長い話\nこれは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>長い話</Str></title><blocks><TextBlock><Paragraph><Str>これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。これは長い一文です。</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-08",
+        "input_text": "## 分類\n* 果物\n  * りんご\n  * みかん\n* 野菜\n",
+        "expected_page_group": [
+            "## 分類\n* 果物\n  * りんご\n  * みかん\n* 野菜"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>分類</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>果物</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>りんご</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>みかん</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>野菜</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-09",
+        "input_text": "![図 1 (全体)](https://example.com/overview.png)\n## 全体像\n- 左の図を見る\n",
+        "expected_page_group": [
+            "![図 1 (全体)](https://example.com/overview.png)",
+            "## 全体像\n- 左の図を見る"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/overview.png\" alt=\"図 1 (全体)\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>全体像</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>左の図を見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112222-10",
+        "input_text": "## 持ち帰り\n＊ 小さく始める\n＊ 記録を残す\n",
+        "expected_page_group": [
+            "## 持ち帰り\n＊ 小さく始める\n＊ 記録を残す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>持ち帰り</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>記録を残す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
