@@ -7,21 +7,43 @@
 import re
 import xml.etree.ElementTree as ET
 
-# 半角・全角の `#` と、その後の半角・全角の空白を受け付ける
-COVER_RE = re.compile(r"^[#＃][ \t　]+(?P<text>.*\S)\s*$")
+# 半角・全角の `#` と、その後の半角・全角の空白を受け付ける。
+# 見出しの行頭の空白（` ## 見出し`）は字下げの乱れとして無視する（表紙・見出しとも）
+COVER_RE = re.compile(r"^[ \t　]*[#＃][ \t　]+(?P<text>.*\S)\s*$")
 # 見出しは `##` の後の空白がなくてもよい（`##見出し`）。`###` は見出しにしない
-HEADING_RE = re.compile(r"^[#＃]{2}(?![#＃])[ \t　]*(?P<text>.*\S)\s*$")
+HEADING_RE = re.compile(r"^[ \t　]*[#＃]{2}(?![#＃])[ \t　]*(?P<text>.*\S)\s*$")
 # 見出しの末尾の、空白に続く閉じの `#`（`## 見出し ##`）
 CLOSING_HASHES_RE = re.compile(r"[ \t　]+[#＃]+$")
 # `-`・`*`・`+`（全角の `－`・`＊`・`＋` も）は箇条書き、`1.`・`1)` は番号付き。
-# 中黒 `・`（半角の `･` も）も箇条書きにする。日本語のメモでは後ろに空白を置かないことが多いため、空白はなくてよい。
+# 中黒 `・`（半角の `･` も）と、ほかのアプリから写したときに残る箇条書きの記号 `•`・`◦`・`‣` も箇条書きにする。
+# 日本語のメモでは後ろに空白を置かないことが多いため、これらの記号の後の空白はなくてよい。
+# `-`・`－` は、後ろに空白がなくても、日本語などの文字（ASCII・数字・空白・`－` 以外）が直後に続けば
+# 箇条書きにする（`-小さく始める`）。`-5 度` のような負の数、`--option`・`---` は箇条書きにしない。
+# `*`・`+` は強調（`**太字**`）などと区別できないため、後ろに空白が必要。
 # 字下げは半角空白 2 つ（全角空白なら 1 つ）で 1 段
 BULLET_RE = re.compile(
     r"^(?P<indent>[ \t　]*)"
-    r"(?:(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+|(?P<dot>[・･])[ \t　]*)"
+    r"(?:(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+"
+    r"|(?P<dash>[-－])(?=[^\x00-\x7F\s\d－])"
+    r"|(?P<dot>[・･•◦‣])[ \t　]*)"
     r"(?P<text>.*)$"
 )
-IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>[^)\s]+)\)\s*$")
+# リンク・画像の URL。`https://ja.wikipedia.org/wiki/Python_(言語)` のように、URL の中の
+# 対になった括弧（1 段まで）は URL の一部にする
+_URL_PATTERN = r"(?:[^()\s]|\([^()\s]*\))+"
+IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>" + _URL_PATTERN + r")\)\s*$")
+# コードブロックの囲み（```・~~~ を 3 つ以上）。開きの後には言語名などを書ける。
+# 閉じは、開きと同じ記号を開きと同じ数以上並べ、後ろに何も書かない行
+FENCE_RE = re.compile(r"^[ \t　]*(?P<fence>`{3,}|~{3,})(?P<info>.*)$")
+
+
+# テキストの先頭のバイト順マーク（BOM, U+FEFF）。ほかのアプリで保存したメモの先頭に付くことがある。
+# 見えない文字なので、行の種類の判定と変換では無視する（ページに分けるときは元のテキストのまま残す）
+BOM = "\ufeff"
+
+
+def _strip_bom(line: str) -> str:
+    return line.lstrip(BOM)
 
 
 def _heading_text(text: str) -> str:
@@ -30,15 +52,36 @@ def _heading_text(text: str) -> str:
 
 
 def _is_cover(line: str) -> bool:
-    return COVER_RE.match(line) is not None
+    return COVER_RE.match(_strip_bom(line)) is not None
 
 
 def _is_heading(line: str) -> bool:
-    return HEADING_RE.match(line) is not None
+    return HEADING_RE.match(_strip_bom(line)) is not None
 
 
 def _is_image(line: str) -> bool:
-    return IMAGE_RE.match(line) is not None
+    return IMAGE_RE.match(_strip_bom(line)) is not None
+
+
+def _fence_open(line: str) -> str | None:
+    """コードブロックの開きの行なら、その囲みの記号を返す"""
+    match = FENCE_RE.match(_strip_bom(line))
+    if match is None:
+        return None
+    # ``` の開きの後ろ（言語名など）に ` は書けない（インラインのコードと区別する）
+    if match["fence"][0] == "`" and "`" in match["info"]:
+        return None
+    return match["fence"]
+
+
+def _is_fence_close(line: str, fence: str) -> bool:
+    match = FENCE_RE.match(_strip_bom(line))
+    return (
+        match is not None
+        and match["fence"][0] == fence[0]
+        and len(match["fence"]) >= len(fence)
+        and not match["info"].strip()
+    )
 
 
 def text_to_page_grouper(raw_text: str) -> list[str]:
@@ -50,18 +93,30 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
     3. 見出しより前（または表紙の直後）にある図だけの行は、それだけで 1 ページ
     4. 見出しより前にあるそれ以外の行は、図だけの行を除き、続く行をまとめて 1 ページ（見出しのないページ）
     5. 行末の空白は除く。ページの前後の空行は除き、ページの途中の空行はそのまま残す
+    6. コードブロック（```・~~~ で囲んだ行）の中は、見出し・表紙・図の行として扱わず、
+       開きの行と同じページに入れる（コードの中の `## ` でページを分けない）
     """
     pages: list[list[str]] = []
     # 今のページの種類: "heading"（見出しのページ）、"body"（見出しのない本文のページ）、None（足せない）
     current: str | None = None
     # まだどのページにも入れていない空行の数（続く行が同じページに入るときだけ足す）
     pending_blanks = 0
+    # 開いているコードブロックの囲みの記号（開いていなければ None）
+    fence: str | None = None
     for raw_line in raw_text.splitlines():
         line = raw_line.rstrip()
-        if not line.strip():
+        if not _strip_bom(line).strip():
             pending_blanks += 1
             continue
         blanks, pending_blanks = pending_blanks, 0
+        if fence is not None and current is not None:
+            # コードブロックの中の行は、閉じの行も含めて、今のページに足す
+            pages[-1].extend([""] * blanks)
+            pages[-1].append(line)
+            if _is_fence_close(line, fence):
+                fence = None
+            continue
+        fence = _fence_open(line)
         if current is not None and not _is_cover(line) and not _is_heading(line):
             if current == "heading" or (current == "body" and not _is_image(line)):
                 pages[-1].extend([""] * blanks)
@@ -86,8 +141,16 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
 
 # -- インラインの記法 --
 
-_DELIMITERS = [("**", "Strong"), ("~~", "Strike"), ("*", "Em")]
-_LINK_RE = re.compile(r"\[(?P<text>[^\]]+)\]\((?P<href>[^)\s]+)\)")
+_DELIMITERS = [("**", "Strong"), ("__", "Strong"), ("~~", "Strike"), ("*", "Em"), ("_", "Em")]
+_LINK_RE = re.compile(r"\[(?P<text>[^\]]+)\]\((?P<href>" + _URL_PATTERN + r")\)")
+# 自動リンク `<https://example.com>`（`<` と `>` で囲んだ、スキームのある URL）
+_AUTOLINK_RE = re.compile(r"<(?P<href>[A-Za-z][A-Za-z0-9+.\-]{1,31}:[^<>\s]+)>")
+# `_`・`__` は、英数字に挟まれた位置（`snake_case` など）では強調の記号にしない
+_ASCII_WORD_RE = re.compile(r"[A-Za-z0-9]")
+
+
+def _is_ascii_word(char: str) -> bool:
+    return _ASCII_WORD_RE.fullmatch(char) is not None
 
 
 def _find_closing(text: str, delimiter: str, start: int) -> int:
@@ -100,14 +163,19 @@ def _find_closing(text: str, delimiter: str, start: int) -> int:
         position = text.find(delimiter, position)
         if position == -1:
             return -1
-        if delimiter == "*":
-            # `**` の一部なら、ひとまとまりで読み飛ばす（入れ子の太字）
-            if text.startswith("**", position):
-                closing = _find_closing(text, "**", position + 2)
+        if len(delimiter) == 1:
+            # `**`・`__` の一部なら、ひとまとまりで読み飛ばす（入れ子の太字）
+            double = delimiter * 2
+            if text.startswith(double, position):
+                closing = _find_closing(text, double, position + 2)
                 if closing == -1:
                     return -1
                 position = closing + 2
                 continue
+        end = position + len(delimiter)
+        if delimiter[0] == "_" and end < len(text) and _is_ascii_word(text[end]):
+            position = end
+            continue
         if position > start and not text[position - 1].isspace():
             return position
         position += len(delimiter)
@@ -144,9 +212,18 @@ def _parse_inline(text: str) -> list[tuple]:
                 nodes.append(("Anchor", (link["href"], _parse_inline(link["text"]))))
                 index = link.end()
                 continue
+        if char == "<":
+            autolink = _AUTOLINK_RE.match(text, index)
+            if autolink:
+                flush()
+                nodes.append(("Anchor", (autolink["href"], [("Str", autolink["href"])])))
+                index = autolink.end()
+                continue
         matched = False
         for delimiter, kind in _DELIMITERS:
             if not text.startswith(delimiter, index):
+                continue
+            if delimiter[0] == "_" and index > 0 and _is_ascii_word(text[index - 1]):
                 continue
             inner_start = index + len(delimiter)
             if inner_start >= len(text) or text[inner_start].isspace():
@@ -247,7 +324,8 @@ def page_to_slideir_page(page_text: str, page_id: str) -> str:
     2. `## ` の見出しがあり、本文があれば GeneralPage、なければ HeadingPage
     3. 見出しがなく、本文が図 1 つだけなら FigurePage、それ以外は BodyPage
     """
-    lines = [line.rstrip() for line in page_text.splitlines() if line.strip()]
+    lines = [_strip_bom(line).rstrip() for line in page_text.splitlines()]
+    lines = [line for line in lines if line.strip()]
     if not lines:
         raise ValueError("空のページは作らない")
 

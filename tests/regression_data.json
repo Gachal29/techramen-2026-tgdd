@@ -164,5 +164,87 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112118-09",
+    "input_text": "## 記法の補足\nここが __大事__ な点。 _先に_ 書く\n",
+    "expected_page_group": [
+      "## 記法の補足\nここが __大事__ な点。 _先に_ 書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法の補足</Str></title><blocks><TextBlock><Paragraph><Str>ここが </Str><Strong><Str>大事</Str></Strong><Str> な点。 </Str><Em><Str>先に</Str></Em><Str> 書く</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112118-10",
+    "input_text": "## 資料\n- <https://example.com/doc>\n- 質問は Discord へ\n",
+    "expected_page_group": [
+      "## 資料\n- <https://example.com/doc>\n- 質問は Discord へ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>資料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/doc\"><Str>https://example.com/doc</Str></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Str>質問は Discord へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112120-09",
+    "input_text": "## 持ち物\n• 財布\n• 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n• 財布\n• 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112121-07",
+    "input_text": "## 参考リンク\n- 詳細は [Wikipedia](https://ja.wikipedia.org/wiki/Python_(言語)) を参照\n",
+    "expected_page_group": [
+      "## 参考リンク\n- 詳細は [Wikipedia](https://ja.wikipedia.org/wiki/Python_(言語)) を参照"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考リンク</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://ja.wikipedia.org/wiki/Python_(言語)\"><Str>Wikipedia</Str></Anchor><Str> を参照</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112122-05",
+    "input_text": " ## 先頭に空白のある見出し\n- 見出しとして扱いたい\n",
+    "expected_page_group": [
+      " ## 先頭に空白のある見出し\n- 見出しとして扱いたい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>先頭に空白のある見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>見出しとして扱いたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112201-05",
+    "input_text": "﻿## BOM 付きの見出し\n- 項目\n",
+    "expected_page_group": [
+      "﻿## BOM 付きの見出し\n- 項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>BOM 付きの見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112205-10",
+    "input_text": "## 方針\n-小さく始める\n-毎日続ける\n",
+    "expected_page_group": [
+      "## 方針\n-小さく始める\n-毎日続ける"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎日続ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112207-04",
+    "input_text": "## 設定例\n```\n## これは見出しではない\nkey = value\n```\n- 保存して再起動する\n\n## 次\n",
+    "expected_page_group": [
+      "## 設定例\n```\n## これは見出しではない\nkey = value\n```\n- 保存して再起動する",
+      "## 次"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>設定例</Str></title><blocks><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>## これは見出しではない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>key = value</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>保存して再起動する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>次</Str></title></HeadingPage>"
+    ]
   }
 ]
