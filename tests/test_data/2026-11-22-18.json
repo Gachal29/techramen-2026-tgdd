@@ -1,0 +1,116 @@
+[
+    {
+        "test_data_id": "2026112218-01",
+        "input_text": "# 勉強会を半年続けて\n\n## 続いた理由\n毎回 15 分だけにした\n- 準備を軽くする\n- 発表者を固定しない\n\n## 次の目標\n",
+        "expected_page_group": [
+            "# 勉強会を半年続けて",
+            "## 続いた理由\n毎回 15 分だけにした\n- 準備を軽くする\n- 発表者を固定しない",
+            "## 次の目標"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>勉強会を半年続けて</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>続いた理由</Str></title><blocks><TextBlock><Paragraph><Str>毎回 15 分だけにした</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備を軽くする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>発表者を固定しない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>次の目標</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-02",
+        "input_text": "![ダッシュボードの画面](https://example.com/dash.png)\n\n## 気づき\n数字を毎朝見るようになった\n誰も見ない指標は消した\n\n## 今後\n- 週次で見直す\n",
+        "expected_page_group": [
+            "![ダッシュボードの画面](https://example.com/dash.png)",
+            "## 気づき\n数字を毎朝見るようになった\n誰も見ない指標は消した",
+            "## 今後\n- 週次で見直す"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/dash.png\" alt=\"ダッシュボードの画面\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>気づき</Str></title><blocks><TextBlock><Paragraph><Str>数字を毎朝見るようになった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>誰も見ない指標は消した</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<GeneralPage id=\"p3\"><title><Str>今後</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>週次で見直す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-03",
+        "input_text": "# 引っ越し作業の自動化\n\n## 洗い出し\n1. 手続きを書き出す\n2. 期限で並べる\n3. 自動化できるものを選ぶ\n\n## 学び\n**先に全体を見る** と迷わない\n",
+        "expected_page_group": [
+            "# 引っ越し作業の自動化",
+            "## 洗い出し\n1. 手続きを書き出す\n2. 期限で並べる\n3. 自動化できるものを選ぶ",
+            "## 学び\n**先に全体を見る** と迷わない"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>引っ越し作業の自動化</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>洗い出し</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>手続きを書き出す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>期限で並べる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>自動化できるものを選ぶ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>学び</Str></title><blocks><TextBlock><Paragraph><Strong><Str>先に全体を見る</Str></Strong><Str> と迷わない</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-04",
+        "input_text": "## *失敗* から学ぶ\n- 同じ穴に二度落ちない\n",
+        "expected_page_group": [
+            "## *失敗* から学ぶ\n- 同じ穴に二度落ちない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Em><Str>失敗</Str></Em><Str> から学ぶ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>同じ穴に二度落ちない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-05",
+        "input_text": "## 実行方法\n`make test`\n- 事前に環境変数を設定する\n",
+        "expected_page_group": [
+            "## 実行方法\n`make test`\n- 事前に環境変数を設定する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>実行方法</Str></title><blocks><TextBlock><Paragraph><Code>make test</Code></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>事前に環境変数を設定する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-06",
+        "input_text": "## 構造\n- 全体\n  - 部品\n    - 細部\n- 別の全体\n",
+        "expected_page_group": [
+            "## 構造\n- 全体\n  - 部品\n    - 細部\n- 別の全体"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>構造</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>全体</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>部品</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>細部</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>別の全体</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-07",
+        "input_text": "## 変更点\n~~旧 API~~ は廃止した\n- 新 API は ~~未定~~ 公開済み\n",
+        "expected_page_group": [
+            "## 変更点\n~~旧 API~~ は廃止した\n- 新 API は ~~未定~~ 公開済み"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>変更点</Str></title><blocks><TextBlock><Paragraph><Strike><Str>旧 API</Str></Strike><Str> は廃止した</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>新 API は </Str><Strike><Str>未定</Str></Strike><Str> 公開済み</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-08",
+        "input_text": "## 引用の扱い\n\"quote\" と 'apostrophe' を含む\n- it's a \"test\"\n",
+        "expected_page_group": [
+            "## 引用の扱い\n\"quote\" と 'apostrophe' を含む\n- it's a \"test\""
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>引用の扱い</Str></title><blocks><TextBlock><Paragraph><Str>\"quote\" と 'apostrophe' を含む</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>it's a \"test\"</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-09",
+        "input_text": "## 所感\n　字下げした段落を書いた\n- 全角空白は消えてよい\n",
+        "expected_page_group": [
+            "## 所感\n　字下げした段落を書いた\n- 全角空白は消えてよい"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>所感</Str></title><blocks><TextBlock><Paragraph><Str>字下げした段落を書いた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>全角空白は消えてよい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112218-10",
+        "input_text": "## ①背景\n- 人手が足りない\n\n## ②対策\n- 当番を減らす\n",
+        "expected_page_group": [
+            "## ①背景\n- 人手が足りない",
+            "## ②対策\n- 当番を減らす"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>①背景</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>人手が足りない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>②対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>当番を減らす</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
