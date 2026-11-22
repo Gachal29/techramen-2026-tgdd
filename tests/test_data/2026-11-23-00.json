@@ -1,0 +1,120 @@
+[
+    {
+        "test_data_id": "2026112300-01",
+        "input_text": "# ペアプロを試した\n\n## 背景\nレビューが滞っていた\n\n## やり方\n- 交代は15分ごと\n  - タイマーを使う\n- 画面は共有する\n\n## 感想\n",
+        "expected_page_group": [
+            "# ペアプロを試した",
+            "## 背景\nレビューが滞っていた",
+            "## やり方\n- 交代は15分ごと\n  - タイマーを使う\n- 画面は共有する",
+            "## 感想"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>ペアプロを試した</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>レビューが滞っていた</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>やり方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>交代は15分ごと</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>タイマーを使う</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>画面は共有する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>感想</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-02",
+        "input_text": "# 振り返り\n![](https://example.com/graph.png)\n\n## 良かった点\n1. 続けられた\n2. 記録が残った\n",
+        "expected_page_group": [
+            "# 振り返り",
+            "![](https://example.com/graph.png)",
+            "## 良かった点\n1. 続けられた\n2. 記録が残った"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>振り返り</Str></title></CoverPage>",
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/graph.png\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>良かった点</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>続けられた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>記録が残った</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-03",
+        "input_text": "## 検討\n\n## 比較\n速さを重視する\n- 方法A\n- 方法B\n\n## 結論\n方法Aを採る\n",
+        "expected_page_group": [
+            "## 検討",
+            "## 比較\n速さを重視する\n- 方法A\n- 方法B",
+            "## 結論\n方法Aを採る"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Str>検討</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p2\"><title><Str>比較</Str></title><blocks><TextBlock><Paragraph><Str>速さを重視する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>方法A</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>方法B</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p3\"><title><Str>結論</Str></title><blocks><TextBlock><Paragraph><Str>方法Aを採る</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-04",
+        "input_text": "## 設計\n### 方針\n- 小さく作る\n### 制約\n- 期限は来月\n",
+        "expected_page_group": [
+            "## 設計\n### 方針\n- 小さく作る\n### 制約\n- 期限は来月"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>設計</Str></title><blocks><TextBlock><Paragraph><Str>### 方針</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく作る</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>### 制約</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>期限は来月</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-05",
+        "input_text": "## 一\n## 二\n## 三\n- 項目\n",
+        "expected_page_group": [
+            "## 一",
+            "## 二",
+            "## 三\n- 項目"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Str>一</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p2\"><title><Str>二</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p3\"><title><Str>三</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-06",
+        "input_text": "## 手順\n1. 準備する\n1. 実行する\n1. 片付ける\n",
+        "expected_page_group": [
+            "## 手順\n1. 準備する\n1. 実行する\n1. 片付ける"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>片付ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-07",
+        "input_text": "## 資料\n- [検索結果](https://example.com/?q=a&lang=ja)\n",
+        "expected_page_group": [
+            "## 資料\n- [検索結果](https://example.com/?q=a&lang=ja)"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>資料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/?q=a&amp;lang=ja\"><Str>検索結果</Str></Anchor></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-08",
+        "input_text": "## 結果\n**太字の中の *斜体* です**\n",
+        "expected_page_group": [
+            "## 結果\n**太字の中の *斜体* です**"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>結果</Str></title><blocks><TextBlock><Paragraph><Strong><Str>太字の中の </Str><Em><Str>斜体</Str></Em><Str> です</Str></Strong></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-09",
+        "input_text": "## 書式\n__太字__で強調する\n_斜体_も使える\n",
+        "expected_page_group": [
+            "## 書式\n__太字__で強調する\n_斜体_も使える"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>書式</Str></title><blocks><TextBlock><Paragraph><Strong><Str>太字</Str></Strong><Str>で強調する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>斜体</Str></Em><Str>も使える</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112300-10",
+        "input_text": "## 進捗\n- [x] 設計\n- [ ] 実装\n",
+        "expected_page_group": [
+            "## 進捗\n- [x] 設計\n- [ ] 実装"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>進捗</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>[x] 設計</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>[ ] 実装</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
