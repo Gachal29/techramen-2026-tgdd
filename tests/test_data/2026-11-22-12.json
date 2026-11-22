@@ -1,0 +1,104 @@
+[
+  {
+    "test_data_id": "2026112212-01",
+    "input_text": "# 自宅サーバ運用の1年\n\n## きっかけ\n\n## 構成\nミニPCを1台使っている\n- OS は Debian\n  - 自動更新は有効\n- バックアップは週次\n",
+    "expected_page_group": [
+      "# 自宅サーバ運用の1年",
+      "## きっかけ",
+      "## 構成\nミニPCを1台使っている\n- OS は Debian\n  - 自動更新は有効\n- バックアップは週次"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>自宅サーバ運用の1年</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>きっかけ</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>構成</Str></title><blocks><TextBlock><Paragraph><Str>ミニPCを1台使っている</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>OS は Debian</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>自動更新は有効</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>バックアップは週次</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-02",
+    "input_text": "## 道具\n*軽い* ノートPCと `tmux` を使う\n- 公式の [手引き](https://example.com/guide) を読む\n",
+    "expected_page_group": [
+      "## 道具\n*軽い* ノートPCと `tmux` を使う\n- 公式の [手引き](https://example.com/guide) を読む"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><TextBlock><Paragraph><Em><Str>軽い</Str></Em><Str> ノートPCと </Str><Code>tmux</Code><Str> を使う</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>公式の </Str><Anchor href=\"https://example.com/guide\"><Str>手引き</Str></Anchor><Str> を読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-03",
+    "input_text": "![全体図](https://example.com/overview.png)\n\n## 流れ\n- 計画する\n- 実装する\n",
+    "expected_page_group": [
+      "![全体図](https://example.com/overview.png)",
+      "## 流れ\n- 計画する\n- 実装する"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/overview.png\" alt=\"全体図\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>流れ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>計画する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実装する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-04",
+    "input_text": "## **重要** な話\n- 先に結論を言う\n",
+    "expected_page_group": [
+      "## **重要** な話\n- 先に結論を言う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strong><Str>重要</Str></Strong><Str> な話</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>先に結論を言う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-05",
+    "input_text": "## `uv` の使い方\n- 依存を同期する\n- スクリプトを実行する\n",
+    "expected_page_group": [
+      "## `uv` の使い方\n- 依存を同期する\n- スクリプトを実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Code>uv</Code><Str> の使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存を同期する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>スクリプトを実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-06",
+    "input_text": "## 一覧\n9. 九番目\n10. 十番目\n",
+    "expected_page_group": [
+      "## 一覧\n9. 九番目\n10. 十番目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>一覧</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>九番目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>十番目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-07",
+    "input_text": "",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112212-08",
+    "input_text": "## 参考動画\n[発表の録画](https://example.com/talk)\n- 長さは 20 分\n",
+    "expected_page_group": [
+      "## 参考動画\n[発表の録画](https://example.com/talk)\n- 長さは 20 分"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考動画</Str></title><blocks><TextBlock><Paragraph><Anchor href=\"https://example.com/talk\"><Str>発表の録画</Str></Anchor></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>長さは 20 分</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-09",
+    "input_text": "## 完了 🎉\n- 初回リリース ✅\n- 次は改善 🚀\n",
+    "expected_page_group": [
+      "## 完了 🎉\n- 初回リリース ✅\n- 次は改善 🚀"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>完了 🎉</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>初回リリース ✅</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>次は改善 🚀</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112212-10",
+    "input_text": "## 持ち物\n－ 水筒\n－ タオル\n",
+    "expected_page_group": [
+      "## 持ち物\n－ 水筒\n－ タオル"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水筒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タオル</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
