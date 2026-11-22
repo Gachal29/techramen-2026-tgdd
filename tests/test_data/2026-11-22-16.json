@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112216-01",
+    "input_text": "# LT練習会の運営メモ\n\n![会場の配置](https://example.com/layout.png)\n\n## 開催の目的\n\n## 進め方\n毎月第 2 水曜に開く\n- 1 人 5 分で話す\n- 感想は付箋に書く\n",
+    "expected_page_group": [
+      "# LT練習会の運営メモ",
+      "![会場の配置](https://example.com/layout.png)",
+      "## 開催の目的",
+      "## 進め方\n毎月第 2 水曜に開く\n- 1 人 5 分で話す\n- 感想は付箋に書く"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>LT練習会の運営メモ</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/layout.png\" alt=\"会場の配置\" /></FigurePage>",
+      "<HeadingPage id=\"p2\"><title><Str>開催の目的</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p3\"><title><Str>進め方</Str></title><blocks><TextBlock><Paragraph><Str>毎月第 2 水曜に開く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>1 人 5 分で話す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>感想は付箋に書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-02",
+    "input_text": "## 進行\n開始前に確認する\n1. 受付\n2. 発表\n3. 懇親会\n\n## 担当\n- 司会\n  - 進行表を読む\n- 時計係\n",
+    "expected_page_group": [
+      "## 進行\n開始前に確認する\n1. 受付\n2. 発表\n3. 懇親会",
+      "## 担当\n- 司会\n  - 進行表を読む\n- 時計係"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>進行</Str></title><blocks><TextBlock><Paragraph><Str>開始前に確認する</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>受付</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>発表</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>懇親会</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>担当</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>司会</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>進行表を読む</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>時計係</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-03",
+    "input_text": "# 勉強会の運営\n## 目的\n- 知見を共有する\n## 頻度\n",
+    "expected_page_group": [
+      "# 勉強会の運営",
+      "## 目的\n- 知見を共有する",
+      "## 頻度"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>勉強会の運営</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>目的</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>知見を共有する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>頻度</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-04",
+    "input_text": "## 受付\n- 名札を渡す\n    - 手書きでよい\n- 資料を配る\n",
+    "expected_page_group": [
+      "## 受付\n- 名札を渡す\n    - 手書きでよい\n- 資料を配る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>受付</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>名札を渡す</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>手書きでよい</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>資料を配る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-05",
+    "input_text": "## 準備\n\n\n\n- 会場を押さえる\n\n\n\n## 当日\n- 機材を運ぶ\n",
+    "expected_page_group": [
+      "## 準備\n\n\n\n- 会場を押さえる",
+      "## 当日\n- 機材を運ぶ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>会場を押さえる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>当日</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>機材を運ぶ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-06",
+    "input_text": "## 持ち物\n-\t水筒\n-\tタオル\n",
+    "expected_page_group": [
+      "## 持ち物\n-\t水筒\n-\tタオル"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水筒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タオル</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-07",
+    "input_text": "## 結論\n**先に *速さ* を決める** のが大事\n- 次に品質\n",
+    "expected_page_group": [
+      "## 結論\n**先に *速さ* を決める** のが大事\n- 次に品質"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>結論</Str></title><blocks><TextBlock><Paragraph><Strong><Str>先に </Str><Em><Str>速さ</Str></Em><Str> を決める</Str></Strong><Str> のが大事</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次に品質</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-08",
+    "input_text": "## 条件\nR&D 部門に確認する\n- if (a < b && c > d) を使う\n",
+    "expected_page_group": [
+      "## 条件\nR&D 部門に確認する\n- if (a < b && c > d) を使う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>条件</Str></title><blocks><TextBlock><Paragraph><Str>R&amp;D 部門に確認する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>if (a &lt; b &amp;&amp; c &gt; d) を使う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-09",
+    "input_text": "- 先に結論を書く\n- 理由は後で足す\n\n## 詳細\n結論は 2 点ある\n",
+    "expected_page_group": [
+      "- 先に結論を書く\n- 理由は後で足す",
+      "## 詳細\n結論は 2 点ある"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>先に結論を書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>理由は後で足す</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>",
+      "<GeneralPage id=\"p2\"><title><Str>詳細</Str></title><blocks><TextBlock><Paragraph><Str>結論は 2 点ある</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112216-10",
+    "input_text": "##会場の下見\n- 席数を数える\n- 電源を探す\n",
+    "expected_page_group": [
+      "##会場の下見\n- 席数を数える\n- 電源を探す"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>会場の下見</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>席数を数える</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>電源を探す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
