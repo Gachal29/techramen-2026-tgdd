@@ -1,0 +1,114 @@
+[
+    {
+        "test_data_id": "2026112221-01",
+        "input_text": "# CIを10分短縮した話\n\n## 遅かった原因\nテストを直列で回していた\n- 依存の取得に3分\n- E2Eが12分\n\n## 対策\n- キャッシュを使う\n- 並列に分ける\n\n## 結果\n",
+        "expected_page_group": [
+            "# CIを10分短縮した話",
+            "## 遅かった原因\nテストを直列で回していた\n- 依存の取得に3分\n- E2Eが12分",
+            "## 対策\n- キャッシュを使う\n- 並列に分ける",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>CIを10分短縮した話</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>遅かった原因</Str></title><blocks><TextBlock><Paragraph><Str>テストを直列で回していた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存の取得に3分</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>E2Eが12分</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>キャッシュを使う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>並列に分ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-02",
+        "input_text": "![ビルド時間の推移](https://example.com/before.png)\n![改善後の推移](https://example.com/after.png)\n## 比較\n- 左が改善前\n- 右が改善後\n",
+        "expected_page_group": [
+            "![ビルド時間の推移](https://example.com/before.png)",
+            "![改善後の推移](https://example.com/after.png)",
+            "## 比較\n- 左が改善前\n- 右が改善後"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/before.png\" alt=\"ビルド時間の推移\" /></FigurePage>",
+            "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/after.png\" alt=\"改善後の推移\" /></FigurePage>",
+            "<GeneralPage id=\"p3\"><title><Str>比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>左が改善前</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>右が改善後</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-03",
+        "input_text": "## 手順\n1. 依存を入れる\n2. **テスト**を回す\n3. 結果を見る\n",
+        "expected_page_group": [
+            "## 手順\n1. 依存を入れる\n2. **テスト**を回す\n3. 結果を見る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>依存を入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>テスト</Str></Strong><Str>を回す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>結果を見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-04",
+        "input_text": "## 補足\n**詳細は `docs/ci.md` と [社内Wiki](https://example.com/wiki) を見る**\n",
+        "expected_page_group": [
+            "## 補足\n**詳細は `docs/ci.md` と [社内Wiki](https://example.com/wiki) を見る**"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>補足</Str></title><blocks><TextBlock><Paragraph><Strong><Str>詳細は </Str><Code>docs/ci.md</Code><Str> と </Str><Anchor href=\"https://example.com/wiki\"><Str>社内Wiki</Str></Anchor><Str> を見る</Str></Strong></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-05",
+        "input_text": "## 種類\n- 単体テスト\n  1. 関数ごと\n  2. 境界値\n- 結合テスト\n",
+        "expected_page_group": [
+            "## 種類\n- 単体テスト\n  1. 関数ごと\n  2. 境界値\n- 結合テスト"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>種類</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>単体テスト</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>関数ごと</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>境界値</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>結合テスト</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-06",
+        "input_text": "## 画面\n![一覧画面](https://example.com/list.png)\n一覧で状態を見る\n![詳細画面](https://example.com/detail.png)\n",
+        "expected_page_group": [
+            "## 画面\n![一覧画面](https://example.com/list.png)\n一覧で状態を見る\n![詳細画面](https://example.com/detail.png)"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>画面</Str></title><blocks><ImageFigure src=\"https://example.com/list.png\" alt=\"一覧画面\" /><TextBlock><Paragraph><Str>一覧で状態を見る</Str></Paragraph></TextBlock><ImageFigure src=\"https://example.com/detail.png\" alt=\"詳細画面\" /></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-07",
+        "input_text": "## 書き方\n見出しは ## で書く\n- 行の途中の ## は区切りにしない\n- # も同じ\n",
+        "expected_page_group": [
+            "## 書き方\n見出しは ## で書く\n- 行の途中の ## は区切りにしない\n- # も同じ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>書き方</Str></title><blocks><TextBlock><Paragraph><Str>見出しは ## で書く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>行の途中の ## は区切りにしない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str># も同じ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-08",
+        "input_text": "\n\n\n## 本題\n- 先頭に空行がある\n\n\n- 途中にも空行がある\n\n\n\n## おわり\n\n\n",
+        "expected_page_group": [
+            "## 本題\n- 先頭に空行がある\n\n\n- 途中にも空行がある",
+            "## おわり"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>本題</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>先頭に空行がある</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>途中にも空行がある</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>おわり</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-09",
+        "input_text": "## 持ち物\n・水筒\n・タオル\n・着替え\n",
+        "expected_page_group": [
+            "## 持ち物\n・水筒\n・タオル\n・着替え"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水筒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タオル</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>着替え</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112221-10",
+        "input_text": "## 参考\n* [公式](https://example.com/official) を読む\n* [ブログ](https://example.com/blog) も見る\n",
+        "expected_page_group": [
+            "## 参考\n* [公式](https://example.com/official) を読む\n* [ブログ](https://example.com/blog) も見る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/official\"><Str>公式</Str></Anchor><Str> を読む</Str></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://example.com/blog\"><Str>ブログ</Str></Anchor><Str> も見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
