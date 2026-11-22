@@ -1,0 +1,116 @@
+[
+    {
+        "test_data_id": "2026112301-01",
+        "input_text": "# 監視アラートを整理した話\n\n## 困っていたこと\n- 夜中に通知が鳴る\n- 大半は対応不要\n\n## 方針\n- 対応が必要なものだけ残す\n  - 判断基準を決める\n- 残りは朝にまとめて見る\n\n## おわりに\n",
+        "expected_page_group": [
+            "# 監視アラートを整理した話",
+            "## 困っていたこと\n- 夜中に通知が鳴る\n- 大半は対応不要",
+            "## 方針\n- 対応が必要なものだけ残す\n  - 判断基準を決める\n- 残りは朝にまとめて見る",
+            "## おわりに"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>監視アラートを整理した話</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>困っていたこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>夜中に通知が鳴る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>大半は対応不要</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>対応が必要なものだけ残す</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>判断基準を決める</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>残りは朝にまとめて見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>おわりに</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-02",
+        "input_text": "# 当番の決め方\n\n## 運用ルール\n基本は二人体制\n- 一次対応は当番\n- 二次対応は担当チーム\n詳細は別紙\n",
+        "expected_page_group": [
+            "# 当番の決め方",
+            "## 運用ルール\n基本は二人体制\n- 一次対応は当番\n- 二次対応は担当チーム\n詳細は別紙"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>当番の決め方</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>運用ルール</Str></title><blocks><TextBlock><Paragraph><Str>基本は二人体制</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一次対応は当番</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二次対応は担当チーム</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>詳細は別紙</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-03",
+        "input_text": "## 流れ\n![対応フロー](https://example.com/flow.png)\n- 検知する\n- 判断する\n\n![](https://example.com/graph.png)\n",
+        "expected_page_group": [
+            "## 流れ\n![対応フロー](https://example.com/flow.png)\n- 検知する\n- 判断する",
+            "![](https://example.com/graph.png)"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>流れ</Str></title><blocks><ImageFigure src=\"https://example.com/flow.png\" alt=\"対応フロー\" /><Cluster marker=\"true\"><TextBlock><Paragraph><Str>検知する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>判断する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/graph.png\" /></FigurePage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-04",
+        "input_text": "## 概要\r\n- 一つ目\r\n- 二つ目\r\n\r\n## 詳細\r\n補足を書く\r\n",
+        "expected_page_group": [
+            "## 概要\n- 一つ目\n- 二つ目",
+            "## 詳細\n補足を書く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>詳細</Str></title><blocks><TextBlock><Paragraph><Str>補足を書く</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-05",
+        "input_text": "## まとめ   \n- 一つ目  \n- 二つ目\t\n",
+        "expected_page_group": [
+            "## まとめ\n- 一つ目\n- 二つ目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-06",
+        "input_text": "## 条件式\n- `a < b && c > d` のとき通知する\n- `x & y` は使わない\n",
+        "expected_page_group": [
+            "## 条件式\n- `a < b && c > d` のとき通知する\n- `x & y` は使わない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>条件式</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Code>a &lt; b &amp;&amp; c &gt; d</Code><Str> のとき通知する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>x &amp; y</Code><Str> は使わない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-07",
+        "input_text": "## 参照\n- [**公式ドキュメント**](https://example.com/docs)\n- [*非公式* メモ](https://example.com/memo)\n",
+        "expected_page_group": [
+            "## 参照\n- [**公式ドキュメント**](https://example.com/docs)\n- [*非公式* メモ](https://example.com/memo)"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参照</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/docs\"><Strong><Str>公式ドキュメント</Str></Strong></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://example.com/memo\"><Em><Str>非公式</Str></Em><Str> メモ</Str></Anchor></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-08",
+        "input_text": "## 優先度\n9. 障害対応\n10. 問い合わせ\n11. 改善\n",
+        "expected_page_group": [
+            "## 優先度\n9. 障害対応\n10. 問い合わせ\n11. 改善"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>優先度</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>障害対応</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>問い合わせ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>改善</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-09",
+        "input_text": "## C# と F# の話\n- 言語機能を比べる\n",
+        "expected_page_group": [
+            "## C# と F# の話\n- 言語機能を比べる"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>C# と F# の話</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>言語機能を比べる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112301-10",
+        "input_text": "## 1. はじめに\n- 背景を書く\n\n## 2. 発言\n- \"ship it\" と 'LGTM' と「やろう」\n",
+        "expected_page_group": [
+            "## 1. はじめに\n- 背景を書く",
+            "## 2. 発言\n- \"ship it\" と 'LGTM' と「やろう」"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>1. はじめに</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>背景を書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>2. 発言</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>\"ship it\" と 'LGTM' と「やろう」</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
