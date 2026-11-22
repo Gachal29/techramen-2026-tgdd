@@ -1,0 +1,106 @@
+[
+  {
+    "test_data_id": "2026112306-01",
+    "input_text": "# Taskfile入門\n\n## なぜ使うか\n- コマンドを覚えなくて済む\n- READMEが短くなる\n\n## 書き方は次のページ",
+    "expected_page_group": [
+      "# Taskfile入門",
+      "## なぜ使うか\n- コマンドを覚えなくて済む\n- READMEが短くなる",
+      "## 書き方は次のページ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>Taskfile入門</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>なぜ使うか</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>コマンドを覚えなくて済む</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>READMEが短くなる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>書き方は次のページ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-02",
+    "input_text": "# 読書会の感想\n\n## 良かった点\n読む量が決まっていて楽だった\n毎回誰かが要約してくれた\n\n## 次回",
+    "expected_page_group": [
+      "# 読書会の感想",
+      "## 良かった点\n読む量が決まっていて楽だった\n毎回誰かが要約してくれた",
+      "## 次回"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>読書会の感想</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>良かった点</Str></title><blocks><TextBlock><Paragraph><Str>読む量が決まっていて楽だった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>毎回誰かが要約してくれた</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>次回</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-03",
+    "input_text": "# 引っ越しで学んだこと\n\n![段ボールの山](https://example.com/boxes.jpg)\n\n## 学び\n- 捨てるものを先に決める\n  - 迷ったら一旦保留\n- 荷造りは部屋ごとに行う",
+    "expected_page_group": [
+      "# 引っ越しで学んだこと",
+      "![段ボールの山](https://example.com/boxes.jpg)",
+      "## 学び\n- 捨てるものを先に決める\n  - 迷ったら一旦保留\n- 荷造りは部屋ごとに行う"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>引っ越しで学んだこと</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/boxes.jpg\" alt=\"段ボールの山\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>学び</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>捨てるものを先に決める</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>迷ったら一旦保留</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>荷造りは部屋ごとに行う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-04",
+    "input_text": "## 構成\n- 親\n\t- 子その1\n\t- 子その2\n- 別の親",
+    "expected_page_group": [
+      "## 構成\n- 親\n\t- 子その1\n\t- 子その2\n- 別の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子その1</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>子その2</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>別の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-05",
+    "input_text": "## 概要\nああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ",
+    "expected_page_group": [
+      "## 概要\nああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><TextBlock><Paragraph><Str>ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-06",
+    "input_text": "## [公式サイト](https://example.com/top)\n- 最新情報が載っている",
+    "expected_page_group": [
+      "## [公式サイト](https://example.com/top)\n- 最新情報が載っている"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Anchor href=\"https://example.com/top\"><Str>公式サイト</Str></Anchor></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>最新情報が載っている</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-07",
+    "input_text": "## 記法の確認\n`**強調**` と書くと **強調** になる",
+    "expected_page_group": [
+      "## 記法の確認\n`**強調**` と書くと **強調** になる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法の確認</Str></title><blocks><TextBlock><Paragraph><Code>**強調**</Code><Str> と書くと </Str><Strong><Str>強調</Str></Strong><Str> になる</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-08",
+    "input_text": "## 記号の扱い\n- <div> と &amp; をそのまま書く\n- 5 > 3 かつ 2 < 4",
+    "expected_page_group": [
+      "## 記号の扱い\n- <div> と &amp; をそのまま書く\n- 5 > 3 かつ 2 < 4"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記号の扱い</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>&lt;div&gt; と &amp;amp; をそのまま書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>5 &gt; 3 かつ 2 &lt; 4</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112306-09",
+    "input_text": "",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112306-10",
+    "input_text": "   \n\t\n  \n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  }
+]
