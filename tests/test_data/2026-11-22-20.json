@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112220-01",
+    "input_text": "# 読書会の続け方\n\n## 選書\n- 薄い本から\n  - 100 ページ以内\n- 持ち回りで決める\n\n## 運営\n毎回 30 分だけ集まる\n\n## 次回\n",
+    "expected_page_group": [
+      "# 読書会の続け方",
+      "## 選書\n- 薄い本から\n  - 100 ページ以内\n- 持ち回りで決める",
+      "## 運営\n毎回 30 分だけ集まる",
+      "## 次回"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>読書会の続け方</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>選書</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>薄い本から</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>100 ページ以内</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>持ち回りで決める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>運営</Str></title><blocks><TextBlock><Paragraph><Str>毎回 30 分だけ集まる</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>次回</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-02",
+    "input_text": "![料金表](https://example.com/price.png)\n\n## 比較\n1. 無料枠で試す\n2. 有料は後で\n\n## 結論\n- 小さく始める\n",
+    "expected_page_group": [
+      "![料金表](https://example.com/price.png)",
+      "## 比較\n1. 無料枠で試す\n2. 有料は後で",
+      "## 結論\n- 小さく始める"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/price.png\" alt=\"料金表\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>比較</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>無料枠で試す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>有料は後で</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>結論</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-03",
+    "input_text": "# 失敗談: 本番を消した\n\n## 経緯\n- 金曜の夜に作業した\n- 確認せず実行した\n\n## 教訓\n**本番で試さない**\n",
+    "expected_page_group": [
+      "# 失敗談: 本番を消した",
+      "## 経緯\n- 金曜の夜に作業した\n- 確認せず実行した",
+      "## 教訓\n**本番で試さない**"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>失敗談: 本番を消した</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>経緯</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>金曜の夜に作業した</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>確認せず実行した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>教訓</Str></title><blocks><TextBlock><Paragraph><Strong><Str>本番で試さない</Str></Strong></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-04",
+    "input_text": "## 要約\n- 結論を先に\n- 根拠は後で",
+    "expected_page_group": [
+      "## 要約\n- 結論を先に\n- 根拠は後で"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>要約</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>結論を先に</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>根拠は後で</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-05",
+    "input_text": "## 手順\n1. 準備する\n  - 道具を揃える\n  - 場所を決める\n2. 実行する\n",
+    "expected_page_group": [
+      "## 手順\n1. 準備する\n  - 道具を揃える\n  - 場所を決める\n2. 実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>道具を揃える</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>場所を決める</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-06",
+    "input_text": "## `uv run` の使い方\n- スクリプトを実行する\n",
+    "expected_page_group": [
+      "## `uv run` の使い方\n- スクリプトを実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Code>uv run</Code><Str> の使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>スクリプトを実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-07",
+    "input_text": "## 反応\n- 好評だった 🎉\n- 次回は 👀 も増やす\n",
+    "expected_page_group": [
+      "## 反応\n- 好評だった 🎉\n- 次回は 👀 も増やす"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>反応</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>好評だった 🎉</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>次回は 👀 も増やす</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-08",
+    "input_text": "## 連絡先\nhttps://example.com/contact\n- 質問は Slack で\n",
+    "expected_page_group": [
+      "## 連絡先\nhttps://example.com/contact\n- 質問は Slack で"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>連絡先</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/contact</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>質問は Slack で</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-09",
+    "input_text": "## 注意\n- **閉じ忘れた太字\n- 普通の項目\n",
+    "expected_page_group": [
+      "## 注意\n- **閉じ忘れた太字\n- 普通の項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>**閉じ忘れた太字</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>普通の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112220-10",
+    "input_text": "## 手順\n1) 準備する\n2) 実行する\n",
+    "expected_page_group": [
+      "## 手順\n1) 準備する\n2) 実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
