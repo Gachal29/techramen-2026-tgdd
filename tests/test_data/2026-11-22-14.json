@@ -1,0 +1,122 @@
+[
+  {
+    "test_data_id": "2026112214-01",
+    "input_text": "# ペアプロ導入の振り返り\n\n## 背景\nレビュー待ちが長かった\n\n## 試したこと\n- 週に 2 回ペアで書く\n  - 役割は 15 分で交代\n- 終わったら記録を残す\n\n## 結果\n",
+    "expected_page_group": [
+      "# ペアプロ導入の振り返り",
+      "## 背景\nレビュー待ちが長かった",
+      "## 試したこと\n- 週に 2 回ペアで書く\n  - 役割は 15 分で交代\n- 終わったら記録を残す",
+      "## 結果"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ペアプロ導入の振り返り</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>レビュー待ちが長かった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>試したこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>週に 2 回ペアで書く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>役割は 15 分で交代</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>終わったら記録を残す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>結果</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-02",
+    "input_text": "![ペア作業の様子](https://example.com/pair.png)  \n\n## 良かった点\n1. 質問しやすい\n2. 知識が広がる\n\n## 課題\n- 疲れる",
+    "expected_page_group": [
+      "![ペア作業の様子](https://example.com/pair.png)",
+      "## 良かった点\n1. 質問しやすい\n2. 知識が広がる",
+      "## 課題\n- 疲れる"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/pair.png\" alt=\"ペア作業の様子\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>良かった点</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>質問しやすい</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>知識が広がる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>課題</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>疲れる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-03",
+    "input_text": "# 発表の準備メモ\n\n## 構成\n最初に結論を言う\n具体例は 2 つに絞る\n\n## 質疑\n\n## 時間配分\n- 導入 1 分\n- 本編 3 分\n余白を残す\n",
+    "expected_page_group": [
+      "# 発表の準備メモ",
+      "## 構成\n最初に結論を言う\n具体例は 2 つに絞る",
+      "## 質疑",
+      "## 時間配分\n- 導入 1 分\n- 本編 3 分\n余白を残す"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>発表の準備メモ</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><TextBlock><Paragraph><Str>最初に結論を言う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>具体例は 2 つに絞る</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>質疑</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p3\"><title><Str>時間配分</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>導入 1 分</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>本編 3 分</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>余白を残す</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-04",
+    "input_text": "## 経緯\nきっかけは障害だった\n\n再発防止を考えた\n\n## 対策\n- 監視を足す\n\n- 手順書を直す\n\n- 訓練をする\n",
+    "expected_page_group": [
+      "## 経緯\nきっかけは障害だった\n\n再発防止を考えた",
+      "## 対策\n- 監視を足す\n\n- 手順書を直す\n\n- 訓練をする"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>経緯</Str></title><blocks><TextBlock><Paragraph><Str>きっかけは障害だった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>再発防止を考えた</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>監視を足す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>手順書を直す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>訓練をする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-05",
+    "input_text": "# **爆速**で作る CLI\n\n## 作った理由\n- 既存ツールが遅い",
+    "expected_page_group": [
+      "# **爆速**で作る CLI",
+      "## 作った理由\n- 既存ツールが遅い"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Strong><Str>爆速</Str></Strong><Str>で作る CLI</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>作った理由</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>既存ツールが遅い</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-06",
+    "input_text": "## 参考リンク\n- [検索](https://example.com/search?q=tgdd&lang=ja)\n- [仕様](https://example.com/spec)",
+    "expected_page_group": [
+      "## 参考リンク\n- [検索](https://example.com/search?q=tgdd&lang=ja)\n- [仕様](https://example.com/spec)"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考リンク</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/search?q=tgdd&amp;lang=ja\"><Str>検索</Str></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://example.com/spec\"><Str>仕様</Str></Anchor></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-07",
+    "input_text": "## 閉じ忘れ\n**重要なことを書く\n- 次に直す",
+    "expected_page_group": [
+      "## 閉じ忘れ\n**重要なことを書く\n- 次に直す"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>閉じ忘れ</Str></title><blocks><TextBlock><Paragraph><Str>**重要なことを書く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次に直す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-08",
+    "input_text": "## 手順\n1. 準備する\n  - 道具を揃える\n  - 場所を決める\n2. 実行する\n3. 片付ける",
+    "expected_page_group": [
+      "## 手順\n1. 準備する\n  - 道具を揃える\n  - 場所を決める\n2. 実行する\n3. 片付ける"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>道具を揃える</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>場所を決める</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>片付ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-09",
+    "input_text": "## 持ち物\n- 水筒\n - タオル\n- 帽子",
+    "expected_page_group": [
+      "## 持ち物\n- 水筒\n - タオル\n- 帽子"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水筒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タオル</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>帽子</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112214-10",
+    "input_text": "## 買い物\n-　牛乳\n-　卵",
+    "expected_page_group": [
+      "## 買い物\n-　牛乳\n-　卵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>買い物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>牛乳</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>卵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
