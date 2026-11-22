@@ -1,0 +1,106 @@
+[
+  {
+    "test_data_id": "2026112223-01",
+    "input_text": "# 通知を減らした話\n\n## 背景\n毎朝100件の通知が届いていた\n- 重要なものが埋もれる\n- 見るのに疲れる\n\n## 対策\n- 通知元を3つに絞る\n\n## まとめ\n",
+    "expected_page_group": [
+      "# 通知を減らした話",
+      "## 背景\n毎朝100件の通知が届いていた\n- 重要なものが埋もれる\n- 見るのに疲れる",
+      "## 対策\n- 通知元を3つに絞る",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>通知を減らした話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>毎朝100件の通知が届いていた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>重要なものが埋もれる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>見るのに疲れる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>通知元を3つに絞る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112223-02",
+    "input_text": "![操作画面](https://example.com/ui.png)\n\n## 使い方\n- 起動する\n  - 初回は設定を開く\n- 検索する\n",
+    "expected_page_group": [
+      "![操作画面](https://example.com/ui.png)",
+      "## 使い方\n- 起動する\n  - 初回は設定を開く\n- 検索する"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/ui.png\" alt=\"操作画面\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>起動する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>初回は設定を開く</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>検索する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112223-03",
+    "input_text": "## 手順\n1. 問題を再現する\n2. **原因**を切り分ける\n3. 修正する\n\n## 感想\n再現が一番大変だった\n",
+    "expected_page_group": [
+      "## 手順\n1. 問題を再現する\n2. **原因**を切り分ける\n3. 修正する",
+      "## 感想\n再現が一番大変だった"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>問題を再現する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>原因</Str></Strong><Str>を切り分ける</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>修正する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>感想</Str></title><blocks><TextBlock><Paragraph><Str>再現が一番大変だった</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112223-04",
+    "input_text": "",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112223-05",
+    "input_text": "   \n\t\n　\n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112223-06",
+    "input_text": "＃ 全角の題名\n\n＃＃　はじめに\n- 項目を書く\n",
+    "expected_page_group": [
+      "＃ 全角の題名",
+      "＃＃　はじめに\n- 項目を書く"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>全角の題名</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>はじめに</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目を書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112223-07",
+    "input_text": "## 階層\n- 親\n\t- 子\n\t- 子その2\n- 次の親\n",
+    "expected_page_group": [
+      "## 階層\n- 親\n\t- 子\n\t- 子その2\n- 次の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>階層</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>子その2</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>次の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112223-08",
+    "input_text": "## ~~手作業~~ から自動へ\n- 移行した\n",
+    "expected_page_group": [
+      "## ~~手作業~~ から自動へ\n- 移行した"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strike><Str>手作業</Str></Strike><Str> から自動へ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>移行した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112223-09",
+    "input_text": "## 記法メモ\n改行は <br> で書く\n- 別の話\n",
+    "expected_page_group": [
+      "## 記法メモ\n改行は <br> で書く\n- 別の話"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法メモ</Str></title><blocks><TextBlock><Paragraph><Str>改行は &lt;br&gt; で書く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>別の話</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112223-10",
+    "input_text": "## 経緯\n\n発端は障害だった\n\n- 影響は小さかった\n",
+    "expected_page_group": [
+      "## 経緯\n\n発端は障害だった\n\n- 影響は小さかった"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>経緯</Str></title><blocks><TextBlock><Paragraph><Str>発端は障害だった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>影響は小さかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
