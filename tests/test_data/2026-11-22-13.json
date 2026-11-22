@@ -1,0 +1,110 @@
+[
+    {
+        "test_data_id": "2026112213-01",
+        "input_text": "# Rust 入門の三か月\n\n## 動機\n\n## 所有権\n借用チェッカーに何度も怒られた\n- 可変な参照は一度に 1 つだけ\n  - 読み取りだけなら複数でよい\n- 迷ったらコピーする\n",
+        "expected_page_group": [
+            "# Rust 入門の三か月",
+            "## 動機",
+            "## 所有権\n借用チェッカーに何度も怒られた\n- 可変な参照は一度に 1 つだけ\n  - 読み取りだけなら複数でよい\n- 迷ったらコピーする"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>Rust 入門の三か月</Str></title></CoverPage>",
+            "<HeadingPage id=\"p1\"><title><Str>動機</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p2\"><title><Str>所有権</Str></title><blocks><TextBlock><Paragraph><Str>借用チェッカーに何度も怒られた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>可変な参照は一度に 1 つだけ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>読み取りだけなら複数でよい</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>迷ったらコピーする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-02",
+        "input_text": "計測してから直す\n推測では直さない\n- 例外は作らない\n",
+        "expected_page_group": [
+            "計測してから直す\n推測では直さない\n- 例外は作らない"
+        ],
+        "expected_slideir_page": [
+            "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>計測してから直す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>推測では直さない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>例外は作らない</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-03",
+        "input_text": "# 発表練習の記録\n\n![練習風景](https://example.com/practice.jpg)\n\n## 反省\n",
+        "expected_page_group": [
+            "# 発表練習の記録",
+            "![練習風景](https://example.com/practice.jpg)",
+            "## 反省"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>発表練習の記録</Str></title></CoverPage>",
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/practice.jpg\" alt=\"練習風景\" /></FigurePage>",
+            "<HeadingPage id=\"p2\"><title><Str>反省</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-04",
+        "input_text": "## 手順\r\n- 材料を量る\r\n- 混ぜる\r\n\r\n## 仕上げ\r\n- 焼く\r\n",
+        "expected_page_group": [
+            "## 手順\n- 材料を量る\n- 混ぜる",
+            "## 仕上げ\n- 焼く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>材料を量る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>混ぜる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>仕上げ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>焼く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-05",
+        "input_text": "## 結果\n- 速くなった\n## 原因\n- キャッシュが効いた",
+        "expected_page_group": [
+            "## 結果\n- 速くなった",
+            "## 原因\n- キャッシュが効いた"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>速くなった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>原因</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>キャッシュが効いた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-06",
+        "input_text": "##　全角空白の見出し\n- 項目\n",
+        "expected_page_group": [
+            "##　全角空白の見出し\n- 項目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>全角空白の見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-07",
+        "input_text": "## a < b & c > d\n- 条件は a が小さいとき\n",
+        "expected_page_group": [
+            "## a < b & c > d\n- 条件は a が小さいとき"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>a &lt; b &amp; c &gt; d</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>条件は a が小さいとき</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-08",
+        "input_text": "## 見積もり   \n- 工数は 3 日  \n- 確認は 1 日 \n",
+        "expected_page_group": [
+            "## 見積もり\n- 工数は 3 日\n- 確認は 1 日"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>見積もり</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>工数は 3 日</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>確認は 1 日</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-09",
+        "input_text": "## 表示\n<b>強調</b> は使えない\n- 理由は後で書く\n",
+        "expected_page_group": [
+            "## 表示\n<b>強調</b> は使えない\n- 理由は後で書く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>表示</Str></title><blocks><TextBlock><Paragraph><Str>&lt;b&gt;強調&lt;/b&gt; は使えない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>理由は後で書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112213-10",
+        "input_text": "   \n\t\n  \n",
+        "expected_page_group": [],
+        "expected_slideir_page": []
+    }
+]
