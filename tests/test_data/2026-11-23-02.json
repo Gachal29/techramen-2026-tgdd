@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112302-01",
+    "input_text": "# 勉強会を続けるコツ\n\n## 始めた理由\n同僚と知識を共有したかった\n\n## 続けるために\n- 時間は30分に固定する\n- 発表は持ち回りにする\n\n## まとめ\n",
+    "expected_page_group": [
+      "# 勉強会を続けるコツ",
+      "## 始めた理由\n同僚と知識を共有したかった",
+      "## 続けるために\n- 時間は30分に固定する\n- 発表は持ち回りにする",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>勉強会を続けるコツ</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>始めた理由</Str></title><blocks><TextBlock><Paragraph><Str>同僚と知識を共有したかった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>続けるために</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>時間は30分に固定する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>発表は持ち回りにする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-02",
+    "input_text": "## 体制\n- 開発チーム\n  - バックエンド\n    - API\n    - バッチ\n  - フロントエンド\n- 運用チーム\n",
+    "expected_page_group": [
+      "## 体制\n- 開発チーム\n  - バックエンド\n    - API\n    - バッチ\n  - フロントエンド\n- 運用チーム"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>体制</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>開発チーム</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>バックエンド</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>API</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>バッチ</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>フロントエンド</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>運用チーム</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-03",
+    "input_text": "## 手順\n最初に環境を作る\n1. 入れる\n2. 動かす\n次に確認する\n- 画面を見る\n",
+    "expected_page_group": [
+      "## 手順\n最初に環境を作る\n1. 入れる\n2. 動かす\n次に確認する\n- 画面を見る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><TextBlock><Paragraph><Str>最初に環境を作る</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>動かす</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>次に確認する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>画面を見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-04",
+    "input_text": "# 登壇準備メモ\n## 目次\n## 本編\n## 終わりに",
+    "expected_page_group": [
+      "# 登壇準備メモ",
+      "## 目次",
+      "## 本編",
+      "## 終わりに"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>登壇準備メモ</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>目次</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>本編</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p3\"><title><Str>終わりに</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-05",
+    "input_text": "![A&B <概念図>](https://example.com/p.png?w=100&h=50)\n",
+    "expected_page_group": [
+      "![A&B <概念図>](https://example.com/p.png?w=100&h=50)"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/p.png?w=100&amp;h=50\" alt=\"A&amp;B &lt;概念図&gt;\" /></FigurePage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-06",
+    "input_text": "## 方針転換\n~~古い手順~~ をやめて *新しい手順* に移る\n`make all` が入口になる\n",
+    "expected_page_group": [
+      "## 方針転換\n~~古い手順~~ をやめて *新しい手順* に移る\n`make all` が入口になる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>方針転換</Str></title><blocks><TextBlock><Paragraph><Strike><Str>古い手順</Str></Strike><Str> をやめて </Str><Em><Str>新しい手順</Str></Em><Str> に移る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>make all</Code><Str> が入口になる</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-07",
+    "input_text": "## **重要** な `if` 文\n- 条件を *先に* 書く\n",
+    "expected_page_group": [
+      "## **重要** な `if` 文\n- 条件を *先に* 書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strong><Str>重要</Str></Strong><Str> な </Str><Code>if</Code><Str> 文</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>条件を </Str><Em><Str>先に</Str></Em><Str> 書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-08",
+    "input_text": "## 注意点\n- 一つ目は設定\n- 二つ目は権限\n補足: 権限は最小にする\n- 三つ目は監査\n",
+    "expected_page_group": [
+      "## 注意点\n- 一つ目は設定\n- 二つ目は権限\n補足: 権限は最小にする\n- 三つ目は監査"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目は設定</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二つ目は権限</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>補足: 権限は最小にする</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>三つ目は監査</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-09",
+    "input_text": "## 失敗談\n**注意 を忘れて本番を止めた\n- 確認は二人で行う\n",
+    "expected_page_group": [
+      "## 失敗談\n**注意 を忘れて本番を止めた\n- 確認は二人で行う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>失敗談</Str></title><blocks><TextBlock><Paragraph><Str>**注意 を忘れて本番を止めた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>確認は二人で行う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112302-10",
+    "input_text": "##はじめに\n- 空白がない\n\n## 終わりに ##\n- 末尾に # がある\n",
+    "expected_page_group": [
+      "##はじめに\n- 空白がない",
+      "## 終わりに ##\n- 末尾に # がある"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>はじめに</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>空白がない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>終わりに</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>末尾に # がある</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
