@@ -1,0 +1,114 @@
+[
+  {
+    "test_data_id": "2026112211-01",
+    "input_text": "# 家庭菜園の失敗録\n\n## 水やり\n朝か夕方にやるのが基本\n- 昼は避ける\n- 土の表面が乾いたらやる\n\n## 肥料\n- 元肥\n  - 植える前に入れる\n    - 入れすぎない\n- 追肥\n\n## おわりに\n",
+    "expected_page_group": [
+      "# 家庭菜園の失敗録",
+      "## 水やり\n朝か夕方にやるのが基本\n- 昼は避ける\n- 土の表面が乾いたらやる",
+      "## 肥料\n- 元肥\n  - 植える前に入れる\n    - 入れすぎない\n- 追肥",
+      "## おわりに"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>家庭菜園の失敗録</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>水やり</Str></title><blocks><TextBlock><Paragraph><Str>朝か夕方にやるのが基本</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>昼は避ける</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>土の表面が乾いたらやる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>肥料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>元肥</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>植える前に入れる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>入れすぎない</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>追肥</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>おわりに</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-02",
+    "input_text": "## 準備\n## 当日\n## 後片付け\n- ゴミを分ける\n",
+    "expected_page_group": [
+      "## 準備",
+      "## 当日",
+      "## 後片付け\n- ゴミを分ける"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Str>準備</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>当日</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p3\"><title><Str>後片付け</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ゴミを分ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-03",
+    "input_text": "## 手順\n1. 土を耕す\n2. 苗を植える\n水は朝にやる\n",
+    "expected_page_group": [
+      "## 手順\n1. 土を耕す\n2. 苗を植える\n水は朝にやる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>土を耕す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>苗を植える</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>水は朝にやる</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-04",
+    "input_text": "## 進捗\n#3 まで終わった\n- 次は #4 に進む\n",
+    "expected_page_group": [
+      "## 進捗\n#3 まで終わった\n- 次は #4 に進む"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>進捗</Str></title><blocks><TextBlock><Paragraph><Str>#3 まで終わった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次は #4 に進む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-05",
+    "input_text": "1. 水を入れる\n2. 火にかける\n",
+    "expected_page_group": [
+      "1. 水を入れる\n2. 火にかける"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>水を入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>火にかける</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-06",
+    "input_text": "## 参考\nhttps://example.com/guide\n- 初心者向けの解説\n",
+    "expected_page_group": [
+      "## 参考\nhttps://example.com/guide\n- 初心者向けの解説"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/guide</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>初心者向けの解説</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-07",
+    "input_text": "## 注意\n`rm -rf の前に確認する\n- バックアップを取る\n",
+    "expected_page_group": [
+      "## 注意\n`rm -rf の前に確認する\n- バックアップを取る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Str>`rm -rf の前に確認する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>バックアップを取る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-08",
+    "input_text": "## 記号\n- 行の途中の ## は見出しではない\n- # だけの項目も見出しではない\n",
+    "expected_page_group": [
+      "## 記号\n- 行の途中の ## は見出しではない\n- # だけの項目も見出しではない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記号</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>行の途中の ## は見出しではない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str># だけの項目も見出しではない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-09",
+    "input_text": "＃＃ 水やりのコツ\n- 朝にやる\n\n＃＃ 肥料のコツ\n- 月に 1 回\n",
+    "expected_page_group": [
+      "＃＃ 水やりのコツ\n- 朝にやる",
+      "＃＃ 肥料のコツ\n- 月に 1 回"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>水やりのコツ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>朝にやる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>肥料のコツ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>月に 1 回</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112211-10",
+    "input_text": "## 収穫\n- トマト\n\t- ミニトマト\n- きゅうり\n",
+    "expected_page_group": [
+      "## 収穫\n- トマト\n\t- ミニトマト\n- きゅうり"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>収穫</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>トマト</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ミニトマト</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>きゅうり</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
