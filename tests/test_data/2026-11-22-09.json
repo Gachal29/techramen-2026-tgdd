@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112209-01",
+    "input_text": "# 社内Wikiを捨てた話\n\n![移行前の画面](https://example.com/wiki.png)\n\n## 背景\n誰も更新しなくなっていた\n\n## 移行先\n- リポジトリの README\n- 検索はコード検索に任せる\n\n## おわり\n",
+    "expected_page_group": [
+      "# 社内Wikiを捨てた話",
+      "![移行前の画面](https://example.com/wiki.png)",
+      "## 背景\n誰も更新しなくなっていた",
+      "## 移行先\n- リポジトリの README\n- 検索はコード検索に任せる",
+      "## おわり"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>社内Wikiを捨てた話</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/wiki.png\" alt=\"移行前の画面\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>誰も更新しなくなっていた</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>移行先</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>リポジトリの README</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>検索はコード検索に任せる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p4\"><title><Str>おわり</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-02",
+    "input_text": "- 先に結論\n  - 移行は 2 週間で終わった\n  - 困ったのは権限だけ\n- 詳細は後で\n\n## 経緯\n",
+    "expected_page_group": [
+      "- 先に結論\n  - 移行は 2 週間で終わった\n  - 困ったのは権限だけ\n- 詳細は後で",
+      "## 経緯"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>先に結論</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>移行は 2 週間で終わった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>困ったのは権限だけ</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>詳細は後で</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>",
+      "<HeadingPage id=\"p2\"><title><Str>経緯</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-03",
+    "input_text": "# 開発環境の整備\n\n## 手順\n1. エディタを入れる\n2. 拡張機能を入れる\n3. 設定を共有する\n\n## 以上\n",
+    "expected_page_group": [
+      "# 開発環境の整備",
+      "## 手順\n1. エディタを入れる\n2. 拡張機能を入れる\n3. 設定を共有する",
+      "## 以上"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>開発環境の整備</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>エディタを入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>拡張機能を入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>設定を共有する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>以上</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-04",
+    "input_text": "## C# と F# の比較\n- 書き味が違う\n- 型推論の効き方も違う\n",
+    "expected_page_group": [
+      "## C# と F# の比較\n- 書き味が違う\n- 型推論の効き方も違う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>C# と F# の比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>書き味が違う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>型推論の効き方も違う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-05",
+    "input_text": "＃ 新人研修の振り返り\n\n## 良かった点\n- 先輩が丁寧だった\n",
+    "expected_page_group": [
+      "＃ 新人研修の振り返り",
+      "## 良かった点\n- 先輩が丁寧だった"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>新人研修の振り返り</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>良かった点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>先輩が丁寧だった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-06",
+    "input_text": "## [公式サイト](https://example.com) を読む\n- 最初に目次を見る\n",
+    "expected_page_group": [
+      "## [公式サイト](https://example.com) を読む\n- 最初に目次を見る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Anchor href=\"https://example.com\"><Str>公式サイト</Str></Anchor><Str> を読む</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>最初に目次を見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-07",
+    "input_text": "## 書き方\n__大事__ なことは _先に_ 書く\n- 理由は後でいい\n",
+    "expected_page_group": [
+      "## 書き方\n__大事__ なことは _先に_ 書く\n- 理由は後でいい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>書き方</Str></title><blocks><TextBlock><Paragraph><Strong><Str>大事</Str></Strong><Str> なことは </Str><Em><Str>先に</Str></Em><Str> 書く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>理由は後でいい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-08",
+    "input_text": "## 記法\n`**太字**` と書くと太字になる\n- 例は `*斜体*` でも同じ\n",
+    "expected_page_group": [
+      "## 記法\n`**太字**` と書くと太字になる\n- 例は `*斜体*` でも同じ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法</Str></title><blocks><TextBlock><Paragraph><Code>**太字**</Code><Str> と書くと太字になる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>例は </Str><Code>*斜体*</Code><Str> でも同じ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-09",
+    "input_text": "## 学び\n**早く出して *直す* のが近道**\n- 完璧を待たない\n",
+    "expected_page_group": [
+      "## 学び\n**早く出して *直す* のが近道**\n- 完璧を待たない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>学び</Str></title><blocks><TextBlock><Paragraph><Strong><Str>早く出して </Str><Em><Str>直す</Str></Em><Str> のが近道</Str></Strong></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>完璧を待たない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112209-10",
+    "input_text": "- ~~Excel 管理~~ をやめた\n- 理由は属人化\n",
+    "expected_page_group": [
+      "- ~~Excel 管理~~ をやめた\n- 理由は属人化"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strike><Str>Excel 管理</Str></Strike><Str> をやめた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>理由は属人化</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>"
+    ]
+  }
+]
