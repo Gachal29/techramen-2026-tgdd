@@ -246,5 +246,25 @@
       "<GeneralPage id=\"p1\"><title><Str>設定例</Str></title><blocks><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>## これは見出しではない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>key = value</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>```</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>保存して再起動する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
       "<HeadingPage id=\"p2\"><title><Str>次</Str></title></HeadingPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112303-09",
+    "input_text": "## 論点\n● 速度\n● コスト\n● 保守性\n",
+    "expected_page_group": [
+      "## 論点\n● 速度\n● コスト\n● 保守性"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>論点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>速度</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>コスト</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>保守性</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112303-10",
+    "input_text": "## 手順\n１．準備する\n２．実行する\n３．確認する\n",
+    "expected_page_group": [
+      "## 手順\n１．準備する\n２．実行する\n３．確認する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>確認する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]

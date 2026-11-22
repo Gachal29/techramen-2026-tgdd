@@ -16,7 +16,10 @@ HEADING_RE = re.compile(r"^[ \t　]*[#＃]{2}(?![#＃])[ \t　]*(?P<text>.*\S)\s
 CLOSING_HASHES_RE = re.compile(r"[ \t　]+[#＃]+$")
 # `-`・`*`・`+`（全角の `－`・`＊`・`＋` も）は箇条書き、`1.`・`1)` は番号付き。
 # 中黒 `・`（半角の `･` も）と、ほかのアプリから写したときに残る箇条書きの記号 `•`・`◦`・`‣` も箇条書きにする。
+# 黒丸・白丸などの記号 `●`・`○`・`◆`・`◇`・`■`・`□`・`▪`・`▫` も箇条書きにする。
 # 日本語のメモでは後ろに空白を置かないことが多いため、これらの記号の後の空白はなくてよい。
+# 番号付きは全角の数字と、全角の `．`・`）` も受け付ける（`１．準備する`）。全角の `．`・`）` の後の
+# 空白はなくてよい（ただし直後に数字が続く `１．５` は小数として扱い、番号付きにしない）。
 # `-`・`－` は、後ろに空白がなくても、日本語などの文字（ASCII・数字・空白・`－` 以外）が直後に続けば
 # 箇条書きにする（`-小さく始める`）。`-5 度` のような負の数、`--option`・`---` は箇条書きにしない。
 # `*`・`+` は強調（`**太字**`）などと区別できないため、後ろに空白が必要。
@@ -24,8 +27,9 @@ CLOSING_HASHES_RE = re.compile(r"[ \t　]+[#＃]+$")
 BULLET_RE = re.compile(
     r"^(?P<indent>[ \t　]*)"
     r"(?:(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+"
+    r"|(?P<wide_number>\d+)[．）](?!\d)[ \t　]*"
     r"|(?P<dash>[-－])(?=[^\x00-\x7F\s\d－])"
-    r"|(?P<dot>[・･•◦‣])[ \t　]*)"
+    r"|(?P<dot>[・･•◦‣●○◆◇■□▪▫])[ \t　]*)"
     r"(?P<text>.*)$"
 )
 # リンク・画像の URL。`https://ja.wikipedia.org/wiki/Python_(言語)` のように、URL の中の
@@ -292,7 +296,7 @@ def _build_blocks(lines: list[str]) -> ET.Element:
     for line in lines:
         bullet = BULLET_RE.match(line)
         if bullet and bullet["text"].strip():
-            ordered = bullet["number"] is not None
+            ordered = bullet["number"] is not None or bullet["wide_number"] is not None
             level = min(_indent_level(bullet["indent"]), len(stack))
             del stack[level + 1 :]
             if len(stack) > level and stack[level][1] != ordered:
