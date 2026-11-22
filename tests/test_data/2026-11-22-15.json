@@ -1,0 +1,120 @@
+[
+  {
+    "test_data_id": "2026112215-01",
+    "input_text": "# 自作キーボード製作記\n\n## 部品選び\n基板は既製品を買った\n- スイッチは 40 個\n  - 軸は静音タイプ\n    - 潤滑は省略\n- ケースは 3D プリント\n\n## 組み立て\n",
+    "expected_page_group": [
+      "# 自作キーボード製作記",
+      "## 部品選び\n基板は既製品を買った\n- スイッチは 40 個\n  - 軸は静音タイプ\n    - 潤滑は省略\n- ケースは 3D プリント",
+      "## 組み立て"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>自作キーボード製作記</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>部品選び</Str></title><blocks><TextBlock><Paragraph><Str>基板は既製品を買った</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>スイッチは 40 個</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>軸は静音タイプ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>潤滑は省略</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>ケースは 3D プリント</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>組み立て</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-02",
+    "input_text": "![](https://example.com/arch.svg)\n\n## 学んだこと\n1. 小さく始める\n2. 記録を残す\n\n## 次の一歩\n- 毎週続ける\n",
+    "expected_page_group": [
+      "![](https://example.com/arch.svg)",
+      "## 学んだこと\n1. 小さく始める\n2. 記録を残す",
+      "## 次の一歩\n- 毎週続ける"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/arch.svg\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>学んだこと</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>記録を残す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>次の一歩</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎週続ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-03",
+    "input_text": "# 社内ツール紹介\n\n## 概要\n**Slack** 連携の *通知* ボット\n\n## 使い方\n- `/notify` を送る\n- 詳細は [README](https://example.com/readme) を参照\n- ~~旧コマンド~~ は廃止\n",
+    "expected_page_group": [
+      "# 社内ツール紹介",
+      "## 概要\n**Slack** 連携の *通知* ボット",
+      "## 使い方\n- `/notify` を送る\n- 詳細は [README](https://example.com/readme) を参照\n- ~~旧コマンド~~ は廃止"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>社内ツール紹介</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><TextBlock><Paragraph><Strong><Str>Slack</Str></Strong><Str> 連携の </Str><Em><Str>通知</Str></Em><Str> ボット</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Code>/notify</Code><Str> を送る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://example.com/readme\"><Str>README</Str></Anchor><Str> を参照</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strike><Str>旧コマンド</Str></Strike><Str> は廃止</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-04",
+    "input_text": "## 比較\n* 速い\n+ 安い\n- 簡単\n",
+    "expected_page_group": [
+      "## 比較\n* 速い\n+ 安い\n- 簡単"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>速い</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>安い</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>簡単</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-05",
+    "input_text": "![](https://example.com/a.png)\n![](https://example.com/b.png)\n\n![](https://example.com/c.png)\n",
+    "expected_page_group": [
+      "![](https://example.com/a.png)",
+      "![](https://example.com/b.png)",
+      "![](https://example.com/c.png)"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/a.png\" /></FigurePage>",
+      "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/b.png\" /></FigurePage>",
+      "<FigurePage id=\"p3\"><ImageFigure src=\"https://example.com/c.png\" /></FigurePage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-06",
+    "input_text": "## 半年の振り返り\nこの半年で学んだことを順番に振り返ると、最初は設計を急ぎすぎて手戻りが多かったが、途中から小さく作って早く確かめる進め方に変えたことで、レビューの回数が減り、リリースまでの時間も大きく縮まったと感じている。\n",
+    "expected_page_group": [
+      "## 半年の振り返り\nこの半年で学んだことを順番に振り返ると、最初は設計を急ぎすぎて手戻りが多かったが、途中から小さく作って早く確かめる進め方に変えたことで、レビューの回数が減り、リリースまでの時間も大きく縮まったと感じている。"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>半年の振り返り</Str></title><blocks><TextBlock><Paragraph><Str>この半年で学んだことを順番に振り返ると、最初は設計を急ぎすぎて手戻りが多かったが、途中から小さく作って早く確かめる進め方に変えたことで、レビューの回数が減り、リリースまでの時間も大きく縮まったと感じている。</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-07",
+    "input_text": "## 注意点\n- **太字の中の `コード`** に注意\n- *斜体と [リンク](https://example.com/x)* を併用\n",
+    "expected_page_group": [
+      "## 注意点\n- **太字の中の `コード`** に注意\n- *斜体と [リンク](https://example.com/x)* を併用"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>太字の中の </Str><Code>コード</Code></Strong><Str> に注意</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>斜体と </Str><Anchor href=\"https://example.com/x\"><Str>リンク</Str></Anchor></Em><Str> を併用</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-08",
+    "input_text": "\n## [仕様書](https://example.com/spec)\n",
+    "expected_page_group": [
+      "## [仕様書](https://example.com/spec)"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Anchor href=\"https://example.com/spec\"><Str>仕様書</Str></Anchor></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-09",
+    "input_text": "＃ 振り返り会のメモ\n\n＃＃ 良かった点\n- 早く終わった\n",
+    "expected_page_group": [
+      "＃ 振り返り会のメモ",
+      "＃＃ 良かった点\n- 早く終わった"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>振り返り会のメモ</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>良かった点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>早く終わった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112215-10",
+    "input_text": "## 見出し ##\n- 末尾に記号を付けた\n",
+    "expected_page_group": [
+      "## 見出し ##\n- 末尾に記号を付けた"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>末尾に記号を付けた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
