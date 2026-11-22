@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112219-01",
+    "input_text": "# 続けるための仕組み\n\n## きっかけ\n三日坊主を卒業したかった\n\n## 工夫\n- 記録を一行にする\n  - 日付だけ付ける\n- 通知は朝だけ\n\n## 次\n",
+    "expected_page_group": [
+      "# 続けるための仕組み",
+      "## きっかけ\n三日坊主を卒業したかった",
+      "## 工夫\n- 記録を一行にする\n  - 日付だけ付ける\n- 通知は朝だけ",
+      "## 次"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>続けるための仕組み</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>きっかけ</Str></title><blocks><TextBlock><Paragraph><Str>三日坊主を卒業したかった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>工夫</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>記録を一行にする</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>日付だけ付ける</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>通知は朝だけ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>次</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-02",
+    "input_text": "# 障害対応の型\n\n![対応フロー](https://example.com/flow.png)\n\n## 初動\n1. 影響範囲を確認する\n2. 関係者に連絡する\n\n## 原因調査\n",
+    "expected_page_group": [
+      "# 障害対応の型",
+      "![対応フロー](https://example.com/flow.png)",
+      "## 初動\n1. 影響範囲を確認する\n2. 関係者に連絡する",
+      "## 原因調査"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>障害対応の型</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/flow.png\" alt=\"対応フロー\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>初動</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>影響範囲を確認する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>関係者に連絡する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>原因調査</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-03",
+    "input_text": "## 環境構築\n最初に依存を入れる\n- Python は 3.12\n- 設定は pyproject.toml に書く\n\n## 注意\n権限が足りないと失敗する\n",
+    "expected_page_group": [
+      "## 環境構築\n最初に依存を入れる\n- Python は 3.12\n- 設定は pyproject.toml に書く",
+      "## 注意\n権限が足りないと失敗する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>環境構築</Str></title><blocks><TextBlock><Paragraph><Str>最初に依存を入れる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Python は 3.12</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>設定は pyproject.toml に書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Str>権限が足りないと失敗する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-04",
+    "input_text": "## 手順\r\n- 準備する\r\n- 実行する\r\n\r\n## 確認\r\n結果を見る\r\n",
+    "expected_page_group": [
+      "## 手順\n- 準備する\n- 実行する",
+      "## 確認\n結果を見る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>確認</Str></title><blocks><TextBlock><Paragraph><Str>結果を見る</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-05",
+    "input_text": "## 見出しの後ろに空白   \n- 項目の後ろにも空白  \n- 次の項目\t\n",
+    "expected_page_group": [
+      "## 見出しの後ろに空白\n- 項目の後ろにも空白\n- 次の項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>見出しの後ろに空白</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目の後ろにも空白</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>次の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-06",
+    "input_text": "## 第 1 回 #LT 準備会\n- 日程を決める\n- #雑談 チャンネルで告知する\n",
+    "expected_page_group": [
+      "## 第 1 回 #LT 準備会\n- 日程を決める\n- #雑談 チャンネルで告知する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>第 1 回 #LT 準備会</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>日程を決める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>#雑談 チャンネルで告知する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-07",
+    "input_text": "## 並べ替えの手順\n9. 九番目の作業\n10. 十番目の作業\n11. 十一番目の作業\n",
+    "expected_page_group": [
+      "## 並べ替えの手順\n9. 九番目の作業\n10. 十番目の作業\n11. 十一番目の作業"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>並べ替えの手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>九番目の作業</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>十番目の作業</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>十一番目の作業</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-08",
+    "input_text": "## 書き方のコツ\n- `**太字**` と書くと強調になる\n- `[文字](URL)` はリンクの記法\n",
+    "expected_page_group": [
+      "## 書き方のコツ\n- `**太字**` と書くと強調になる\n- `[文字](URL)` はリンクの記法"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>書き方のコツ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Code>**太字**</Code><Str> と書くと強調になる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>[文字](URL)</Code><Str> はリンクの記法</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-09",
+    "input_text": "## 命名と計算\n- snake_case_name を使う\n- 2 * 3 * 4 を計算する\n",
+    "expected_page_group": [
+      "## 命名と計算\n- snake_case_name を使う\n- 2 * 3 * 4 を計算する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>命名と計算</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>snake_case_name を使う</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>2 * 3 * 4 を計算する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112219-10",
+    "input_text": "##\t見出しの前にタブ\n-  空白を 2 つ空けた項目\n-  もう一つ\n",
+    "expected_page_group": [
+      "##\t見出しの前にタブ\n-  空白を 2 つ空けた項目\n-  もう一つ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>見出しの前にタブ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>空白を 2 つ空けた項目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>もう一つ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
