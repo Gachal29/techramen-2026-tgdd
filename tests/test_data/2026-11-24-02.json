@@ -1,0 +1,120 @@
+[
+    {
+        "test_data_id": "2026112402-01",
+        "input_text": "# 自作キーボード沼の入口\n\n## 最初の一台\n- 基板は既製品\n- スイッチは赤軸\n\n## 失敗\nはんだ付けで基板を焦がした\n\n## まとめ",
+        "expected_page_group": [
+            "# 自作キーボード沼の入口",
+            "## 最初の一台\n- 基板は既製品\n- スイッチは赤軸",
+            "## 失敗\nはんだ付けで基板を焦がした",
+            "## まとめ"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>自作キーボード沼の入口</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>最初の一台</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>基板は既製品</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>スイッチは赤軸</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>失敗</Str></title><blocks><TextBlock><Paragraph><Str>はんだ付けで基板を焦がした</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-02",
+        "input_text": "![配線図](https://example.com/wiring.png)\n\n## 配線\nピンの対応表を作った\n配列は 60% にした\n",
+        "expected_page_group": [
+            "![配線図](https://example.com/wiring.png)",
+            "## 配線\nピンの対応表を作った\n配列は 60% にした"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/wiring.png\" alt=\"配線図\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>配線</Str></title><blocks><TextBlock><Paragraph><Str>ピンの対応表を作った</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>配列は 60% にした</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-03",
+        "input_text": "# LT の振り返り\n## 良かった点\n## 反省点\n- 時間配分\n  - 導入が長い\n    - 自己紹介を削る\n",
+        "expected_page_group": [
+            "# LT の振り返り",
+            "## 良かった点",
+            "## 反省点\n- 時間配分\n  - 導入が長い\n    - 自己紹介を削る"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>LT の振り返り</Str></title></CoverPage>",
+            "<HeadingPage id=\"p1\"><title><Str>良かった点</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p2\"><title><Str>反省点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>時間配分</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>導入が長い</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>自己紹介を削る</Str></Paragraph></TextBlock></Cluster></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-04",
+        "input_text": "![完成した基板](https://example.com/board.png \"完成版\")\n\n## 完成\n- 動いた\n",
+        "expected_page_group": [
+            "![完成した基板](https://example.com/board.png \"完成版\")",
+            "## 完成\n- 動いた"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/board.png\" alt=\"完成した基板\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>完成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>動いた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-05",
+        "input_text": "## 部品の調達\n- 国内\n  * 秋葉原\n  * 通販\n- 海外\n  * 中国の通販サイト\n",
+        "expected_page_group": [
+            "## 部品の調達\n- 国内\n  * 秋葉原\n  * 通販\n- 海外\n  * 中国の通販サイト"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>部品の調達</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>国内</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>秋葉原</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>通販</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>海外</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>中国の通販サイト</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-06",
+        "input_text": "## 1. はじめに\n- 背景を話す\n\n## 2. 本題\n- 構成を話す\n",
+        "expected_page_group": [
+            "## 1. はじめに\n- 背景を話す",
+            "## 2. 本題\n- 構成を話す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>1. はじめに</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>背景を話す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>2. 本題</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>構成を話す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-07",
+        "input_text": "## 書き方\n`[文字](URL)` と書くとリンクになる\n- [**重要**](https://example.com/a) な資料\n",
+        "expected_page_group": [
+            "## 書き方\n`[文字](URL)` と書くとリンクになる\n- [**重要**](https://example.com/a) な資料"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>書き方</Str></title><blocks><TextBlock><Paragraph><Code>[文字](URL)</Code><Str> と書くとリンクになる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/a\"><Strong><Str>重要</Str></Strong></Anchor><Str> な資料</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-08",
+        "input_text": "## ﾃｽﾄ ﾃﾞｰﾀ\n- ﾊﾝｶｸ ｶﾀｶﾅ\n",
+        "expected_page_group": [
+            "## ﾃｽﾄ ﾃﾞｰﾀ\n- ﾊﾝｶｸ ｶﾀｶﾅ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>ﾃｽﾄ ﾃﾞｰﾀ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ﾊﾝｶｸ ｶﾀｶﾅ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-09",
+        "input_text": "## 持ち帰ること\n• 配線は先に紙に書く\n• 部品は多めに買う\n",
+        "expected_page_group": [
+            "## 持ち帰ること\n• 配線は先に紙に書く\n• 部品は多めに買う"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>持ち帰ること</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>配線は先に紙に書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>部品は多めに買う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112402-10",
+        "input_text": "＃ 完走報告\n＃＃ 結果\n- 42.195km\n",
+        "expected_page_group": [
+            "＃ 完走報告",
+            "＃＃ 結果\n- 42.195km"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>完走報告</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>42.195km</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
