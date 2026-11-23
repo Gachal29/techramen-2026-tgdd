@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112405-01",
+    "input_text": "# 自宅サーバーを立てた\n\n## 構成\nミニPCにUbuntuを入れた\n- メモリ\n  - 16GB\n  - 増設済み\n- 電源\n\n## 次にやること\n",
+    "expected_page_group": [
+      "# 自宅サーバーを立てた",
+      "## 構成\nミニPCにUbuntuを入れた\n- メモリ\n  - 16GB\n  - 増設済み\n- 電源",
+      "## 次にやること"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>自宅サーバーを立てた</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><TextBlock><Paragraph><Str>ミニPCにUbuntuを入れた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>メモリ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>16GB</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>増設済み</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>電源</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>次にやること</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-02",
+    "input_text": "# 自宅ラボ入門\n![全体像](https://example.com/lab.png)\n## 機材\n- ミニPC\n",
+    "expected_page_group": [
+      "# 自宅ラボ入門",
+      "![全体像](https://example.com/lab.png)",
+      "## 機材\n- ミニPC"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>自宅ラボ入門</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/lab.png\" alt=\"全体像\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>機材</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ミニPC</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-03",
+    "input_text": "メモ: 今日はOSを入れ替えた\n- 起動が速くなった\n- 設定は後で見直す\n",
+    "expected_page_group": [
+      "メモ: 今日はOSを入れ替えた\n- 起動が速くなった\n- 設定は後で見直す"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>メモ: 今日はOSを入れ替えた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>起動が速くなった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>設定は後で見直す</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-04",
+    "input_text": "## ~~旧~~新構成\n- 全部Dockerで動かす\n\n## ~~廃止~~\n",
+    "expected_page_group": [
+      "## ~~旧~~新構成\n- 全部Dockerで動かす",
+      "## ~~廃止~~"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strike><Str>旧</Str></Strike><Str>新構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>全部Dockerで動かす</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Strike><Str>廃止</Str></Strike></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-05",
+    "input_text": "## 消費電力\n**電気代は *想定の半分* だった**\n- 待機は10W\n",
+    "expected_page_group": [
+      "## 消費電力\n**電気代は *想定の半分* だった**\n- 待機は10W"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>消費電力</Str></title><blocks><TextBlock><Paragraph><Strong><Str>電気代は </Str><Em><Str>想定の半分</Str></Em><Str> だった</Str></Strong></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>待機は10W</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-06",
+    "input_text": "##\t冷却\n- ファンを交換\n",
+    "expected_page_group": [
+      "##\t冷却\n- ファンを交換"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>冷却</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ファンを交換</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-07",
+    "input_text": "## 注意\n`a && b < c` のような式は崩れやすい\n",
+    "expected_page_group": [
+      "## 注意\n`a && b < c` のような式は崩れやすい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Code>a &amp;&amp; b &lt; c</Code><Str> のような式は崩れやすい</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-08",
+    "input_text": "![ラック](https://example.com/rack.png)  \n\n## 置き場所\n- 玄関の棚\n",
+    "expected_page_group": [
+      "![ラック](https://example.com/rack.png)",
+      "## 置き場所\n- 玄関の棚"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/rack.png\" alt=\"ラック\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>置き場所</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>玄関の棚</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-09",
+    "input_text": "## 発信\n#ホームサーバー #自宅ラボ\n- ブログに書く\n",
+    "expected_page_group": [
+      "## 発信\n#ホームサーバー #自宅ラボ\n- ブログに書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>発信</Str></title><blocks><TextBlock><Paragraph><Str>#ホームサーバー #自宅ラボ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ブログに書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112405-10",
+    "input_text": "## 準備\n- 電源タップ\n  \n## 片付け\n- ケーブルをまとめる\n",
+    "expected_page_group": [
+      "## 準備\n- 電源タップ",
+      "## 片付け\n- ケーブルをまとめる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>電源タップ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>片付け</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ケーブルをまとめる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
