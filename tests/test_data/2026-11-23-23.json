@@ -1,0 +1,112 @@
+[
+    {
+        "test_data_id": "2026112323-01",
+        "input_text": "# 朝活を半年続けた\n\n## きっかけ\n- 夜型の生活を直したかった\n- 静かな時間がほしかった\n\n## 結果\n",
+        "expected_page_group": [
+            "# 朝活を半年続けた",
+            "## きっかけ\n- 夜型の生活を直したかった\n- 静かな時間がほしかった",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>朝活を半年続けた</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>きっかけ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>夜型の生活を直したかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>静かな時間がほしかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-02",
+        "input_text": "## 続けるコツ\n布団の中でスマホを見ない\n前の晩に服を出しておく\n- 水を飲む\n  - 常温がよい\n- 散歩する\n",
+        "expected_page_group": [
+            "## 続けるコツ\n布団の中でスマホを見ない\n前の晩に服を出しておく\n- 水を飲む\n  - 常温がよい\n- 散歩する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>続けるコツ</Str></title><blocks><TextBlock><Paragraph><Str>布団の中でスマホを見ない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>前の晩に服を出しておく</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水を飲む</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>常温がよい</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>散歩する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-03",
+        "input_text": "## 感想\n## 来月の目標\n- 5時起きを維持する\n\n![起床時刻の推移](https://example.com/wake.png)\n",
+        "expected_page_group": [
+            "## 感想",
+            "## 来月の目標\n- 5時起きを維持する",
+            "![起床時刻の推移](https://example.com/wake.png)"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Str>感想</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p2\"><title><Str>来月の目標</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>5時起きを維持する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<FigurePage id=\"p3\"><ImageFigure src=\"https://example.com/wake.png\" alt=\"起床時刻の推移\" /></FigurePage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-04",
+        "input_text": "## 起床ログ\n- 5:30 起床\n\n\n\n- 5:45 散歩\n",
+        "expected_page_group": [
+            "## 起床ログ\n- 5:30 起床\n\n\n\n- 5:45 散歩"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>起床ログ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>5:30 起床</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>5:45 散歩</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-05",
+        "input_text": "##\t時間の使い方\n- 朝は創作\n- 夜は休む\n",
+        "expected_page_group": [
+            "##\t時間の使い方\n- 朝は創作\n- 夜は休む"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>時間の使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>朝は創作</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>夜は休む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-06",
+        "input_text": "![ログ (v1)](https://example.com/log_(1).png)\n\n## 記録\n- 毎日つける\n",
+        "expected_page_group": [
+            "![ログ (v1)](https://example.com/log_(1).png)",
+            "## 記録\n- 毎日つける"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/log_(1).png\" alt=\"ログ (v1)\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>記録</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎日つける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-07",
+        "input_text": "## 比較 a<b & c>d\n- 5時 < 6時 & 7時\n",
+        "expected_page_group": [
+            "## 比較 a<b & c>d\n- 5時 < 6時 & 7時"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>比較 a&lt;b &amp; c&gt;d</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>5時 &lt; 6時 &amp; 7時</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-08",
+        "input_text": "## 優先順位\n* *睡眠*を削らない\n* 運動は軽く\n",
+        "expected_page_group": [
+            "## 優先順位\n* *睡眠*を削らない\n* 運動は軽く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>優先順位</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Em><Str>睡眠</Str></Em><Str>を削らない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>運動は軽く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-09",
+        "input_text": "## 朝のメニュー\n＊ ごはん\n＊ 味噌汁\n",
+        "expected_page_group": [
+            "## 朝のメニュー\n＊ ごはん\n＊ 味噌汁"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>朝のメニュー</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ごはん</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>味噌汁</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112323-10",
+        "input_text": "## 習慣\n-\t水を飲む\n-\t散歩する\n",
+        "expected_page_group": [
+            "## 習慣\n-\t水を飲む\n-\t散歩する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>習慣</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>水を飲む</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>散歩する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
