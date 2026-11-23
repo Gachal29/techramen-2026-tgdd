@@ -1,0 +1,114 @@
+[
+  {
+    "test_data_id": "2026112317-01",
+    "input_text": "# 自作キーボード沼の歩き方\n\n## 動機\n\n## 部品選び\n- スイッチ\n  - 赤軸\n  - 茶軸\n- キーキャップ\n",
+    "expected_page_group": [
+      "# 自作キーボード沼の歩き方",
+      "## 動機",
+      "## 部品選び\n- スイッチ\n  - 赤軸\n  - 茶軸\n- キーキャップ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>自作キーボード沼の歩き方</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>動機</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>部品選び</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>スイッチ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>赤軸</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>茶軸</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>キーキャップ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-02",
+    "input_text": "## はんだ付けの手順\n温度は350度にする\n焦らず順番に進める\n1. 部品を並べる\n2. 仮止めする\n3. 本付けする\n",
+    "expected_page_group": [
+      "## はんだ付けの手順\n温度は350度にする\n焦らず順番に進める\n1. 部品を並べる\n2. 仮止めする\n3. 本付けする"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>はんだ付けの手順</Str></title><blocks><TextBlock><Paragraph><Str>温度は350度にする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>焦らず順番に進める</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>部品を並べる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>仮止めする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>本付けする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-03",
+    "input_text": "# 完成までの記録\n![完成写真](https://example.com/done.jpg)\n## 総評\n- 満足している\n## 次回\n",
+    "expected_page_group": [
+      "# 完成までの記録",
+      "![完成写真](https://example.com/done.jpg)",
+      "## 総評\n- 満足している",
+      "## 次回"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>完成までの記録</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/done.jpg\" alt=\"完成写真\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>総評</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>満足している</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>次回</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-04",
+    "input_text": "  ## 反省会\n- 配線を間違えた\n- ネジが足りなかった\n",
+    "expected_page_group": [
+      "  ## 反省会\n- 配線を間違えた\n- ネジが足りなかった"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>反省会</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>配線を間違えた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ネジが足りなかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-05",
+    "input_text": "## 買ったもの\n\n\n\n- 基板\n\n\n- ケース\n\n\n\n\n## 次の買い物\n\n\n\n- 工具\n",
+    "expected_page_group": [
+      "## 買ったもの\n- 基板\n- ケース",
+      "## 次の買い物\n- 工具"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>買ったもの</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>基板</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ケース</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>次の買い物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>工具</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-06",
+    "input_text": "##　ふり返り\n- 良かった点\n- 困った点\n",
+    "expected_page_group": [
+      "##　ふり返り\n- 良かった点\n- 困った点"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>ふり返り</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>良かった点</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>困った点</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-07",
+    "input_text": "## 道具\n+ ピンセット\n+ はんだごて\n+ テスター\n",
+    "expected_page_group": [
+      "## 道具\n+ ピンセット\n+ はんだごて\n+ テスター"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ピンセット</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>はんだごて</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>テスター</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-08",
+    "input_text": "## 材料\n- 基板\n* ダイオード\n+ スイッチ\n",
+    "expected_page_group": [
+      "## 材料\n- 基板\n* ダイオード\n+ スイッチ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>材料</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>基板</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ダイオード</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>スイッチ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-09",
+    "input_text": "## <br> の使い方\n- `<br>` は改行を表す\n- &amp; は & のこと\n",
+    "expected_page_group": [
+      "## <br> の使い方\n- `<br>` は改行を表す\n- &amp; は & のこと"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>&lt;br&gt; の使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Code>&lt;br&gt;</Code><Str> は改行を表す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>&amp;amp; は &amp; のこと</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112317-10",
+    "input_text": "## 🎉 結果発表\n- ✅ 打鍵感は良好\n- 🚧 ファームは作業中\n",
+    "expected_page_group": [
+      "## 🎉 結果発表\n- ✅ 打鍵感は良好\n- 🚧 ファームは作業中"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>🎉 結果発表</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>✅ 打鍵感は良好</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>🚧 ファームは作業中</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
