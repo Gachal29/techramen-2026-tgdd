@@ -1,0 +1,108 @@
+[
+  {
+    "test_data_id": "2026112313-01",
+    "input_text": "# ドッグフーディングの勧め\n\n## 今日のゴール\n\n## 背景\n自分たちのツールを自分たちで使う\n- 不満が早く見つかる\n- 優先度が決めやすい\n",
+    "expected_page_group": [
+      "# ドッグフーディングの勧め",
+      "## 今日のゴール",
+      "## 背景\n自分たちのツールを自分たちで使う\n- 不満が早く見つかる\n- 優先度が決めやすい"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ドッグフーディングの勧め</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>今日のゴール</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>自分たちのツールを自分たちで使う</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>不満が早く見つかる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>優先度が決めやすい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-02",
+    "input_text": "## 手順\n1. `uv sync` を実行する\n2. **必ず**テストを回す\n\n## 注意\n本番では `--dry-run` を付ける",
+    "expected_page_group": [
+      "## 手順\n1. `uv sync` を実行する\n2. **必ず**テストを回す",
+      "## 注意\n本番では `--dry-run` を付ける"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Code>uv sync</Code><Str> を実行する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>必ず</Str></Strong><Str>テストを回す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Str>本番では </Str><Code>--dry-run</Code><Str> を付ける</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-03",
+    "input_text": "# 小さな改善の積み重ね\n\n\n",
+    "expected_page_group": [
+      "# 小さな改善の積み重ね"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>小さな改善の積み重ね</Str></title></CoverPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-04",
+    "input_text": "## ~~旧方式~~ 新方式\n- 手作業をやめた\n- 自動で回る\n",
+    "expected_page_group": [
+      "## ~~旧方式~~ 新方式\n- 手作業をやめた\n- 自動で回る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strike><Str>旧方式</Str></Strike><Str> 新方式</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>手作業をやめた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>自動で回る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-05",
+    "input_text": "## 三か月の振り返り\nこの三か月で試したことを順番に書き出してみると、最初の一か月は計測の仕組みを作ることに使い、次の一か月で小さな改善を繰り返し、最後の一か月で効果を確かめながら不要になった仕組みを少しずつ片付けていった、という流れになった。振り返ると、仕組みを作る前に何を測るかを決めておけば、もっと早く進められたと思う。\n- 次は先に指標を決める\n",
+    "expected_page_group": [
+      "## 三か月の振り返り\nこの三か月で試したことを順番に書き出してみると、最初の一か月は計測の仕組みを作ることに使い、次の一か月で小さな改善を繰り返し、最後の一か月で効果を確かめながら不要になった仕組みを少しずつ片付けていった、という流れになった。振り返ると、仕組みを作る前に何を測るかを決めておけば、もっと早く進められたと思う。\n- 次は先に指標を決める"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>三か月の振り返り</Str></title><blocks><TextBlock><Paragraph><Str>この三か月で試したことを順番に書き出してみると、最初の一か月は計測の仕組みを作ることに使い、次の一か月で小さな改善を繰り返し、最後の一か月で効果を確かめながら不要になった仕組みを少しずつ片付けていった、という流れになった。振り返ると、仕組みを作る前に何を測るかを決めておけば、もっと早く進められたと思う。</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次は先に指標を決める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-06",
+    "input_text": "## 優先順位\n*速度*を重視する\n* 次の項目\n* その次の項目\n",
+    "expected_page_group": [
+      "## 優先順位\n*速度*を重視する\n* 次の項目\n* その次の項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>優先順位</Str></title><blocks><TextBlock><Paragraph><Em><Str>速度</Str></Em><Str>を重視する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次の項目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>その次の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-07",
+    "input_text": "## 参照の書き方\n- `git commit -m` で記録する\n- `#123` で issue を参照する\n",
+    "expected_page_group": [
+      "## 参照の書き方\n- `git commit -m` で記録する\n- `#123` で issue を参照する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参照の書き方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Code>git commit -m</Code><Str> で記録する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>#123</Code><Str> で issue を参照する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-08",
+    "input_text": "## C# と F# の比較\n- どちらも .NET 上で動く\n- 書き味が違う\n",
+    "expected_page_group": [
+      "## C# と F# の比較\n- どちらも .NET 上で動く\n- 書き味が違う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>C# と F# の比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>どちらも .NET 上で動く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>書き味が違う</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-09",
+    "input_text": "## 手順\n-\t準備する\n-\t実行する\n",
+    "expected_page_group": [
+      "## 手順\n-\t準備する\n-\t実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112313-10",
+    "input_text": "## 作業の分け方\n- 前半\n  1. 設計する\n  2. 実装する\n- 後半\n",
+    "expected_page_group": [
+      "## 作業の分け方\n- 前半\n  1. 設計する\n  2. 実装する\n- 後半"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>作業の分け方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>前半</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>設計する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実装する</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>後半</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
