@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112312-01",
+    "input_text": "# インデックス設計の失敗談\n\n![](https://example.com/slow.png)\n\n## 発端\nクエリが遅かった\n- 実行計画を見た\n- フルスキャンだった\n\n## 対策\n- 複合インデックスを作る\n  - 順序に注意\n\n## まとめ",
+    "expected_page_group": [
+      "# インデックス設計の失敗談",
+      "![](https://example.com/slow.png)",
+      "## 発端\nクエリが遅かった\n- 実行計画を見た\n- フルスキャンだった",
+      "## 対策\n- 複合インデックスを作る\n  - 順序に注意",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>インデックス設計の失敗談</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/slow.png\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>発端</Str></title><blocks><TextBlock><Paragraph><Str>クエリが遅かった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>実行計画を見た</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>フルスキャンだった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>複合インデックスを作る</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>順序に注意</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p4\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-02",
+    "input_text": "## 観測\n- 平均 120ms → 8ms\n- p99 は 900ms → 40ms\n\n## 教訓\n実測してから決める\n",
+    "expected_page_group": [
+      "## 観測\n- 平均 120ms → 8ms\n- p99 は 900ms → 40ms",
+      "## 教訓\n実測してから決める"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>観測</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>平均 120ms → 8ms</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>p99 は 900ms → 40ms</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>教訓</Str></title><blocks><TextBlock><Paragraph><Str>実測してから決める</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-03",
+    "input_text": "## 手法の比較\n- 手法A\n  - 速い\n- 手法B\n  - 安い\n  - 保守しやすい\n迷ったらBを選ぶ\n",
+    "expected_page_group": [
+      "## 手法の比較\n- 手法A\n  - 速い\n- 手法B\n  - 安い\n  - 保守しやすい\n迷ったらBを選ぶ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手法の比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>手法A</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>速い</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>手法B</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>安い</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>保守しやすい</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>迷ったらBを選ぶ</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-04",
+    "input_text": "## 手順\n- 準備\n\t- 道具\n\t\t- 工具\n- 実行\n",
+    "expected_page_group": [
+      "## 手順\n- 準備\n\t- 道具\n\t\t- 工具\n- 実行"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>道具</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>工具</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-05",
+    "input_text": "## [LTooL](https://ltool.io) とは\n- スライド作成ツール\n",
+    "expected_page_group": [
+      "## [LTooL](https://ltool.io) とは\n- スライド作成ツール"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Anchor href=\"https://ltool.io\"><Str>LTooL</Str></Anchor><Str> とは</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>スライド作成ツール</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-06",
+    "input_text": "# **TGDD** 入門\n\n## 目次\n- 背景\n",
+    "expected_page_group": [
+      "# **TGDD** 入門",
+      "## 目次\n- 背景"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Strong><Str>TGDD</Str></Strong><Str> 入門</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>目次</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>背景</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-07",
+    "input_text": "# ベンチ結果\n![ベンチ結果 (n=3)](https://example.com/bench.png?v=2&dl=1)\n## 読み方\n- 縦軸は秒",
+    "expected_page_group": [
+      "# ベンチ結果",
+      "![ベンチ結果 (n=3)](https://example.com/bench.png?v=2&dl=1)",
+      "## 読み方\n- 縦軸は秒"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ベンチ結果</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/bench.png?v=2&amp;dl=1\" alt=\"ベンチ結果 (n=3)\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>読み方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>縦軸は秒</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-08",
+    "input_text": "## 手順\n1. 一\n1. 二\n1. 三\n",
+    "expected_page_group": [
+      "## 手順\n1. 一\n1. 二\n1. 三"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>一</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>三</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-09",
+    "input_text": "## 発信\n#techramen を付けてポストする\n- 感想を書く\n",
+    "expected_page_group": [
+      "## 発信\n#techramen を付けてポストする\n- 感想を書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>発信</Str></title><blocks><TextBlock><Paragraph><Str>#techramen を付けてポストする</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>感想を書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112312-10",
+    "input_text": "## 手順\n  - 準備\n  - 実行\n",
+    "expected_page_group": [
+      "## 手順\n  - 準備\n  - 実行"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
