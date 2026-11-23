@@ -35,7 +35,12 @@ BULLET_RE = re.compile(
 # リンク・画像の URL。`https://ja.wikipedia.org/wiki/Python_(言語)` のように、URL の中の
 # 対になった括弧（1 段まで）は URL の一部にする
 _URL_PATTERN = r"(?:[^()\s]|\([^()\s]*\))+"
-IMAGE_RE = re.compile(r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>" + _URL_PATTERN + r")\)\s*$")
+# リンク・画像の URL の後に書くタイトル（`[文字](URL "タイトル")`）。`"…"`・`'…'`・`(…)` で囲む。
+# SlideIR にはタイトルを表す属性がないため、読み取って捨てる
+_TITLE_PATTERN = r"(?:[ \t]+(?:\"[^\"]*\"|'[^']*'|\([^()]*\)))?[ \t]*"
+IMAGE_RE = re.compile(
+    r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>" + _URL_PATTERN + r")" + _TITLE_PATTERN + r"\)\s*$"
+)
 # コードブロックの囲み（```・~~~ を 3 つ以上）。開きの後には言語名などを書ける。
 # 閉じは、開きと同じ記号を開きと同じ数以上並べ、後ろに何も書かない行
 FENCE_RE = re.compile(r"^[ \t　]*(?P<fence>`{3,}|~{3,})(?P<info>.*)$")
@@ -146,7 +151,12 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
 # -- インラインの記法 --
 
 _DELIMITERS = [("**", "Strong"), ("__", "Strong"), ("~~", "Strike"), ("*", "Em"), ("_", "Em")]
-_LINK_RE = re.compile(r"\[(?P<text>[^\]]+)\]\((?P<href>" + _URL_PATTERN + r")\)")
+_LINK_RE = re.compile(
+    r"\[(?P<text>[^\]]+)\]\((?P<href>" + _URL_PATTERN + r")" + _TITLE_PATTERN + r"\)"
+)
+# バックスラッシュによるエスケープ（`\*\*太字ではない\*\*`）。バックスラッシュの後の ASCII の記号は、
+# 記法の記号として扱わず、その文字のまま表示する（バックスラッシュは表示しない）
+_ESCAPABLE = set("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
 # 自動リンク `<https://example.com>`（`<` と `>` で囲んだ、スキームのある URL）
 _AUTOLINK_RE = re.compile(r"<(?P<href>[A-Za-z][A-Za-z0-9+.\-]{1,31}:[^<>\s]+)>")
 # `_`・`__` は、英数字に挟まれた位置（`snake_case` など）では強調の記号にしない
@@ -202,6 +212,10 @@ def _parse_inline(text: str) -> list[tuple]:
     index = 0
     while index < len(text):
         char = text[index]
+        if char == "\\" and index + 1 < len(text) and text[index + 1] in _ESCAPABLE:
+            buffer.append(text[index + 1])
+            index += 2
+            continue
         if char == "`":
             closing = text.find("`", index + 1)
             if closing > index + 1:
