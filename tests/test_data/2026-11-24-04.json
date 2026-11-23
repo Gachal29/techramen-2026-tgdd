@@ -1,0 +1,104 @@
+[
+  {
+    "test_data_id": "2026112404-01",
+    "input_text": "# ベランダ菜園を1年続けた\n\n## 始めた理由\n在宅勤務の気分転換がしたかった\n- 食費も少し減らしたい\n- 土いじりが好き\n\n## おわりに\n",
+    "expected_page_group": [
+      "# ベランダ菜園を1年続けた",
+      "## 始めた理由\n在宅勤務の気分転換がしたかった\n- 食費も少し減らしたい\n- 土いじりが好き",
+      "## おわりに"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ベランダ菜園を1年続けた</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>始めた理由</Str></title><blocks><TextBlock><Paragraph><Str>在宅勤務の気分転換がしたかった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>食費も少し減らしたい</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>土いじりが好き</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>おわりに</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-02",
+    "input_text": "## 収穫の記録\n![月ごとの収穫量](https://example.com/harvest.png)\n- 7月がピーク\n",
+    "expected_page_group": [
+      "## 収穫の記録\n![月ごとの収穫量](https://example.com/harvest.png)\n- 7月がピーク"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>収穫の記録</Str></title><blocks><ImageFigure src=\"https://example.com/harvest.png\" alt=\"月ごとの収穫量\" /><Cluster marker=\"true\"><TextBlock><Paragraph><Str>7月がピーク</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-03",
+    "input_text": "## 準備\n## 実行\n## 片付け\n",
+    "expected_page_group": [
+      "## 準備",
+      "## 実行",
+      "## 片付け"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Str>準備</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>実行</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p3\"><title><Str>片付け</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-04",
+    "input_text": "# 家庭菜園の失敗談\n## 水やり\n- 毎日あげすぎた",
+    "expected_page_group": [
+      "# 家庭菜園の失敗談",
+      "## 水やり\n- 毎日あげすぎた"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>家庭菜園の失敗談</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>水やり</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎日あげすぎた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-05",
+    "input_text": "## 注意点\n*まず*水を控える\n**絶対**に毎日はやらない\n* 肥料は薄める\n",
+    "expected_page_group": [
+      "## 注意点\n*まず*水を控える\n**絶対**に毎日はやらない\n* 肥料は薄める"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><TextBlock><Paragraph><Em><Str>まず</Str></Em><Str>水を控える</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>絶対</Str></Strong><Str>に毎日はやらない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>肥料は薄める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-06",
+    "input_text": "## 写真\n![朝の様子](https://example.com/morning.png)\n![夜の様子](https://example.com/night.png)\n",
+    "expected_page_group": [
+      "## 写真\n![朝の様子](https://example.com/morning.png)\n![夜の様子](https://example.com/night.png)"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>写真</Str></title><blocks><ImageFigure src=\"https://example.com/morning.png\" alt=\"朝の様子\" /><ImageFigure src=\"https://example.com/night.png\" alt=\"夜の様子\" /></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-07",
+    "input_text": "## 書き方メモ\n**~~古い~~新しい**書き方\n`**` は太字の記号\n",
+    "expected_page_group": [
+      "## 書き方メモ\n**~~古い~~新しい**書き方\n`**` は太字の記号"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>書き方メモ</Str></title><blocks><TextBlock><Paragraph><Strong><Strike><Str>古い</Str></Strike><Str>新しい</Str></Strong><Str>書き方</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>**</Code><Str> は太字の記号</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-08",
+    "input_text": "## 植え付け\n1. 土を作る\n2. 苗を植える\n  - 深さは5cm\n3. 水をやる\n",
+    "expected_page_group": [
+      "## 植え付け\n1. 土を作る\n2. 苗を植える\n  - 深さは5cm\n3. 水をやる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>植え付け</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>土を作る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>苗を植える</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>深さは5cm</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>水をやる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112404-09",
+    "input_text": "",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112404-10",
+    "input_text": " 　 \n\n\t \n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  }
+]
