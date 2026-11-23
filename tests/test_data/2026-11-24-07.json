@@ -1,0 +1,142 @@
+[
+    {
+        "test_data_id": "2026112407-01",
+        "input_text": "# 引っ越し振り返り\n\n## 業者選び\n- 3社で見積もりを取った\n- 繁忙期は避けた\n\n## 荷造り\n段ボールは100個だった\n\n## 反省\n",
+        "expected_page_group": [
+            "# 引っ越し振り返り",
+            "## 業者選び\n- 3社で見積もりを取った\n- 繁忙期は避けた",
+            "## 荷造り\n段ボールは100個だった",
+            "## 反省"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>引っ越し振り返り</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>業者選び</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>3社で見積もりを取った</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>繁忙期は避けた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>荷造り</Str></title><blocks><TextBlock><Paragraph><Str>段ボールは100個だった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>反省</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-02",
+        "input_text": "![間取り図](https://example.com/plan.png)\n\n## 新居\n- 駅から5分\n  - 徒歩\n  - 坂道なし\n- 南向き\n",
+        "expected_page_group": [
+            "![間取り図](https://example.com/plan.png)",
+            "## 新居\n- 駅から5分\n  - 徒歩\n  - 坂道なし\n- 南向き"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/plan.png\" alt=\"間取り図\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>新居</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>駅から5分</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>徒歩</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>坂道なし</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>南向き</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-03",
+        "input_text": "![引っ越し前](https://example.com/before.png)\n![引っ越し後](https://example.com/after.png)\n\n## 結果\n- 広くなった\n",
+        "expected_page_group": [
+            "![引っ越し前](https://example.com/before.png)",
+            "![引っ越し後](https://example.com/after.png)",
+            "## 結果\n- 広くなった"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/before.png\" alt=\"引っ越し前\" /></FigurePage>",
+            "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/after.png\" alt=\"引っ越し後\" /></FigurePage>",
+            "<GeneralPage id=\"p3\"><title><Str>結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>広くなった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-04",
+        "input_text": "## 手順1\n## 手順2\n## 手順3\n## 手順4\n## 手順5\n## 手順6\n## 手順7\n## 手順8\n## 手順9\n## 手順10\n## 手順11\n## 手順12\n",
+        "expected_page_group": [
+            "## 手順1",
+            "## 手順2",
+            "## 手順3",
+            "## 手順4",
+            "## 手順5",
+            "## 手順6",
+            "## 手順7",
+            "## 手順8",
+            "## 手順9",
+            "## 手順10",
+            "## 手順11",
+            "## 手順12"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Str>手順1</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p2\"><title><Str>手順2</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p3\"><title><Str>手順3</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p4\"><title><Str>手順4</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p5\"><title><Str>手順5</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p6\"><title><Str>手順6</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p7\"><title><Str>手順7</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p8\"><title><Str>手順8</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p9\"><title><Str>手順9</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p10\"><title><Str>手順10</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p11\"><title><Str>手順11</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p12\"><title><Str>手順12</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-05",
+        "input_text": "## 感想\n- 良かった\n\n## 感想\n- 大変だった\n",
+        "expected_page_group": [
+            "## 感想\n- 良かった",
+            "## 感想\n- 大変だった"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>感想</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>良かった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>感想</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>大変だった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-06",
+        "input_text": "## 間取り\n- 1LDK\n\n![間取り図](https://example.com/room.png)\n\n- 南向き\n- 角部屋\n",
+        "expected_page_group": [
+            "## 間取り\n- 1LDK\n![間取り図](https://example.com/room.png)\n- 南向き\n- 角部屋"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>間取り</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>1LDK</Str></Paragraph></TextBlock></Cluster><ImageFigure src=\"https://example.com/room.png\" alt=\"間取り図\" /><Cluster marker=\"true\"><TextBlock><Paragraph><Str>南向き</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>角部屋</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-07",
+        "input_text": "## 前半\n- 契約した\n\n# 中締め\n\n## 後半\n- 引き渡しを受けた\n",
+        "expected_page_group": [
+            "## 前半\n- 契約した",
+            "# 中締め",
+            "## 後半\n- 引き渡しを受けた"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>前半</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>契約した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<CoverPage id=\"cover\"><title><Str>中締め</Str></title></CoverPage>",
+            "<GeneralPage id=\"p2\"><title><Str>後半</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>引き渡しを受けた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-08",
+        "input_text": "## 当日の流れ\n1. 搬出\n1. 運搬\n1. 搬入\n",
+        "expected_page_group": [
+            "## 当日の流れ\n1. 搬出\n1. 運搬\n1. 搬入"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>当日の流れ</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>搬出</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>運搬</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>搬入</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-09",
+        "input_text": "##近所の店\n- スーパー\n- 郵便局\n",
+        "expected_page_group": [
+            "##近所の店\n- スーパー\n- 郵便局"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>近所の店</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>スーパー</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>郵便局</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112407-10",
+        "input_text": "## 持ち物\n-通帳\n-印鑑\n",
+        "expected_page_group": [
+            "## 持ち物\n-通帳\n-印鑑"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>通帳</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>印鑑</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
