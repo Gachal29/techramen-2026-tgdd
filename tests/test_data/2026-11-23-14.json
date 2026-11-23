@@ -1,0 +1,112 @@
+[
+  {
+    "test_data_id": "2026112314-01",
+    "input_text": "# 勉強会を主催して学んだこと\n\n## 参加者が来ない\n\n## 告知の工夫\n**早めに**日程を決める\n締切を明示する\n",
+    "expected_page_group": [
+      "# 勉強会を主催して学んだこと",
+      "## 参加者が来ない",
+      "## 告知の工夫\n**早めに**日程を決める\n締切を明示する"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>勉強会を主催して学んだこと</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>参加者が来ない</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>告知の工夫</Str></title><blocks><TextBlock><Paragraph><Strong><Str>早めに</Str></Strong><Str>日程を決める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>締切を明示する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-02",
+    "input_text": "![会場の様子](https://example.com/venue.jpg)\n![懇親会](https://example.com/party.jpg)\n\n## 当日の流れ\n1. 受付\n2. *全員*で挨拶\n3. 発表\n",
+    "expected_page_group": [
+      "![会場の様子](https://example.com/venue.jpg)",
+      "![懇親会](https://example.com/party.jpg)",
+      "## 当日の流れ\n1. 受付\n2. *全員*で挨拶\n3. 発表"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/venue.jpg\" alt=\"会場の様子\" /></FigurePage>",
+      "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/party.jpg\" alt=\"懇親会\" /></FigurePage>",
+      "<GeneralPage id=\"p3\"><title><Str>当日の流れ</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>受付</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>全員</Str></Em><Str>で挨拶</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>発表</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-03",
+    "input_text": "# 自宅サーバー運用記\n\n## 構成\n- 本体\n  - `Raspberry Pi 4`\n  - 電源\n- ネットワーク\n- 備考\n",
+    "expected_page_group": [
+      "# 自宅サーバー運用記",
+      "## 構成\n- 本体\n  - `Raspberry Pi 4`\n  - 電源\n- ネットワーク\n- 備考"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>自宅サーバー運用記</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>本体</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>Raspberry Pi 4</Code></Paragraph></TextBlock><TextBlock><Paragraph><Str>電源</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>ネットワーク</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>備考</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-04",
+    "input_text": "## 手順\r\n- 準備\r\n- 実行\r\n\r\n## 確認\r\n結果を見る\r\n",
+    "expected_page_group": [
+      "## 手順\n- 準備\n- 実行",
+      "## 確認\n結果を見る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>確認</Str></title><blocks><TextBlock><Paragraph><Str>結果を見る</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-05",
+    "input_text": "## 概要 ##\n- 目的\n",
+    "expected_page_group": [
+      "## 概要 ##\n- 目的"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>目的</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-06",
+    "input_text": "## 準備\n   \n- 道具\n\t\n- 場所\n\n## 本番\n発表\n",
+    "expected_page_group": [
+      "## 準備\n\n- 道具\n\n- 場所",
+      "## 本番\n発表"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>道具</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>場所</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>本番</Str></title><blocks><TextBlock><Paragraph><Str>発表</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-07",
+    "input_text": "## 記法\n**太字**`コード`*斜体*[リンク](https://example.com)\n",
+    "expected_page_group": [
+      "## 記法\n**太字**`コード`*斜体*[リンク](https://example.com)"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法</Str></title><blocks><TextBlock><Paragraph><Strong><Str>太字</Str></Strong><Code>コード</Code><Em><Str>斜体</Str></Em><Anchor href=\"https://example.com\"><Str>リンク</Str></Anchor></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-08",
+    "input_text": "## 参考\nhttps://example.com/article\n",
+    "expected_page_group": [
+      "## 参考\nhttps://example.com/article"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/article</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-09",
+    "input_text": "##空白なしの見出し\n- 本文が続く\n",
+    "expected_page_group": [
+      "##空白なしの見出し\n- 本文が続く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>空白なしの見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>本文が続く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112314-10",
+    "input_text": "   \n\t\n\n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  }
+]
