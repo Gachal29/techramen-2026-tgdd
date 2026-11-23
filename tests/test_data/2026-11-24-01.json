@@ -1,0 +1,110 @@
+[
+    {
+        "test_data_id": "2026112401-01",
+        "input_text": "# ブログを100日書いた\n\n## 書き始めた理由\n- 技術メモが散らばっていた\n- 読まれる前提で整理したかった\n続けられるか不安だった\n\n## 結果\n",
+        "expected_page_group": [
+            "# ブログを100日書いた",
+            "## 書き始めた理由\n- 技術メモが散らばっていた\n- 読まれる前提で整理したかった\n続けられるか不安だった",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>ブログを100日書いた</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>書き始めた理由</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>技術メモが散らばっていた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>読まれる前提で整理したかった</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>続けられるか不安だった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-02",
+        "input_text": "## 続いた仕組み\n- 朝\n  - 15分だけ書く\n  - 下書きは前夜に作る\n- 週末\n  - 見直す\n",
+        "expected_page_group": [
+            "## 続いた仕組み\n- 朝\n  - 15分だけ書く\n  - 下書きは前夜に作る\n- 週末\n  - 見直す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>続いた仕組み</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>朝</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>15分だけ書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>下書きは前夜に作る</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>週末</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>見直す</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-03",
+        "input_text": "![PV の推移](https://example.com/pv.png)\n\n## 伸びなかった時期\n\n## 転機\n- 書く題材を絞った\n",
+        "expected_page_group": [
+            "![PV の推移](https://example.com/pv.png)",
+            "## 伸びなかった時期",
+            "## 転機\n- 書く題材を絞った"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/pv.png\" alt=\"PV の推移\" /></FigurePage>",
+            "<HeadingPage id=\"p2\"><title><Str>伸びなかった時期</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p3\"><title><Str>転機</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>書く題材を絞った</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-04",
+        "input_text": "## 下書きの置き場\n- Obsidian\n\t- 日付ごとのノート\n\t- タグで分類\n- GitHub\n",
+        "expected_page_group": [
+            "## 下書きの置き場\n- Obsidian\n\t- 日付ごとのノート\n\t- タグで分類\n- GitHub"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>下書きの置き場</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Obsidian</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>日付ごとのノート</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>タグで分類</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>GitHub</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-05",
+        "input_text": "## **一番の教訓**\n- 完璧を目指さない\n",
+        "expected_page_group": [
+            "## **一番の教訓**\n- 完璧を目指さない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Strong><Str>一番の教訓</Str></Strong></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>完璧を目指さない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-06",
+        "input_text": "## 構成図 \n- 図は後から足す  \n",
+        "expected_page_group": [
+            "## 構成図\n- 図は後から足す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>構成図</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>図は後から足す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-07",
+        "input_text": "##  読者の反応\n- 感想をもらえた\n",
+        "expected_page_group": [
+            "##  読者の反応\n- 感想をもらえた"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>読者の反応</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>感想をもらえた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-08",
+        "input_text": "## 参考にした記事\n- **締切**は [カレンダー](https://example.com/cal) で管理\n- *週1回*は振り返る\n",
+        "expected_page_group": [
+            "## 参考にした記事\n- **締切**は [カレンダー](https://example.com/cal) で管理\n- *週1回*は振り返る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参考にした記事</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>締切</Str></Strong><Str>は </Str><Anchor href=\"https://example.com/cal\"><Str>カレンダー</Str></Anchor><Str> で管理</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>週1回</Str></Em><Str>は振り返る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-09",
+        "input_text": "## 手順\n1) 下書きを書く\n2) 声に出して読む\n3) 公開する\n",
+        "expected_page_group": [
+            "## 手順\n1) 下書きを書く\n2) 声に出して読む\n3) 公開する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>下書きを書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>声に出して読む</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>公開する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112401-10",
+        "input_text": "## 進み具合\n- ✅ 100本達成\n- 🚧 英語版は作業中",
+        "expected_page_group": [
+            "## 進み具合\n- ✅ 100本達成\n- 🚧 英語版は作業中"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>進み具合</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>✅ 100本達成</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>🚧 英語版は作業中</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]

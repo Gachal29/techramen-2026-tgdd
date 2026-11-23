@@ -1,0 +1,110 @@
+[
+    {
+        "test_data_id": "2026112400-01",
+        "input_text": "# 深夜のDNS障害を振り返る\n\n## 何が起きたか\n全社でメールが止まった\n- 原因はMXレコードの誤設定\n- 復旧まで2時間\n\n## 教訓\n",
+        "expected_page_group": [
+            "# 深夜のDNS障害を振り返る",
+            "## 何が起きたか\n全社でメールが止まった\n- 原因はMXレコードの誤設定\n- 復旧まで2時間",
+            "## 教訓"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>深夜のDNS障害を振り返る</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>何が起きたか</Str></title><blocks><TextBlock><Paragraph><Str>全社でメールが止まった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>原因はMXレコードの誤設定</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>復旧まで2時間</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>教訓</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-02",
+        "input_text": "![](https://example.com/timeline.png)\n\n## 年表\n02:00 アラート発報\n02:30 原因を特定\n",
+        "expected_page_group": [
+            "![](https://example.com/timeline.png)",
+            "## 年表\n02:00 アラート発報\n02:30 原因を特定"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/timeline.png\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>年表</Str></title><blocks><TextBlock><Paragraph><Str>02:00 アラート発報</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>02:30 原因を特定</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-03",
+        "input_text": "## 再発防止\n- [Runbook](https://example.com/runbook) を整備\n  - `dig` の使い方\n  - ~~口頭~~ 文書で引き継ぐ\n- 監視を追加\n",
+        "expected_page_group": [
+            "## 再発防止\n- [Runbook](https://example.com/runbook) を整備\n  - `dig` の使い方\n  - ~~口頭~~ 文書で引き継ぐ\n- 監視を追加"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>再発防止</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/runbook\"><Str>Runbook</Str></Anchor><Str> を整備</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>dig</Code><Str> の使い方</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strike><Str>口頭</Str></Strike><Str> 文書で引き継ぐ</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>監視を追加</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-04",
+        "input_text": "## 原因\n\n- 変更のレビューが無かった\n- 本番と検証で設定が違った\n",
+        "expected_page_group": [
+            "## 原因\n\n- 変更のレビューが無かった\n- 本番と検証で設定が違った"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>原因</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>変更のレビューが無かった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>本番と検証で設定が違った</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-05",
+        "input_text": "## [障害報告書](https://example.com/report) の読み方\n- 時系列から読む\n",
+        "expected_page_group": [
+            "## [障害報告書](https://example.com/report) の読み方\n- 時系列から読む"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Anchor href=\"https://example.com/report\"><Str>障害報告書</Str></Anchor><Str> の読み方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>時系列から読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-06",
+        "input_text": "## 気をつけたこと\n- **重要だけ閉じ忘れた\n- 夜間は一人で触らない\n",
+        "expected_page_group": [
+            "## 気をつけたこと\n- **重要だけ閉じ忘れた\n- 夜間は一人で触らない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>気をつけたこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>**重要だけ閉じ忘れた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>夜間は一人で触らない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-07",
+        "input_text": "## 事後報告\nhttps://example.com/postmortem\n",
+        "expected_page_group": [
+            "## 事後報告\nhttps://example.com/postmortem"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>事後報告</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/postmortem</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-08",
+        "input_text": "![アラート画面](https://example.com/alert.png)\r\n\r\n## 対応の流れ\r\n- 検知\r\n- 切り戻し\r\n",
+        "expected_page_group": [
+            "![アラート画面](https://example.com/alert.png)",
+            "## 対応の流れ\n- 検知\n- 切り戻し"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/alert.png\" alt=\"アラート画面\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>対応の流れ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>検知</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>切り戻し</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-09",
+        "input_text": "## 確認項目\n○ TTL の値\n○ NS の向き先\n",
+        "expected_page_group": [
+            "## 確認項目\n○ TTL の値\n○ NS の向き先"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>確認項目</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>TTL の値</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>NS の向き先</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112400-10",
+        "input_text": "## 連絡先\n-　当番表を見る\n-　無ければ課長へ\n",
+        "expected_page_group": [
+            "## 連絡先\n-　当番表を見る\n-　無ければ課長へ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>連絡先</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>当番表を見る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>無ければ課長へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]

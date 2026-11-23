@@ -1,0 +1,112 @@
+[
+    {
+        "test_data_id": "2026112403-01",
+        "input_text": "# 社内勉強会を続けるコツ\n\n## 始めた理由\n- 知見が属人化していた\n- 新人の立ち上がりが遅かった\n\n## 続けるコツ\n1. 時間を固定する\n2. 発表は10分まで\n\n## まとめ\n",
+        "expected_page_group": [
+            "# 社内勉強会を続けるコツ",
+            "## 始めた理由\n- 知見が属人化していた\n- 新人の立ち上がりが遅かった",
+            "## 続けるコツ\n1. 時間を固定する\n2. 発表は10分まで",
+            "## まとめ"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>社内勉強会を続けるコツ</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>始めた理由</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>知見が属人化していた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>新人の立ち上がりが遅かった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>続けるコツ</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>時間を固定する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>発表は10分まで</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-02",
+        "input_text": "## 実行方法\n以下のコマンドを使う\n1. 準備する\n2. 実行する\n注意点は後で話す\n",
+        "expected_page_group": [
+            "## 実行方法\n以下のコマンドを使う\n1. 準備する\n2. 実行する\n注意点は後で話す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>実行方法</Str></title><blocks><TextBlock><Paragraph><Str>以下のコマンドを使う</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>注意点は後で話す</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-03",
+        "input_text": "![全体像](https://example.com/overview.png)\n\n## 構成\n- フロントエンド\n  - React\n- バックエンド\n  - FastAPI\n\n![](https://example.com/end.png)",
+        "expected_page_group": [
+            "![全体像](https://example.com/overview.png)",
+            "## 構成\n- フロントエンド\n  - React\n- バックエンド\n  - FastAPI",
+            "![](https://example.com/end.png)"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/overview.png\" alt=\"全体像\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>フロントエンド</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>React</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>バックエンド</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>FastAPI</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>",
+            "<FigurePage id=\"p3\"><ImageFigure src=\"https://example.com/end.png\" /></FigurePage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-04",
+        "input_text": "## C# 入門 # 一歩目\n- 型がある\n",
+        "expected_page_group": [
+            "## C# 入門 # 一歩目\n- 型がある"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>C# 入門 # 一歩目</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>型がある</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-05",
+        "input_text": "## `uv run` の使い方\n- `uv run pytest` でテストを回す\n",
+        "expected_page_group": [
+            "## `uv run` の使い方\n- `uv run pytest` でテストを回す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Code>uv run</Code><Str> の使い方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Code>uv run pytest</Code><Str> でテストを回す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-06",
+        "input_text": "## 感想\n**早い**と*楽*は違うし、~~面倒~~だった。詳細は[ブログ](https://example.com/blog)へ。\n",
+        "expected_page_group": [
+            "## 感想\n**早い**と*楽*は違うし、~~面倒~~だった。詳細は[ブログ](https://example.com/blog)へ。"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>感想</Str></title><blocks><TextBlock><Paragraph><Strong><Str>早い</Str></Strong><Str>と</Str><Em><Str>楽</Str></Em><Str>は違うし、</Str><Strike><Str>面倒</Str></Strike><Str>だった。詳細は</Str><Anchor href=\"https://example.com/blog\"><Str>ブログ</Str></Anchor><Str>へ。</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-07",
+        "input_text": "## 続けた結果\n毎週金曜の夕方に、その週に学んだことを三つだけ選んで社内のチャットに書き残すようにしたところ、半年後には自分でも驚くほどの量の知見が検索できる形で溜まっていた\n- 検索できて助かった\n",
+        "expected_page_group": [
+            "## 続けた結果\n毎週金曜の夕方に、その週に学んだことを三つだけ選んで社内のチャットに書き残すようにしたところ、半年後には自分でも驚くほどの量の知見が検索できる形で溜まっていた\n- 検索できて助かった"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>続けた結果</Str></title><blocks><TextBlock><Paragraph><Str>毎週金曜の夕方に、その週に学んだことを三つだけ選んで社内のチャットに書き残すようにしたところ、半年後には自分でも驚くほどの量の知見が検索できる形で溜まっていた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>検索できて助かった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-08",
+        "input_text": "## 🎉 発表を終えて\n- 緊張した 😅\n- また出たい\n",
+        "expected_page_group": [
+            "## 🎉 発表を終えて\n- 緊張した 😅\n- また出たい"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>🎉 発表を終えて</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>緊張した 😅</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>また出たい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-09",
+        "input_text": "## タグの扱い\n- <div> は使わない\n- &nbsp; も書かない\n",
+        "expected_page_group": [
+            "## タグの扱い\n- <div> は使わない\n- &nbsp; も書かない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>タグの扱い</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>&lt;div&gt; は使わない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>&amp;nbsp; も書かない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112403-10",
+        "input_text": "# 題名だけのメモ",
+        "expected_page_group": [
+            "# 題名だけのメモ"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>題名だけのメモ</Str></title></CoverPage>"
+        ]
+    }
+]
