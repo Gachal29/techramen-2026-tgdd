@@ -1,0 +1,112 @@
+[
+    {
+        "test_data_id": "2026112319-01",
+        "input_text": "# 翻訳CLI「trans」を作った\n\n## 作った理由\n- 毎回コピペが面倒\n- 用語集を使いたい\n\n## 使い方\n`trans README.md --to en`\n",
+        "expected_page_group": [
+            "# 翻訳CLI「trans」を作った",
+            "## 作った理由\n- 毎回コピペが面倒\n- 用語集を使いたい",
+            "## 使い方\n`trans README.md --to en`"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>翻訳CLI「trans」を作った</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>作った理由</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎回コピペが面倒</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>用語集を使いたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>使い方</Str></title><blocks><TextBlock><Paragraph><Code>trans README.md --to en</Code></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-02",
+        "input_text": "![処理の流れ](https://example.com/flow.png)\n\n## 処理の流れ\n- 分割\n- 翻訳\n- 結合\n",
+        "expected_page_group": [
+            "![処理の流れ](https://example.com/flow.png)",
+            "## 処理の流れ\n- 分割\n- 翻訳\n- 結合"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/flow.png\" alt=\"処理の流れ\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>処理の流れ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>分割</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>翻訳</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>結合</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-03",
+        "input_text": "## 工夫した点\n\n## 用語集\n**固有名詞**は訳さない\n- 製品名\n  - `trans`\n    - コマンド名\n- 略語\n",
+        "expected_page_group": [
+            "## 工夫した点",
+            "## 用語集\n**固有名詞**は訳さない\n- 製品名\n  - `trans`\n    - コマンド名\n- 略語"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Str>工夫した点</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p2\"><title><Str>用語集</Str></title><blocks><TextBlock><Paragraph><Strong><Str>固有名詞</Str></Strong><Str>は訳さない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>製品名</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>trans</Code></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>コマンド名</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>略語</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-04",
+        "input_text": "## 構成\n- 本体\n\t- 画面\n\t- 入力\n- 周辺\n",
+        "expected_page_group": [
+            "## 構成\n- 本体\n\t- 画面\n\t- 入力\n- 周辺"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>本体</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>画面</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>入力</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>周辺</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-05",
+        "input_text": "# 翻訳CLI　作りました  \n",
+        "expected_page_group": [
+            "# 翻訳CLI　作りました"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>翻訳CLI　作りました</Str></title></CoverPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-06",
+        "input_text": "## C# と F# の比較\n- どちらも .NET 上で動く\n",
+        "expected_page_group": [
+            "## C# と F# の比較\n- どちらも .NET 上で動く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>C# と F# の比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>どちらも .NET 上で動く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-07",
+        "input_text": "\n\n## 次の一歩\n- 英→日にも対応\n- 設定ファイルを読む",
+        "expected_page_group": [
+            "## 次の一歩\n- 英→日にも対応\n- 設定ファイルを読む"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>次の一歩</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>英→日にも対応</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>設定ファイルを読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-08",
+        "input_text": "まず前提として\n- 対象は Markdown のみ\n\n## 制限\n- コードは訳さない\n",
+        "expected_page_group": [
+            "まず前提として\n- 対象は Markdown のみ",
+            "## 制限\n- コードは訳さない"
+        ],
+        "expected_slideir_page": [
+            "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>まず前提として</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>対象は Markdown のみ</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>",
+            "<GeneralPage id=\"p2\"><title><Str>制限</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>コードは訳さない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-09",
+        "input_text": "## 対応言語\n- 日本語\n    - 敬体\n    - 常体\n- 英語\n",
+        "expected_page_group": [
+            "## 対応言語\n- 日本語\n    - 敬体\n    - 常体\n- 英語"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>対応言語</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>日本語</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>敬体</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>常体</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>英語</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112319-10",
+        "input_text": "＃ 翻訳CLIの紹介\n",
+        "expected_page_group": [
+            "＃ 翻訳CLIの紹介"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>翻訳CLIの紹介</Str></title></CoverPage>"
+        ]
+    }
+]
