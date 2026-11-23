@@ -1,0 +1,116 @@
+[
+    {
+        "test_data_id": "2026112408-01",
+        "input_text": "# CI高速化の道のり\n\n## きっかけ\nCIの完了まで20分かかっていた\n- 待ち時間で集中が切れる\n- レビューが遅れる\n\n## 打ち手\n\n## 結果\n- 8分になった\n",
+        "expected_page_group": [
+            "# CI高速化の道のり",
+            "## きっかけ\nCIの完了まで20分かかっていた\n- 待ち時間で集中が切れる\n- レビューが遅れる",
+            "## 打ち手",
+            "## 結果\n- 8分になった"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>CI高速化の道のり</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>きっかけ</Str></title><blocks><TextBlock><Paragraph><Str>CIの完了まで20分かかっていた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>待ち時間で集中が切れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>レビューが遅れる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>打ち手</Str></title></HeadingPage>",
+            "<GeneralPage id=\"p3\"><title><Str>結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>8分になった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-02",
+        "input_text": "![ビルド時間の推移](https://example.com/build.png)\n\n## 結果\n- 20分が8分になった\n  - キャッシュを入れた\n  - 並列化した\n    - テストを4分割した\n",
+        "expected_page_group": [
+            "![ビルド時間の推移](https://example.com/build.png)",
+            "## 結果\n- 20分が8分になった\n  - キャッシュを入れた\n  - 並列化した\n    - テストを4分割した"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/build.png\" alt=\"ビルド時間の推移\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>20分が8分になった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>キャッシュを入れた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>並列化した</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>テストを4分割した</Str></Paragraph></TextBlock></Cluster></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-03",
+        "input_text": "# 夜のCI待ちを減らした話\n\n## 背景\n- 毎晩20分待っていた\n\n## 課題\n1. キャッシュが効かない\n2. テストが直列\n\n## 方針\n小さく直して計測する\n",
+        "expected_page_group": [
+            "# 夜のCI待ちを減らした話",
+            "## 背景\n- 毎晩20分待っていた",
+            "## 課題\n1. キャッシュが効かない\n2. テストが直列",
+            "## 方針\n小さく直して計測する"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>夜のCI待ちを減らした話</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎晩20分待っていた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>課題</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>キャッシュが効かない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>テストが直列</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p3\"><title><Str>方針</Str></title><blocks><TextBlock><Paragraph><Str>小さく直して計測する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-04",
+        "input_text": "## 参考\n[~~旧ドキュメント~~](https://example.com/old)は廃止した\n- [新ドキュメント](https://example.com/new)を見る\n",
+        "expected_page_group": [
+            "## 参考\n[~~旧ドキュメント~~](https://example.com/old)は廃止した\n- [新ドキュメント](https://example.com/new)を見る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Anchor href=\"https://example.com/old\"><Strike><Str>旧ドキュメント</Str></Strike></Anchor><Str>は廃止した</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/new\"><Str>新ドキュメント</Str></Anchor><Str>を見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-05",
+        "input_text": "## 段の戻り方\n- 親A\n  - 子A1\n    - 孫A1a\n- 親B\n  - 子B1\n",
+        "expected_page_group": [
+            "## 段の戻り方\n- 親A\n  - 子A1\n    - 孫A1a\n- 親B\n  - 子B1"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>段の戻り方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親A</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子A1</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>孫A1a</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>親B</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子B1</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-06",
+        "input_text": "![図 \"非同期\" の流れ](https://example.com/flow.png)",
+        "expected_page_group": [
+            "![図 \"非同期\" の流れ](https://example.com/flow.png)"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/flow.png\" alt='図 \"非同期\" の流れ' /></FigurePage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-07",
+        "input_text": "## 使うツール\n- [`uv`の公式](https://docs.astral.sh/uv/)を読んだ\n- `pytest` は変えない\n",
+        "expected_page_group": [
+            "## 使うツール\n- [`uv`の公式](https://docs.astral.sh/uv/)を読んだ\n- `pytest` は変えない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>使うツール</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://docs.astral.sh/uv/\"><Code>uv</Code><Str>の公式</Str></Anchor><Str>を読んだ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>pytest</Code><Str> は変えない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-08",
+        "input_text": "## 深い入れ子\n- 一段目\n  - 二段目\n    - 三段目\n      - 四段目\n",
+        "expected_page_group": [
+            "## 深い入れ子\n- 一段目\n  - 二段目\n    - 三段目\n      - 四段目"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>深い入れ子</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一段目</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>二段目</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>三段目</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>四段目</Str></Paragraph></TextBlock></Cluster></Cluster></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-09",
+        "input_text": "## 反省\n＊ 計測が先だった\n＋ 一度に変えすぎた\n",
+        "expected_page_group": [
+            "## 反省\n＊ 計測が先だった\n＋ 一度に変えすぎた"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>反省</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>計測が先だった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>一度に変えすぎた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112408-10",
+        "input_text": "## 手順\n-   依存を入れる\n-   キャッシュを確認する\n",
+        "expected_page_group": [
+            "## 手順\n-   依存を入れる\n-   キャッシュを確認する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>依存を入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>キャッシュを確認する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
