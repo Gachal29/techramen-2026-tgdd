@@ -276,5 +276,37 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112316-05",
+    "input_text": "## 記号の扱い\n\\*\\*太字ではない\\*\\* と書く",
+    "expected_page_group": [
+      "## 記号の扱い\n\\*\\*太字ではない\\*\\* と書く"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記号の扱い</Str></title><blocks><TextBlock><Paragraph><Str>**太字ではない** と書く</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112316-06",
+    "input_text": "![障害の推移](https://example.com/graph.png \"図1\")\n\n## 推移\n- 02:10 から急増",
+    "expected_page_group": [
+      "![障害の推移](https://example.com/graph.png \"図1\")",
+      "## 推移\n- 02:10 から急増"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/graph.png\" alt=\"障害の推移\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>推移</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>02:10 から急増</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112316-10",
+    "input_text": "## 参考\n- [障害報告書](https://example.com/report \"社内資料\") を読む",
+    "expected_page_group": [
+      "## 参考\n- [障害報告書](https://example.com/report \"社内資料\") を読む"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/report\"><Str>障害報告書</Str></Anchor><Str> を読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
