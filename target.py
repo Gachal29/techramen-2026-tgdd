@@ -291,13 +291,15 @@ def _build_blocks(lines: list[str]) -> ET.Element:
     - 図だけの行は ImageFigure、箇条書きは Cluster（字下げは入れ子）、それ以外は段落 1 行で TextBlock 1 つ
     """
     blocks = ET.Element("blocks")
-    # 箇条書きの入れ子: (Cluster 要素, 番号付きか) の配列。添字が段
-    stack: list[tuple[ET.Element, bool]] = []
+    # 箇条書きの入れ子: (Cluster 要素, 番号付きか, その段の最初の項目の字下げ) の配列。添字が段
+    # 段は字下げの絶対値ではなく、上の段より深いかで決める（全体が字下げされた箇条書きも 1 段目にする）
+    stack: list[tuple[ET.Element, bool, int]] = []
     for line in lines:
         bullet = BULLET_RE.match(line)
         if bullet and bullet["text"].strip():
             ordered = bullet["number"] is not None or bullet["wide_number"] is not None
-            level = min(_indent_level(bullet["indent"]), len(stack))
+            indent = _indent_level(bullet["indent"])
+            level = sum(1 for entry in stack if entry[2] < indent)
             del stack[level + 1 :]
             if len(stack) > level and stack[level][1] != ordered:
                 del stack[level:]
@@ -306,7 +308,7 @@ def _build_blocks(lines: list[str]) -> ET.Element:
                 attributes = {"marker": "true"}
                 if ordered:
                     attributes = {"ordered": "true", "marker": "true"}
-                stack.append((ET.SubElement(parent, "Cluster", attributes), ordered))
+                stack.append((ET.SubElement(parent, "Cluster", attributes), ordered, indent))
             _text_block(stack[level][0], bullet["text"].strip())
             continue
         stack.clear()
