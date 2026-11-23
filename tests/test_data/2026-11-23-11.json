@@ -1,0 +1,114 @@
+[
+  {
+    "test_data_id": "2026112311-01",
+    "input_text": "# 自作キーボードを組んだ\n\n## 動機\n毎日使う道具だから拘りたい\n打鍵感が気になっていた\n\n## 部品\n- 基板\n  - ホットスワップ対応\n- スイッチ\n- キーキャップ\n\n## 完成",
+    "expected_page_group": [
+      "# 自作キーボードを組んだ",
+      "## 動機\n毎日使う道具だから拘りたい\n打鍵感が気になっていた",
+      "## 部品\n- 基板\n  - ホットスワップ対応\n- スイッチ\n- キーキャップ",
+      "## 完成"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>自作キーボードを組んだ</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>動機</Str></title><blocks><TextBlock><Paragraph><Str>毎日使う道具だから拘りたい</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>打鍵感が気になっていた</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>部品</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>基板</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ホットスワップ対応</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>スイッチ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>キーキャップ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>完成</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-02",
+    "input_text": "![完成した写真](https://example.com/kb.jpg)\n\n## 使ってみて\nタイプ音が静かになった\n\n## 今後\n- 無線化したい",
+    "expected_page_group": [
+      "![完成した写真](https://example.com/kb.jpg)",
+      "## 使ってみて\nタイプ音が静かになった",
+      "## 今後\n- 無線化したい"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/kb.jpg\" alt=\"完成した写真\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>使ってみて</Str></title><blocks><TextBlock><Paragraph><Str>タイプ音が静かになった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p3\"><title><Str>今後</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>無線化したい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-03",
+    "input_text": "## 設定\n`config.toml` に **timeout** を書く\n- 値は [公式](https://example.com/docs) を参照",
+    "expected_page_group": [
+      "## 設定\n`config.toml` に **timeout** を書く\n- 値は [公式](https://example.com/docs) を参照"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>設定</Str></title><blocks><TextBlock><Paragraph><Code>config.toml</Code><Str> に </Str><Strong><Str>timeout</Str></Strong><Str> を書く</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>値は </Str><Anchor href=\"https://example.com/docs\"><Str>公式</Str></Anchor><Str> を参照</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-04",
+    "input_text": "## **重要**な `config` の話\n- 設定を確認する",
+    "expected_page_group": [
+      "## **重要**な `config` の話\n- 設定を確認する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Strong><Str>重要</Str></Strong><Str>な </Str><Code>config</Code><Str> の話</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>設定を確認する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-05",
+    "input_text": "## 構成\n- 全体像\n![構成図](https://example.com/arch.png)\n- 詳細は次ページ",
+    "expected_page_group": [
+      "## 構成\n- 全体像\n![構成図](https://example.com/arch.png)\n- 詳細は次ページ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>全体像</Str></Paragraph></TextBlock></Cluster><ImageFigure src=\"https://example.com/arch.png\" alt=\"構成図\" /><Cluster marker=\"true\"><TextBlock><Paragraph><Str>詳細は次ページ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-06",
+    "input_text": "## 準備\n\n\n\n- 道具を揃える\n- 場所を決める\n\n\n## 本番\n発表する",
+    "expected_page_group": [
+      "## 準備\n\n\n\n- 道具を揃える\n- 場所を決める",
+      "## 本番\n発表する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>道具を揃える</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>場所を決める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>本番</Str></title><blocks><TextBlock><Paragraph><Str>発表する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-07",
+    "input_text": "## 一日の流れ\n1. 起床\n2. 朝食\n3. 通勤\n4. 会議\n5. 昼食\n6. 作業\n7. 休憩\n8. 退勤\n9. 夕食\n10. 就寝",
+    "expected_page_group": [
+      "## 一日の流れ\n1. 起床\n2. 朝食\n3. 通勤\n4. 会議\n5. 昼食\n6. 作業\n7. 休憩\n8. 退勤\n9. 夕食\n10. 就寝"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>一日の流れ</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>起床</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>朝食</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>通勤</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>会議</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>昼食</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>作業</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>休憩</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>退勤</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>夕食</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>就寝</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-08",
+    "input_text": "## 注意\n**必ず確認する**\n通常の文",
+    "expected_page_group": [
+      "## 注意\n**必ず確認する**\n通常の文"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Strong><Str>必ず確認する</Str></Strong></Paragraph></TextBlock><TextBlock><Paragraph><Str>通常の文</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-09",
+    "input_text": "## 持ち物\n● 財布\n● 鍵",
+    "expected_page_group": [
+      "## 持ち物\n● 財布\n● 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112311-10",
+    "input_text": "## 体制\n* 親\n  * 子\n* 別の親",
+    "expected_page_group": [
+      "## 体制\n* 親\n  * 子\n* 別の親"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>体制</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>親</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>子</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>別の親</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
