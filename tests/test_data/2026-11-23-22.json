@@ -1,0 +1,108 @@
+[
+  {
+    "test_data_id": "2026112322-01",
+    "input_text": "# ボードゲーム会を開いた話\n\n## 始めたきっかけ\n友人と遊ぶ場所が欲しかった\n~~毎回の日程調整~~から解放されたい\n\n## 結果",
+    "expected_page_group": [
+      "# ボードゲーム会を開いた話",
+      "## 始めたきっかけ\n友人と遊ぶ場所が欲しかった\n~~毎回の日程調整~~から解放されたい",
+      "## 結果"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>ボードゲーム会を開いた話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>始めたきっかけ</Str></title><blocks><TextBlock><Paragraph><Str>友人と遊ぶ場所が欲しかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strike><Str>毎回の日程調整</Str></Strike><Str>から解放されたい</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>結果</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-02",
+    "input_text": "開催の流れ\n1. 集合\n2. ルール説明\n3. 対戦\n\n## 片付け\n- 椅子を戻す",
+    "expected_page_group": [
+      "開催の流れ\n1. 集合\n2. ルール説明\n3. 対戦",
+      "## 片付け\n- 椅子を戻す"
+    ],
+    "expected_slideir_page": [
+      "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>開催の流れ</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>集合</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ルール説明</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>対戦</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>",
+      "<GeneralPage id=\"p2\"><title><Str>片付け</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>椅子を戻す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-03",
+    "input_text": "## 費用\n- 会場費: `3000円`\n- 参加費: **500円**",
+    "expected_page_group": [
+      "## 費用\n- 会場費: `3000円`\n- 参加費: **500円**"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>費用</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>会場費: </Str><Code>3000円</Code></Paragraph></TextBlock><TextBlock><Paragraph><Str>参加費: </Str><Strong><Str>500円</Str></Strong></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-04",
+    "input_text": "## 当日の流れ\r\n- 受付\r\n- 対戦\r\n\r\n## 終了\r\n",
+    "expected_page_group": [
+      "## 当日の流れ\n- 受付\n- 対戦",
+      "## 終了"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>当日の流れ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>受付</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>対戦</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>終了</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-05",
+    "input_text": "## 反省点 ##\n- 時間が押した\n- 説明が長かった",
+    "expected_page_group": [
+      "## 反省点 ##\n- 時間が押した\n- 説明が長かった"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>反省点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>時間が押した</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>説明が長かった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-06",
+    "input_text": "## 準備の手順\n- 会場\n  1. 机を並べる\n  2. 椅子を置く\n- 道具",
+    "expected_page_group": [
+      "## 準備の手順\n- 会場\n  1. 机を並べる\n  2. 椅子を置く\n- 道具"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>準備の手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>会場</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>机を並べる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>椅子を置く</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>道具</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-07",
+    "input_text": "## 記法メモ\n`**太字**` と書くと太字になる",
+    "expected_page_group": [
+      "## 記法メモ\n`**太字**` と書くと太字になる"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法メモ</Str></title><blocks><TextBlock><Paragraph><Code>**太字**</Code><Str> と書くと太字になる</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-08",
+    "input_text": "![A&B の比較](https://example.com/p?a=1&b=2)\n\n## 比較結果\n- 差は小さい",
+    "expected_page_group": [
+      "![A&B の比較](https://example.com/p?a=1&b=2)",
+      "## 比較結果\n- 差は小さい"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/p?a=1&amp;b=2\" alt=\"A&amp;B の比較\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>比較結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>差は小さい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-09",
+    "input_text": "＃＃ 次回の予定\n- 来月の第1土曜\n- 会場は同じ",
+    "expected_page_group": [
+      "＃＃ 次回の予定\n- 来月の第1土曜\n- 会場は同じ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>次回の予定</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>来月の第1土曜</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>会場は同じ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112322-10",
+    "input_text": "  \n\t\n   \n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  }
+]
