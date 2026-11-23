@@ -1,0 +1,116 @@
+[
+    {
+        "test_data_id": "2026112321-01",
+        "input_text": "# 自宅サーバー運用の三年間\n\n## 構成\n- Raspberry Pi 4\n- 外付けSSD\n\n## 学び\n運用は地味な作業の積み重ね\n",
+        "expected_page_group": [
+            "# 自宅サーバー運用の三年間",
+            "## 構成\n- Raspberry Pi 4\n- 外付けSSD",
+            "## 学び\n運用は地味な作業の積み重ね"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>自宅サーバー運用の三年間</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Raspberry Pi 4</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>外付けSSD</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>学び</Str></title><blocks><TextBlock><Paragraph><Str>運用は地味な作業の積み重ね</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-02",
+        "input_text": "![サーバーラック](https://example.com/rack.jpg)\n\n## 置き場所\n- 玄関の棚\n  - 通気を確保\n  - 床から 30cm 上げる\n- 配線は壁沿い\n\n## 次の章\n",
+        "expected_page_group": [
+            "![サーバーラック](https://example.com/rack.jpg)",
+            "## 置き場所\n- 玄関の棚\n  - 通気を確保\n  - 床から 30cm 上げる\n- 配線は壁沿い",
+            "## 次の章"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/rack.jpg\" alt=\"サーバーラック\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>置き場所</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>玄関の棚</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>通気を確保</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>床から 30cm 上げる</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>配線は壁沿い</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>次の章</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-03",
+        "input_text": "# 家で動かすサービス\n## 公開しているもの\n1. **Nextcloud** でファイル共有\n2. [Gitea](https://gitea.io) でコード管理\n\n## 非公開\nVPN 経由だけ使える",
+        "expected_page_group": [
+            "# 家で動かすサービス",
+            "## 公開しているもの\n1. **Nextcloud** でファイル共有\n2. [Gitea](https://gitea.io) でコード管理",
+            "## 非公開\nVPN 経由だけ使える"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>家で動かすサービス</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>公開しているもの</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Strong><Str>Nextcloud</Str></Strong><Str> でファイル共有</Str></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://gitea.io\"><Str>Gitea</Str></Anchor><Str> でコード管理</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>非公開</Str></title><blocks><TextBlock><Paragraph><Str>VPN 経由だけ使える</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-04",
+        "input_text": "# `systemd` と仲良くなる\n## 動機\n- 手動起動に疲れた",
+        "expected_page_group": [
+            "# `systemd` と仲良くなる",
+            "## 動機\n- 手動起動に疲れた"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Code>systemd</Code><Str> と仲良くなる</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>動機</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>手動起動に疲れた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-05",
+        "input_text": "## 参考\n- [`uv`](https://docs.astral.sh/uv/) の公式文書\n- [`pytest`](https://docs.pytest.org/) の公式文書",
+        "expected_page_group": [
+            "## 参考\n- [`uv`](https://docs.astral.sh/uv/) の公式文書\n- [`pytest`](https://docs.pytest.org/) の公式文書"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://docs.astral.sh/uv/\"><Code>uv</Code></Anchor><Str> の公式文書</Str></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://docs.pytest.org/\"><Code>pytest</Code></Anchor><Str> の公式文書</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-06",
+        "input_text": "## `docker compose up -d`\n",
+        "expected_page_group": [
+            "## `docker compose up -d`"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Code>docker compose up -d</Code></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-07",
+        "input_text": "## 定期実行\n*`cron`* と systemd timer を比べた\n- `cron` は設定が簡単\n- timer はログが見やすい",
+        "expected_page_group": [
+            "## 定期実行\n*`cron`* と systemd timer を比べた\n- `cron` は設定が簡単\n- timer はログが見やすい"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>定期実行</Str></title><blocks><TextBlock><Paragraph><Em><Code>cron</Code></Em><Str> と systemd timer を比べた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>cron</Code><Str> は設定が簡単</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>timer はログが見やすい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-08",
+        "input_text": "## ⚠️ `sudo` に注意\n- 実行前に内容を読む\n",
+        "expected_page_group": [
+            "## ⚠️ `sudo` に注意\n- 実行前に内容を読む"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>⚠️ </Str><Code>sudo</Code><Str> に注意</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>実行前に内容を読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-09",
+        "input_text": "電源の話\n------\n- UPS を導入した\n- 停電時は 10 分もつ\n",
+        "expected_page_group": [
+            "電源の話\n------\n- UPS を導入した\n- 停電時は 10 分もつ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>電源の話</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>UPS を導入した</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>停電時は 10 分もつ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112321-10",
+        "input_text": "## 作業手順\n1、電源を切る\n2、SDカードを抜く\n3、差し替える\n",
+        "expected_page_group": [
+            "## 作業手順\n1、電源を切る\n2、SDカードを抜く\n3、差し替える"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>作業手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>電源を切る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>SDカードを抜く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>差し替える</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "test_data_id": "2026112318-01",
+    "input_text": "# SQLiteを本番で使った話\n\n## 背景\n小規模なサービスで構成を軽くしたかった\n\n## 結論\n",
+    "expected_page_group": [
+      "# SQLiteを本番で使った話",
+      "## 背景\n小規模なサービスで構成を軽くしたかった",
+      "## 結論"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>SQLiteを本番で使った話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>小規模なサービスで構成を軽くしたかった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>結論</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-02",
+    "input_text": "![構成図](https://example.com/arch.png)\n\n## 課題\n- 同時書き込みに弱い\n  - WALで緩和\n  - 限界はある\n- バックアップが必要\n",
+    "expected_page_group": [
+      "![構成図](https://example.com/arch.png)",
+      "## 課題\n- 同時書き込みに弱い\n  - WALで緩和\n  - 限界はある\n- バックアップが必要"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/arch.png\" alt=\"構成図\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>課題</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>同時書き込みに弱い</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>WALで緩和</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>限界はある</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>バックアップが必要</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-03",
+    "input_text": "## 設定\n1. `PRAGMA journal_mode=WAL;` を実行する\n2. [公式文書](https://www.sqlite.org/wal.html) を読む\n3. **必ず**バックアップする\n",
+    "expected_page_group": [
+      "## 設定\n1. `PRAGMA journal_mode=WAL;` を実行する\n2. [公式文書](https://www.sqlite.org/wal.html) を読む\n3. **必ず**バックアップする"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>設定</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Code>PRAGMA journal_mode=WAL;</Code><Str> を実行する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://www.sqlite.org/wal.html\"><Str>公式文書</Str></Anchor><Str> を読む</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>必ず</Str></Strong><Str>バックアップする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-04",
+    "input_text": "## 向いている用途\n－ 読み取りが中心\n－ 単一サーバー\n",
+    "expected_page_group": [
+      "## 向いている用途\n－ 読み取りが中心\n－ 単一サーバー"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>向いている用途</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>読み取りが中心</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>単一サーバー</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-05",
+    "input_text": "## 注意\n**太字の中に*斜体*を入れる**\n",
+    "expected_page_group": [
+      "## 注意\n**太字の中に*斜体*を入れる**"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Strong><Str>太字の中に</Str><Em><Str>斜体</Str></Em><Str>を入れる</Str></Strong></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-06",
+    "input_text": "## **重要**な [お知らせ](https://example.com/news)\n",
+    "expected_page_group": [
+      "## **重要**な [お知らせ](https://example.com/news)"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Strong><Str>重要</Str></Strong><Str>な </Str><Anchor href=\"https://example.com/news\"><Str>お知らせ</Str></Anchor></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-07",
+    "input_text": "![](https://example.com/a.png)\n\n## 次にやること\n",
+    "expected_page_group": [
+      "![](https://example.com/a.png)",
+      "## 次にやること"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/a.png\" /></FigurePage>",
+      "<HeadingPage id=\"p2\"><title><Str>次にやること</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-08",
+    "input_text": "## 実験条件\n-5℃ まで冷却する\n- 24時間 放置する\n",
+    "expected_page_group": [
+      "## 実験条件\n-5℃ まで冷却する\n- 24時間 放置する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>実験条件</Str></title><blocks><TextBlock><Paragraph><Str>-5℃ まで冷却する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>24時間 放置する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-09",
+    "input_text": "## メモ\n**閉じ忘れた太字\n",
+    "expected_page_group": [
+      "## メモ\n**閉じ忘れた太字"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>メモ</Str></title><blocks><TextBlock><Paragraph><Str>**閉じ忘れた太字</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112318-10",
+    "input_text": "## 良かった点\n・移行が簡単\n・運用が楽\n",
+    "expected_page_group": [
+      "## 良かった点\n・移行が簡単\n・運用が楽"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>良かった点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>移行が簡単</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>運用が楽</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
