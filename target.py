@@ -18,8 +18,9 @@ CLOSING_HASHES_RE = re.compile(r"[ \t　]+[#＃]+$")
 # 中黒 `・`（半角の `･` も）と、ほかのアプリから写したときに残る箇条書きの記号 `•`・`◦`・`‣` も箇条書きにする。
 # 黒丸・白丸などの記号 `●`・`○`・`◆`・`◇`・`■`・`□`・`▪`・`▫` も箇条書きにする。
 # 日本語のメモでは後ろに空白を置かないことが多いため、これらの記号の後の空白はなくてよい。
-# 番号付きは全角の数字と、全角の `．`・`）` も受け付ける（`１．準備する`）。全角の `．`・`）` の後の
-# 空白はなくてよい（ただし直後に数字が続く `１．５` は小数として扱い、番号付きにしない）。
+# 番号付きは全角の数字と、全角の `．`・`）` も受け付ける（`１．準備する`）。日本語の読点 `、` で番号を
+# 区切る書き方（`1、電源を切る`）も番号付きにする。全角の `．`・`）`・`、` の後の空白はなくてよい
+# （ただし直後に数字が続く `１．５`・`1、2 回` は小数や数の並びとして扱い、番号付きにしない）。
 # `-`・`－` は、後ろに空白がなくても、日本語などの文字（ASCII・数字・空白・`－` 以外）が直後に続けば
 # 箇条書きにする（`-小さく始める`）。`-5 度` のような負の数、`--option`・`---` は箇条書きにしない。
 # `*`・`+` は強調（`**太字**`）などと区別できないため、後ろに空白が必要。
@@ -27,7 +28,7 @@ CLOSING_HASHES_RE = re.compile(r"[ \t　]+[#＃]+$")
 BULLET_RE = re.compile(
     r"^(?P<indent>[ \t　]*)"
     r"(?:(?:(?P<mark>[-*+－＊＋])|(?P<number>\d+)[.)])[ \t　]+"
-    r"|(?P<wide_number>\d+)[．）](?!\d)[ \t　]*"
+    r"|(?P<wide_number>\d+)[．）、](?!\d)[ \t　]*"
     r"|(?P<dash>[-－])(?=[^\x00-\x7F\s\d－])"
     r"|(?P<dot>[・･•◦‣●○◆◇■□▪▫])[ \t　]*)"
     r"(?P<text>.*)$"
@@ -41,6 +42,11 @@ _TITLE_PATTERN = r"(?:[ \t]+(?:\"[^\"]*\"|'[^']*'|\([^()]*\)))?[ \t]*"
 IMAGE_RE = re.compile(
     r"^\s*!\[(?P<alt>[^\]]*)\]\((?P<src>" + _URL_PATTERN + r")" + _TITLE_PATTERN + r"\)\s*$"
 )
+# Setext 形式の見出しの下線（`見出し` の次の行の `------`・`======`）。記号を 2 つ以上並べた行。
+# `=` の下線は表紙（`# ` と同じ）、`-` の下線は見出し（`## ` と同じ）にする。
+# 下線の直前の行が段落（見出し・箇条書き・図・コードブロックの囲みでない、文字のある行）のときだけ
+# 見出しにする。それ以外の `---` は今までどおり段落の文字として扱う
+SETEXT_UNDERLINE_RE = re.compile(r"^[ \t　]*(?:(?P<cover>[=＝]{2,})|(?P<heading>[-－]{2,}))[ \t　]*$")
 # コードブロックの囲み（```・~~~ を 3 つ以上）。開きの後には言語名などを書ける。
 # 閉じは、開きと同じ記号を開きと同じ数以上並べ、後ろに何も書かない行
 FENCE_RE = re.compile(r"^[ \t　]*(?P<fence>`{3,}|~{3,})(?P<info>.*)$")
@@ -93,6 +99,26 @@ def _is_fence_close(line: str, fence: str) -> bool:
     )
 
 
+def _setext_kind(line: str, next_line: str | None) -> str | None:
+    """`line` が Setext 形式の見出しの文字の行なら "cover"・"heading" を返す（次の行が下線）"""
+    if next_line is None:
+        return None
+    underline = SETEXT_UNDERLINE_RE.match(_strip_bom(next_line))
+    text = _strip_bom(line)
+    if (
+        underline is None
+        or not text.strip()
+        or _is_cover(text)
+        or _is_heading(text)
+        or _is_image(text)
+        or _fence_open(text) is not None
+        or BULLET_RE.match(text)
+        or SETEXT_UNDERLINE_RE.match(text)
+    ):
+        return None
+    return "cover" if underline["cover"] else "heading"
+
+
 def text_to_page_grouper(raw_text: str) -> list[str]:
     """作業メモを、ページごとのテキストに分ける
 
@@ -104,6 +130,7 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
     5. 行末の空白は除く。ページの前後の空行は除き、ページの途中の空行はそのまま残す
     6. コードブロック（```・~~~ で囲んだ行）の中は、見出し・表紙・図の行として扱わず、
        開きの行と同じページに入れる（コードの中の `## ` でページを分けない）
+    7. Setext 形式の見出し（文字の行と、その次の `===`・`---` の行）は、2 行で `# `・`## ` の行と同じに扱う
     """
     pages: list[list[str]] = []
     # 今のページの種類: "heading"（見出しのページ）、"body"（見出しのない本文のページ）、None（足せない）
@@ -112,7 +139,12 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
     pending_blanks = 0
     # 開いているコードブロックの囲みの記号（開いていなければ None）
     fence: str | None = None
-    for raw_line in raw_text.splitlines():
+    raw_lines = raw_text.splitlines()
+    # Setext 形式の見出しの下線として、見出しの文字の行と一緒にページへ入れた行の位置
+    underline_index = -1
+    for index, raw_line in enumerate(raw_lines):
+        if index == underline_index:
+            continue
         line = raw_line.rstrip()
         if not _strip_bom(line).strip():
             pending_blanks += 1
@@ -124,6 +156,14 @@ def text_to_page_grouper(raw_text: str) -> list[str]:
             pages[-1].append(line)
             if _is_fence_close(line, fence):
                 fence = None
+            continue
+        next_line = raw_lines[index + 1].rstrip() if index + 1 < len(raw_lines) else None
+        setext = _setext_kind(line, next_line)
+        if setext is not None:
+            pages.append([line, next_line])
+            current = "heading" if setext == "heading" else None
+            underline_index = index + 1
+            fence = None
             continue
         fence = _fence_open(line)
         if current is not None and not _is_cover(line) and not _is_heading(line):
@@ -345,6 +385,25 @@ def page_to_slideir_page(page_text: str, page_id: str) -> str:
     3. 見出しがなく、本文が図 1 つだけなら FigurePage、それ以外は BodyPage
     """
     lines = [_strip_bom(line).rstrip() for line in page_text.splitlines()]
+    # Setext 形式の見出し（最初の文字の行と、そのすぐ次の下線の行）
+    first = next((index for index, line in enumerate(lines) if line.strip()), None)
+    if first is not None:
+        next_line = lines[first + 1] if first + 1 < len(lines) else None
+        setext = _setext_kind(lines[first], next_line)
+        if setext is not None:
+            title = lines[first].strip()
+            body = [line for line in lines[first + 2 :] if line.strip()]
+            if setext == "cover":
+                # 表紙は `# ` の行と同じく、題名だけにする
+                page = ET.Element("CoverPage", {"id": page_id})
+                _append_inlines(ET.SubElement(page, "title"), title)
+                return ET.tostring(page, encoding="unicode")
+            blocks = _build_blocks(body)
+            page = ET.Element("GeneralPage" if len(blocks) else "HeadingPage", {"id": page_id})
+            _append_inlines(ET.SubElement(page, "title"), title)
+            if len(blocks):
+                page.append(blocks)
+            return ET.tostring(page, encoding="unicode")
     lines = [line for line in lines if line.strip()]
     if not lines:
         raise ValueError("空のページは作らない")

@@ -308,5 +308,25 @@
     "expected_slideir_page": [
       "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/report\"><Str>障害報告書</Str></Anchor><Str> を読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
     ]
+  },
+  {
+    "test_data_id": "2026112321-09",
+    "input_text": "電源の話\n------\n- UPS を導入した\n- 停電時は 10 分もつ\n",
+    "expected_page_group": [
+      "電源の話\n------\n- UPS を導入した\n- 停電時は 10 分もつ"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>電源の話</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>UPS を導入した</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>停電時は 10 分もつ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112321-10",
+    "input_text": "## 作業手順\n1、電源を切る\n2、SDカードを抜く\n3、差し替える\n",
+    "expected_page_group": [
+      "## 作業手順\n1、電源を切る\n2、SDカードを抜く\n3、差し替える"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>作業手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>電源を切る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>SDカードを抜く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>差し替える</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
   }
 ]
