@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112406-01",
+    "input_text": "# コードレビューで気をつけていること\n\n## 見るところ\n観点を3つに絞っている\n- 動作\n- 読みやすさ\n- 影響範囲\n\n![レビューの流れ](https://example.com/review-flow.png)\n\n## 伝え方\n\n## まとめ\n- 小さく出す\n",
+    "expected_page_group": [
+      "# コードレビューで気をつけていること",
+      "## 見るところ\n観点を3つに絞っている\n- 動作\n- 読みやすさ\n- 影響範囲",
+      "![レビューの流れ](https://example.com/review-flow.png)",
+      "## 伝え方",
+      "## まとめ\n- 小さく出す"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>コードレビューで気をつけていること</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>見るところ</Str></title><blocks><TextBlock><Paragraph><Str>観点を3つに絞っている</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>動作</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>読みやすさ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>影響範囲</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/review-flow.png\" alt=\"レビューの流れ\" /></FigurePage>",
+      "<HeadingPage id=\"p3\"><title><Str>伝え方</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p4\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく出す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-02",
+    "input_text": "## 障害対応の手順\n1. 影響範囲を確認する\n2. 一次対応をする\n3. 原因を調べる\n- 再発防止は別のページで話す\n\n## 連絡先\n夜間は当番に電話する\n",
+    "expected_page_group": [
+      "## 障害対応の手順\n1. 影響範囲を確認する\n2. 一次対応をする\n3. 原因を調べる\n- 再発防止は別のページで話す",
+      "## 連絡先\n夜間は当番に電話する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>障害対応の手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>影響範囲を確認する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>一次対応をする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>原因を調べる</Str></Paragraph></TextBlock></Cluster><Cluster marker=\"true\"><TextBlock><Paragraph><Str>再発防止は別のページで話す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>連絡先</Str></title><blocks><TextBlock><Paragraph><Str>夜間は当番に電話する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-03",
+    "input_text": "# **15分**で伝える設計の話\n\n## 話すこと\n- *なぜ*分けるか\n- `interface` の置き場所\n",
+    "expected_page_group": [
+      "# **15分**で伝える設計の話",
+      "## 話すこと\n- *なぜ*分けるか\n- `interface` の置き場所"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Strong><Str>15分</Str></Strong><Str>で伝える設計の話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>話すこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Em><Str>なぜ</Str></Em><Str>分けるか</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>interface</Code><Str> の置き場所</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-04",
+    "input_text": "## 手順\n9. 下準備\n10. 実行\n11. 後片付け\n",
+    "expected_page_group": [
+      "## 手順\n9. 下準備\n10. 実行\n11. 後片付け"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>下準備</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>後片付け</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-05",
+    "input_text": "## 作業の分け方\n- 午前\n  1. メールを返す\n  2. 資料を読む\n- 午後\n  1. 実装する\n",
+    "expected_page_group": [
+      "## 作業の分け方\n- 午前\n  1. メールを返す\n  2. 資料を読む\n- 午後\n  1. 実装する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>作業の分け方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>午前</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>メールを返す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>資料を読む</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>午後</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>実装する</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-06",
+    "input_text": "## R&D と <試作> の違い\n- 研究は &lt; ではなく先の話\n",
+    "expected_page_group": [
+      "## R&D と <試作> の違い\n- 研究は &lt; ではなく先の話"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>R&amp;D と &lt;試作&gt; の違い</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>研究は &amp;lt; ではなく先の話</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-07",
+    "input_text": "## 資料は [公式サイト](https://example.com/docs) から\n- 日本語版もある\n",
+    "expected_page_group": [
+      "## 資料は [公式サイト](https://example.com/docs) から\n- 日本語版もある"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>資料は </Str><Anchor href=\"https://example.com/docs\"><Str>公式サイト</Str></Anchor><Str> から</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>日本語版もある</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-08",
+    "input_text": "\n\n## 結果\n\n\n\n- 速くなった\n\n\n- 安定した\n\n\n\n## 課題\n\n\n",
+    "expected_page_group": [
+      "## 結果\n\n\n\n- 速くなった\n\n\n- 安定した",
+      "## 課題"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>結果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>速くなった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>安定した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>課題</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-09",
+    "input_text": "## 手順\n-\t下準備をする\n-\t本番を実行する\n",
+    "expected_page_group": [
+      "## 手順\n-\t下準備をする\n-\t本番を実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>下準備をする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>本番を実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112406-10",
+    "input_text": "## 概要\n　今日は設計レビューの失敗談を話します。\n　最後に改善策を紹介します。\n",
+    "expected_page_group": [
+      "## 概要\n　今日は設計レビューの失敗談を話します。\n　最後に改善策を紹介します。"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><TextBlock><Paragraph><Str>今日は設計レビューの失敗談を話します。</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>最後に改善策を紹介します。</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  }
+]
