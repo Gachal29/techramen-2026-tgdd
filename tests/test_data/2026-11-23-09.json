@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112309-01",
+    "input_text": "# 読書メモの整理術\n\n## 背景\nメモが散らかっていた\n探すのに時間がかかる\n\n## 方針\n- 一か所に集める\n  - 日付をつける\n- 週末に見直す\n\n## まとめ",
+    "expected_page_group": [
+      "# 読書メモの整理術",
+      "## 背景\nメモが散らかっていた\n探すのに時間がかかる",
+      "## 方針\n- 一か所に集める\n  - 日付をつける\n- 週末に見直す",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>読書メモの整理術</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>メモが散らかっていた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>探すのに時間がかかる</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一か所に集める</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>日付をつける</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>週末に見直す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-02",
+    "input_text": "## 入口\n## 中身\n- 一つ目\n## 出口\n",
+    "expected_page_group": [
+      "## 入口",
+      "## 中身\n- 一つ目",
+      "## 出口"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Str>入口</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>中身</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>出口</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-03",
+    "input_text": "# 家計簿アプリを作った\n![画面のスクリーンショット](https://example.com/app.png)\n## 作った理由\n~~面倒~~をなくしたかった\n",
+    "expected_page_group": [
+      "# 家計簿アプリを作った",
+      "![画面のスクリーンショット](https://example.com/app.png)",
+      "## 作った理由\n~~面倒~~をなくしたかった"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>家計簿アプリを作った</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/app.png\" alt=\"画面のスクリーンショット\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>作った理由</Str></title><blocks><TextBlock><Paragraph><Strike><Str>面倒</Str></Strike><Str>をなくしたかった</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-04",
+    "input_text": "## 結論\n**太字の中に*斜体*を入れる**のは避けたい\n",
+    "expected_page_group": [
+      "## 結論\n**太字の中に*斜体*を入れる**のは避けたい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>結論</Str></title><blocks><TextBlock><Paragraph><Strong><Str>太字の中に</Str><Em><Str>斜体</Str></Em><Str>を入れる</Str></Strong><Str>のは避けたい</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-05",
+    "input_text": "## 道具\n* ペン\n+ 紙\n- 定規\n",
+    "expected_page_group": [
+      "## 道具\n* ペン\n+ 紙\n- 定規"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ペン</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>紙</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>定規</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-06",
+    "input_text": "## 候補\n- 案A\n\n  - 案Aの詳細\n\n- 案B\n",
+    "expected_page_group": [
+      "## 候補\n- 案A\n\n  - 案Aの詳細\n\n- 案B"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>候補</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>案A</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>案Aの詳細</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>案B</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-07",
+    "input_text": "## 階層\n- 一段目\n      - 二段目のつもりで深く字下げした\n- 次の項目\n",
+    "expected_page_group": [
+      "## 階層\n- 一段目\n      - 二段目のつもりで深く字下げした\n- 次の項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>階層</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一段目</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>二段目のつもりで深く字下げした</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>次の項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-08",
+    "input_text": "## 流れ\n1. 準備\n  - 道具を揃える\n2. 実行\n",
+    "expected_page_group": [
+      "## 流れ\n1. 準備\n  - 道具を揃える\n2. 実行"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>流れ</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>道具を揃える</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実行</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-09",
+    "input_text": "## 持ち物\n－ 財布\n－ 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n－ 財布\n－ 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112309-10",
+    "input_text": "## 手順\n1．準備する\n2．実行する\n",
+    "expected_page_group": [
+      "## 手順\n1．準備する\n2．実行する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
