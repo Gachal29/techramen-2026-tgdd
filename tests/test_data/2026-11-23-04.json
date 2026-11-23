@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112304-01",
+    "input_text": "# キャッシュ導入の失敗談\n\n## 発端\n画面の表示が遅かった\n- 原因はDBの集計\n  - 毎回全件を数えていた\n- 対策はキャッシュ\n\n## 結末\n",
+    "expected_page_group": [
+      "# キャッシュ導入の失敗談",
+      "## 発端\n画面の表示が遅かった\n- 原因はDBの集計\n  - 毎回全件を数えていた\n- 対策はキャッシュ",
+      "## 結末"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>キャッシュ導入の失敗談</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>発端</Str></title><blocks><TextBlock><Paragraph><Str>画面の表示が遅かった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>原因はDBの集計</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎回全件を数えていた</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>対策はキャッシュ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>結末</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-02",
+    "input_text": "![障害の時系列](https://example.com/timeline.png)\n## 影響範囲\n会員向けの画面が止まった\n管理画面は無事だった\n",
+    "expected_page_group": [
+      "![障害の時系列](https://example.com/timeline.png)",
+      "## 影響範囲\n会員向けの画面が止まった\n管理画面は無事だった"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/timeline.png\" alt=\"障害の時系列\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>影響範囲</Str></title><blocks><TextBlock><Paragraph><Str>会員向けの画面が止まった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>管理画面は無事だった</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-03",
+    "input_text": "## 復旧の手順\n1. 古い版に戻す\n2. `redis-cli flushall` を実行する\n3. [手順書](https://example.com/runbook)で確認する\n\n## 以上\n",
+    "expected_page_group": [
+      "## 復旧の手順\n1. 古い版に戻す\n2. `redis-cli flushall` を実行する\n3. [手順書](https://example.com/runbook)で確認する",
+      "## 以上"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>復旧の手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>古い版に戻す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>redis-cli flushall</Code><Str> を実行する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://example.com/runbook\"><Str>手順書</Str></Anchor><Str>で確認する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>以上</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-04",
+    "input_text": "## 原因\n- 有効期限を決めていなかった\n　\n## 対策\n- 期限を1時間にする\n",
+    "expected_page_group": [
+      "## 原因\n- 有効期限を決めていなかった",
+      "## 対策\n- 期限を1時間にする"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>原因</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>有効期限を決めていなかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>期限を1時間にする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-05",
+    "input_text": "## 計測\n- 平均は200ms\n\n\n\n## 改善後\n- 平均は50ms",
+    "expected_page_group": [
+      "## 計測\n- 平均は200ms",
+      "## 改善後\n- 平均は50ms"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>計測</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>平均は200ms</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>改善後</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>平均は50ms</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-06",
+    "input_text": "## 注意点\n- **必ず** 先にバックアップを取る [手順](https://example.com/backup)\n- 本番では試さない\n",
+    "expected_page_group": [
+      "## 注意点\n- **必ず** 先にバックアップを取る [手順](https://example.com/backup)\n- 本番では試さない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>必ず</Str></Strong><Str> 先にバックアップを取る </Str><Anchor href=\"https://example.com/backup\"><Str>手順</Str></Anchor></Paragraph></TextBlock><TextBlock><Paragraph><Str>本番では試さない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-07",
+    "input_text": "## 計算式\n`2 * 3 * 4` を先に計算する\n",
+    "expected_page_group": [
+      "## 計算式\n`2 * 3 * 4` を先に計算する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>計算式</Str></title><blocks><TextBlock><Paragraph><Code>2 * 3 * 4</Code><Str> を先に計算する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-08",
+    "input_text": "![全体像](https://example.com/overview.png)  \n## 概要\n- 三つの層に分けた\n",
+    "expected_page_group": [
+      "![全体像](https://example.com/overview.png)",
+      "## 概要\n- 三つの層に分けた"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/overview.png\" alt=\"全体像\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>概要</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>三つの層に分けた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-09",
+    "input_text": "## 参考\nhttps://example.com/blog/cache-design\n- 設計の背景が書かれている\n",
+    "expected_page_group": [
+      "## 参考\nhttps://example.com/blog/cache-design\n- 設計の背景が書かれている"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/blog/cache-design</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>設計の背景が書かれている</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112304-10",
+    "input_text": "## 🚀 リリース\n- ✅ キャッシュ導入\n- ⚠️ 監視は未対応\n",
+    "expected_page_group": [
+      "## 🚀 リリース\n- ✅ キャッシュ導入\n- ⚠️ 監視は未対応"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>🚀 リリース</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>✅ キャッシュ導入</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>⚠️ 監視は未対応</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]

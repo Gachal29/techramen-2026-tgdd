@@ -1,0 +1,116 @@
+[
+    {
+        "test_data_id": "2026112305-01",
+        "input_text": "# CIを10分短くした話\n\n![](https://example.com/before.png)\n\n## 遅かった理由\nテストを直列で回していた\n- 全件で3分\n- 依存の取得で2分\n\n## 結果\n",
+        "expected_page_group": [
+            "# CIを10分短くした話",
+            "![](https://example.com/before.png)",
+            "## 遅かった理由\nテストを直列で回していた\n- 全件で3分\n- 依存の取得で2分",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>CIを10分短くした話</Str></title></CoverPage>",
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/before.png\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>遅かった理由</Str></title><blocks><TextBlock><Paragraph><Str>テストを直列で回していた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>全件で3分</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>依存の取得で2分</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-02",
+        "input_text": "## 分割の方針\n- テストを三つに分ける\n  - 単体\n    - 高速\n    - 低速\n  - 結合\n- 並列数は四つ\n最後に結果をまとめる\n",
+        "expected_page_group": [
+            "## 分割の方針\n- テストを三つに分ける\n  - 単体\n    - 高速\n    - 低速\n  - 結合\n- 並列数は四つ\n最後に結果をまとめる"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>分割の方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>テストを三つに分ける</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>単体</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>高速</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>低速</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>結合</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>並列数は四つ</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>最後に結果をまとめる</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-03",
+        "input_text": "最初に結論\n- 待ち時間が半分になった\n\n## 詳細\n- キャッシュを効かせた\n",
+        "expected_page_group": [
+            "最初に結論\n- 待ち時間が半分になった",
+            "## 詳細\n- キャッシュを効かせた"
+        ],
+        "expected_slideir_page": [
+            "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>最初に結論</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>待ち時間が半分になった</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>",
+            "<GeneralPage id=\"p2\"><title><Str>詳細</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>キャッシュを効かせた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-04",
+        "input_text": "![遅い時間帯](https://example.com/a.png)\n![速い時間帯](https://example.com/b.png)\n\n## 比べてみた\n- 差は歴然\n",
+        "expected_page_group": [
+            "![遅い時間帯](https://example.com/a.png)",
+            "![速い時間帯](https://example.com/b.png)",
+            "## 比べてみた\n- 差は歴然"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/a.png\" alt=\"遅い時間帯\" /></FigurePage>",
+            "<FigurePage id=\"p2\"><ImageFigure src=\"https://example.com/b.png\" alt=\"速い時間帯\" /></FigurePage>",
+            "<GeneralPage id=\"p3\"><title><Str>比べてみた</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>差は歴然</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-05",
+        "input_text": "## 概要\n- 背景\n\n ## 計測\n- 実行時間を記録した\n",
+        "expected_page_group": [
+            "## 概要\n- 背景",
+            " ## 計測\n- 実行時間を記録した"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>背景</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>計測</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>実行時間を記録した</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-06",
+        "input_text": "## 方針\n**~~全件実行~~した案** は取り下げた\n",
+        "expected_page_group": [
+            "## 方針\n**~~全件実行~~した案** は取り下げた"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>方針</Str></title><blocks><TextBlock><Paragraph><Strong><Strike><Str>全件実行</Str></Strike><Str>した案</Str></Strong><Str> は取り下げた</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-07",
+        "input_text": "## 手順\nコマンドは `make test を実行する\n- 結果を見る\n",
+        "expected_page_group": [
+            "## 手順\nコマンドは `make test を実行する\n- 結果を見る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><TextBlock><Paragraph><Str>コマンドは `make test を実行する</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>結果を見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-08",
+        "input_text": "## 設定\n- 並列数\n  - **四つ** を上限にする\n  - 詳細は [設計メモ](https://example.com/design) を参照\n- 時間\n",
+        "expected_page_group": [
+            "## 設定\n- 並列数\n  - **四つ** を上限にする\n  - 詳細は [設計メモ](https://example.com/design) を参照\n- 時間"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>設定</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>並列数</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>四つ</Str></Strong><Str> を上限にする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://example.com/design\"><Str>設計メモ</Str></Anchor><Str> を参照</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>時間</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-09",
+        "input_text": "## 手順\n1) 準備する\n2) 実行する\n3) 確認する\n",
+        "expected_page_group": [
+            "## 手順\n1) 準備する\n2) 実行する\n3) 確認する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>準備する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実行する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>確認する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112305-10",
+        "input_text": "## 振り返り\n・良かった点\n・悪かった点\n・次に試すこと\n",
+        "expected_page_group": [
+            "## 振り返り\n・良かった点\n・悪かった点\n・次に試すこと"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>振り返り</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>良かった点</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>悪かった点</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>次に試すこと</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]

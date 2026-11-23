@@ -1,0 +1,108 @@
+[
+    {
+        "test_data_id": "2026112307-01",
+        "input_text": "# Dockerイメージを軽くした話\n\n![ビルド時間の推移](https://example.com/build.png)\n\n## 背景\n1. 計測する\n2. 原因を探す\n\n## 結果\n",
+        "expected_page_group": [
+            "# Dockerイメージを軽くした話",
+            "![ビルド時間の推移](https://example.com/build.png)",
+            "## 背景\n1. 計測する\n2. 原因を探す",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>Dockerイメージを軽くした話</Str></title></CoverPage>",
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/build.png\" alt=\"ビルド時間の推移\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>背景</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>計測する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>原因を探す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-02",
+        "input_text": "ポイントは三つ\n- 小さく\n- 速く\n- 安全に\n",
+        "expected_page_group": [
+            "ポイントは三つ\n- 小さく\n- 速く\n- 安全に"
+        ],
+        "expected_slideir_page": [
+            "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>ポイントは三つ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>速く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>安全に</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-03",
+        "input_text": "## 使ったツール\n- [dive](https://github.com/wagoodman/dive) でレイヤーを見る\n- `docker build` で時間を測る\n",
+        "expected_page_group": [
+            "## 使ったツール\n- [dive](https://github.com/wagoodman/dive) でレイヤーを見る\n- `docker build` で時間を測る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>使ったツール</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://github.com/wagoodman/dive\"><Str>dive</Str></Anchor><Str> でレイヤーを見る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>docker build</Code><Str> で時間を測る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-04",
+        "input_text": "\n\n\n## 概要\n- 背景\n- 目的\n\n\n",
+        "expected_page_group": [
+            "## 概要\n- 背景\n- 目的"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>概要</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>背景</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>目的</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-05",
+        "input_text": "## 層の構成\n- ベース\n  - OS\n    - Alpine\n  - 言語\n    - Python\n- アプリ\n",
+        "expected_page_group": [
+            "## 層の構成\n- ベース\n  - OS\n    - Alpine\n  - 言語\n    - Python\n- アプリ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>層の構成</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>ベース</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>OS</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Alpine</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>言語</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Python</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>アプリ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-06",
+        "input_text": "## Rust で *書き直す* 理由\n- 起動が速い\n",
+        "expected_page_group": [
+            "## Rust で *書き直す* 理由\n- 起動が速い"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>Rust で </Str><Em><Str>書き直す</Str></Em><Str> 理由</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>起動が速い</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-07",
+        "input_text": "## 改善案\n1. ~~手動で~~ 自動で確認する\n2. **毎回** 結果を記録する\n",
+        "expected_page_group": [
+            "## 改善案\n1. ~~手動で~~ 自動で確認する\n2. **毎回** 結果を記録する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>改善案</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Strike><Str>手動で</Str></Strike><Str> 自動で確認する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>毎回</Str></Strong><Str> 結果を記録する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-08",
+        "input_text": "## C# と F# の比較\n- どちらも .NET 上で動く\n",
+        "expected_page_group": [
+            "## C# と F# の比較\n- どちらも .NET 上で動く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>C# と F# の比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>どちらも .NET 上で動く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-09",
+        "input_text": "## 結論   \n- 軽くなった   \n- 速くなった  \n",
+        "expected_page_group": [
+            "## 結論\n- 軽くなった\n- 速くなった"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>結論</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>軽くなった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>速くなった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112307-10",
+        "input_text": "##\t設計方針\n- 小さく作る\n",
+        "expected_page_group": [
+            "##\t設計方針\n- 小さく作る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>設計方針</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく作る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]

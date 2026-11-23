@@ -1,0 +1,118 @@
+[
+  {
+    "test_data_id": "2026112308-01",
+    "input_text": "# OSSに初めてPRを出した話\n\n## きっかけ\nREADMEの誤字を見つけた\n- 直すだけなら簡単そう\n- でも手順がわからない\n\n## 学んだこと\n1. まずIssueを探す\n2. CONTRIBUTINGを読む\n\n## ありがとうございました\n",
+    "expected_page_group": [
+      "# OSSに初めてPRを出した話",
+      "## きっかけ\nREADMEの誤字を見つけた\n- 直すだけなら簡単そう\n- でも手順がわからない",
+      "## 学んだこと\n1. まずIssueを探す\n2. CONTRIBUTINGを読む",
+      "## ありがとうございました"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>OSSに初めてPRを出した話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>きっかけ</Str></title><blocks><TextBlock><Paragraph><Str>READMEの誤字を見つけた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>直すだけなら簡単そう</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>でも手順がわからない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>学んだこと</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>まずIssueを探す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>CONTRIBUTINGを読む</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>ありがとうございました</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-02",
+    "input_text": "# 今日の流れ\n## 自己紹介\n## 本題\n## 質疑\n",
+    "expected_page_group": [
+      "# 今日の流れ",
+      "## 自己紹介",
+      "## 本題",
+      "## 質疑"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>今日の流れ</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>自己紹介</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>本題</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p3\"><title><Str>質疑</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-03",
+    "input_text": "## ブランチの切り方\n- 作業用に切る\n  - `feature/xxx` の形にする\n  - *なるべく* 短く\n- mainには直接pushしない\n",
+    "expected_page_group": [
+      "## ブランチの切り方\n- 作業用に切る\n  - `feature/xxx` の形にする\n  - *なるべく* 短く\n- mainには直接pushしない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>ブランチの切り方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>作業用に切る</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>feature/xxx</Code><Str> の形にする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>なるべく</Str></Em><Str> 短く</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>mainには直接pushしない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-04",
+    "input_text": "# 初PRの準備\r\n\r\n## 準備\r\n- フォークする\r\n- クローンする\r\n",
+    "expected_page_group": [
+      "# 初PRの準備",
+      "## 準備\n- フォークする\n- クローンする"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>初PRの準備</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>フォークする</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>クローンする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-05",
+    "input_text": "## 注意点 ##\n- 英語で書く\n- 小さく出す\n",
+    "expected_page_group": [
+      "## 注意点 ##\n- 英語で書く\n- 小さく出す"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>英語で書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>小さく出す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-06",
+    "input_text": "## 実績\n1.5倍に増えた\n2026年に10件マージされた\n3.14を超えた\n",
+    "expected_page_group": [
+      "## 実績\n1.5倍に増えた\n2026年に10件マージされた\n3.14を超えた"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>実績</Str></title><blocks><TextBlock><Paragraph><Str>1.5倍に増えた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>2026年に10件マージされた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>3.14を超えた</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-07",
+    "input_text": "## 日程\n- 2026-11-23 - 提出\n- v1.0-beta を試す\n",
+    "expected_page_group": [
+      "## 日程\n- 2026-11-23 - 提出\n- v1.0-beta を試す"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>日程</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>2026-11-23 - 提出</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>v1.0-beta を試す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-08",
+    "input_text": "## 詳細\n詳細は **[こちら](https://example.com/pr)** です\n",
+    "expected_page_group": [
+      "## 詳細\n詳細は **[こちら](https://example.com/pr)** です"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>詳細</Str></title><blocks><TextBlock><Paragraph><Str>詳細は </Str><Strong><Anchor href=\"https://example.com/pr\"><Str>こちら</Str></Anchor></Strong><Str> です</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-09",
+    "input_text": "# 初PRの準備\n＃＃ 環境構築\n- Pythonを入れる\n- フォークする\n",
+    "expected_page_group": [
+      "# 初PRの準備",
+      "＃＃ 環境構築\n- Pythonを入れる\n- フォークする"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>初PRの準備</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>環境構築</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Pythonを入れる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>フォークする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112308-10",
+    "input_text": "##テストを書く\n- 再現手順を書く\n- 期待値を決める\n",
+    "expected_page_group": [
+      "##テストを書く\n- 再現手順を書く\n- 期待値を決める"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>テストを書く</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>再現手順を書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>期待値を決める</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
