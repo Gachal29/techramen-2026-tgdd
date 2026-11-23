@@ -1,0 +1,116 @@
+[
+  {
+    "test_data_id": "2026112315-01",
+    "input_text": "# Rust を3週間触った\n\n## きっかけ\n\n## 学んだこと\n所有権で最初に躓いた\n- 借用チェッカーはエラーが親切\n- `cargo` が便利\n- **ビルドは遅い**\n",
+    "expected_page_group": [
+      "# Rust を3週間触った",
+      "## きっかけ",
+      "## 学んだこと\n所有権で最初に躓いた\n- 借用チェッカーはエラーが親切\n- `cargo` が便利\n- **ビルドは遅い**"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>Rust を3週間触った</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>きっかけ</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p2\"><title><Str>学んだこと</Str></title><blocks><TextBlock><Paragraph><Str>所有権で最初に躓いた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>借用チェッカーはエラーが親切</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>cargo</Code><Str> が便利</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>ビルドは遅い</Str></Strong></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-02",
+    "input_text": "![ロゴ](https://example.com/logo.png)\n\n## 構成\n学習の流れ\n進め方は次のとおり\n- 基礎\n  - 文法\n    - 型\n  - 標準ライブラリ\n- 応用\n",
+    "expected_page_group": [
+      "![ロゴ](https://example.com/logo.png)",
+      "## 構成\n学習の流れ\n進め方は次のとおり\n- 基礎\n  - 文法\n    - 型\n  - 標準ライブラリ\n- 応用"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/logo.png\" alt=\"ロゴ\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>構成</Str></title><blocks><TextBlock><Paragraph><Str>学習の流れ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>進め方は次のとおり</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>基礎</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>文法</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>型</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>標準ライブラリ</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>応用</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-03",
+    "input_text": "# 週報の書き方\n## 目的\n## 構成\n## 運用",
+    "expected_page_group": [
+      "# 週報の書き方",
+      "## 目的",
+      "## 構成",
+      "## 運用"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>週報の書き方</Str></title></CoverPage>",
+      "<HeadingPage id=\"p1\"><title><Str>目的</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>構成</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p3\"><title><Str>運用</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-04",
+    "input_text": "## 本編\n- 要点\n\n# おわりに",
+    "expected_page_group": [
+      "## 本編\n- 要点",
+      "# おわりに"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>本編</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>要点</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<CoverPage id=\"cover\"><title><Str>おわりに</Str></title></CoverPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-05",
+    "input_text": "## Q&A と比較\n- A > B の場合\n- x < y & z\n",
+    "expected_page_group": [
+      "## Q&A と比較\n- A > B の場合\n- x < y & z"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>Q&amp;A と比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>A &gt; B の場合</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>x &lt; y &amp; z</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-06",
+    "input_text": "## 記法の落とし穴\n`**` は太字の記号\n- `*` と `_` も同様\n",
+    "expected_page_group": [
+      "## 記法の落とし穴\n`**` は太字の記号\n- `*` と `_` も同様"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>記法の落とし穴</Str></title><blocks><TextBlock><Paragraph><Code>**</Code><Str> は太字の記号</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>*</Code><Str> と </Str><Code>_</Code><Str> も同様</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-07",
+    "input_text": "##   複数の空白\n-   項目A\n-    項目B\n",
+    "expected_page_group": [
+      "##   複数の空白\n-   項目A\n-    項目B"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>複数の空白</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目A</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>項目B</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-08",
+    "input_text": "##\t見出し\n- 項目\n",
+    "expected_page_group": [
+      "##\t見出し\n- 項目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>項目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-09",
+    "input_text": "## 持ち物\n＊ 財布\n＊ 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n＊ 財布\n＊ 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112315-10",
+    "input_text": "＃＃まとめ\n- 一つ目\n- 二つ目\n",
+    "expected_page_group": [
+      "＃＃まとめ\n- 一つ目\n- 二つ目"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一つ目</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>二つ目</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
