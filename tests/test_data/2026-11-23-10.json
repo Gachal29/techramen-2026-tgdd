@@ -1,0 +1,112 @@
+[
+    {
+        "test_data_id": "2026112310-01",
+        "input_text": "# 障害対応を振り返る\n\n## 何が起きたか\n夜間バッチが止まった\n- 原因はディスク不足\n- 復旧まで2時間\n\n## 教訓\n",
+        "expected_page_group": [
+            "# 障害対応を振り返る",
+            "## 何が起きたか\n夜間バッチが止まった\n- 原因はディスク不足\n- 復旧まで2時間",
+            "## 教訓"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>障害対応を振り返る</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>何が起きたか</Str></title><blocks><TextBlock><Paragraph><Str>夜間バッチが止まった</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>原因はディスク不足</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>復旧まで2時間</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>教訓</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-02",
+        "input_text": "![障害発生時のグラフ](https://example.com/graph.png)\n\n## 初動\n1. アラートを確認する\n2. **担当者**に連絡する\n",
+        "expected_page_group": [
+            "![障害発生時のグラフ](https://example.com/graph.png)",
+            "## 初動\n1. アラートを確認する\n2. **担当者**に連絡する"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/graph.png\" alt=\"障害発生時のグラフ\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>初動</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>アラートを確認する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>担当者</Str></Strong><Str>に連絡する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-03",
+        "input_text": "# 監視の見直し\n\n## 指標\n- 可用性\n  - 稼働率\n    - 月次で集計\n  - 応答時間\n- 詳細は [運用手順](https://example.com/runbook) へ\n",
+        "expected_page_group": [
+            "# 監視の見直し",
+            "## 指標\n- 可用性\n  - 稼働率\n    - 月次で集計\n  - 応答時間\n- 詳細は [運用手順](https://example.com/runbook) へ"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>監視の見直し</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>指標</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>可用性</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>稼働率</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>月次で集計</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>応答時間</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>詳細は </Str><Anchor href=\"https://example.com/runbook\"><Str>運用手順</Str></Anchor><Str> へ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-04",
+        "input_text": "##　全角空白の見出し\n- 本文が続く\n",
+        "expected_page_group": [
+            "##　全角空白の見出し\n- 本文が続く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>全角空白の見出し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>本文が続く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-05",
+        "input_text": "## 反省点\n**急いで書いたので誤字が多い\n- 次回は見直す\n",
+        "expected_page_group": [
+            "## 反省点\n**急いで書いたので誤字が多い\n- 次回は見直す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>反省点</Str></title><blocks><TextBlock><Paragraph><Str>**急いで書いたので誤字が多い</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>次回は見直す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-06",
+        "input_text": "## 比較演算子\n`a < b && c` と書いて確認する\n",
+        "expected_page_group": [
+            "## 比較演算子\n`a < b && c` と書いて確認する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>比較演算子</Str></title><blocks><TextBlock><Paragraph><Code>a &lt; b &amp;&amp; c</Code><Str> と書いて確認する</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-07",
+        "input_text": "## 🎉 成果\n- 🚀 リリース時間が半分に\n- ✅ 障害ゼロ\n",
+        "expected_page_group": [
+            "## 🎉 成果\n- 🚀 リリース時間が半分に\n- ✅ 障害ゼロ"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>🎉 成果</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>🚀 リリース時間が半分に</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>✅ 障害ゼロ</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-08",
+        "input_text": "## お知らせ\n[**重要**なお知らせ](https://example.com/notice)を読む\n",
+        "expected_page_group": [
+            "## お知らせ\n[**重要**なお知らせ](https://example.com/notice)を読む"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>お知らせ</Str></title><blocks><TextBlock><Paragraph><Anchor href=\"https://example.com/notice\"><Strong><Str>重要</Str></Strong><Str>なお知らせ</Str></Anchor><Str>を読む</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-09",
+        "input_text": "＃ 転職して一年\n\n## 良かったこと\n- 裁量が増えた\n",
+        "expected_page_group": [
+            "＃ 転職して一年",
+            "## 良かったこと\n- 裁量が増えた"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>転職して一年</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>良かったこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>裁量が増えた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112310-10",
+        "input_text": "## 次にやること\n• 計測を自動化する\n• 結果を共有する\n",
+        "expected_page_group": [
+            "## 次にやること\n• 計測を自動化する\n• 結果を共有する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>次にやること</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>計測を自動化する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>結果を共有する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
