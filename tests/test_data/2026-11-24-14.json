@@ -1,0 +1,114 @@
+[
+    {
+        "test_data_id": "2026112414-01",
+        "input_text": "# コードレビュー文化を作った話\n\n![レビュー待ち時間の推移](https://example.com/wait.png)\n\n## 背景\nレビューが滞っていた\n- 待ち時間が平均2日\n- 依頼が特定の人に集中\n\n## 結果\n",
+        "expected_page_group": [
+            "# コードレビュー文化を作った話",
+            "![レビュー待ち時間の推移](https://example.com/wait.png)",
+            "## 背景\nレビューが滞っていた\n- 待ち時間が平均2日\n- 依頼が特定の人に集中",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>コードレビュー文化を作った話</Str></title></CoverPage>",
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/wait.png\" alt=\"レビュー待ち時間の推移\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>背景</Str></title><blocks><TextBlock><Paragraph><Str>レビューが滞っていた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>待ち時間が平均2日</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>依頼が特定の人に集中</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-02",
+        "input_text": "## 決めたルール\n最初に決めたのは3つだけ\n- 24時間以内に一次返信\n  - まず**動くか**を見る\n    - 細かい指摘は`nit:`を付ける\n- 大きいPRは分ける\n",
+        "expected_page_group": [
+            "## 決めたルール\n最初に決めたのは3つだけ\n- 24時間以内に一次返信\n  - まず**動くか**を見る\n    - 細かい指摘は`nit:`を付ける\n- 大きいPRは分ける"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>決めたルール</Str></title><blocks><TextBlock><Paragraph><Str>最初に決めたのは3つだけ</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>24時間以内に一次返信</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>まず</Str><Strong><Str>動くか</Str></Strong><Str>を見る</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>細かい指摘は</Str><Code>nit:</Code><Str>を付ける</Str></Paragraph></TextBlock></Cluster></Cluster><TextBlock><Paragraph><Str>大きいPRは分ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-03",
+        "input_text": "## 指標\n- 待ち時間は**2日**から*半日*へ\n- 見る場所は[ダッシュボード](https://example.com/dash)\n\n\n## 感想\nやってよかった\n",
+        "expected_page_group": [
+            "## 指標\n- 待ち時間は**2日**から*半日*へ\n- 見る場所は[ダッシュボード](https://example.com/dash)",
+            "## 感想\nやってよかった"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>指標</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>待ち時間は</Str><Strong><Str>2日</Str></Strong><Str>から</Str><Em><Str>半日</Str></Em><Str>へ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>見る場所は</Str><Anchor href=\"https://example.com/dash\"><Str>ダッシュボード</Str></Anchor></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>感想</Str></title><blocks><TextBlock><Paragraph><Str>やってよかった</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-04",
+        "input_text": "## 手順\r\n- 小さく出す\r\n- 早く返す\r\n\r\n## 補足\r\n人によって速度は違う\r\n",
+        "expected_page_group": [
+            "## 手順\n- 小さく出す\n- 早く返す",
+            "## 補足\n人によって速度は違う"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>小さく出す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>早く返す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>補足</Str></title><blocks><TextBlock><Paragraph><Str>人によって速度は違う</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-05",
+        "input_text": "## 廃止\n- [~~旧手順書~~](https://example.com/old)は読まない\n",
+        "expected_page_group": [
+            "## 廃止\n- [~~旧手順書~~](https://example.com/old)は読まない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>廃止</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Anchor href=\"https://example.com/old\"><Strike><Str>旧手順書</Str></Strike></Anchor><Str>は読まない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-06",
+        "input_text": "## 役割\n- レビュアー\n\t- 一次返信する\n\t- 迷ったら相談する\n- 作者\n\t- 説明を書く\n",
+        "expected_page_group": [
+            "## 役割\n- レビュアー\n\t- 一次返信する\n\t- 迷ったら相談する\n- 作者\n\t- 説明を書く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>役割</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>レビュアー</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>一次返信する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>迷ったら相談する</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>作者</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>説明を書く</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-07",
+        "input_text": "## 結論\n\n\n\nレビューは文化づくりだった\n\n\n続けるには仕組みが要る",
+        "expected_page_group": [
+            "## 結論\n\n\n\nレビューは文化づくりだった\n\n\n続けるには仕組みが要る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>結論</Str></title><blocks><TextBlock><Paragraph><Str>レビューは文化づくりだった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>続けるには仕組みが要る</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-08",
+        "input_text": "## 資料 [スライド](https://example.com/slides)\n\n## 質問\n- 何でも聞いてください\n",
+        "expected_page_group": [
+            "## 資料 [スライド](https://example.com/slides)",
+            "## 質問\n- 何でも聞いてください"
+        ],
+        "expected_slideir_page": [
+            "<HeadingPage id=\"p1\"><title><Str>資料 </Str><Anchor href=\"https://example.com/slides\"><Str>スライド</Str></Anchor></title></HeadingPage>",
+            "<GeneralPage id=\"p2\"><title><Str>質問</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>何でも聞いてください</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-09",
+        "input_text": "## やること\n- [ ] 依頼を出す\n- [x] 一次返信する\n",
+        "expected_page_group": [
+            "## やること\n- [ ] 依頼を出す\n- [x] 一次返信する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>やること</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>[ ] 依頼を出す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>[x] 一次返信する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112414-10",
+        "input_text": "## 参考\nhttps://example.com/guide\n",
+        "expected_page_group": [
+            "## 参考\nhttps://example.com/guide"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Str>https://example.com/guide</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    }
+]
