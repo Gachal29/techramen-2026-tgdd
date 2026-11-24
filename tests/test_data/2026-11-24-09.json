@@ -1,0 +1,114 @@
+[
+  {
+    "test_data_id": "2026112409-01",
+    "input_text": "# 勉強会運営の1年\n\n![参加者の推移](https://example.com/members.png)\n\n## 振り返り\n\n## 続けられた理由\n- 毎月第2水曜と決めた\n  - 場所は固定\n  - 告知は前週に出す\n- 登壇者を持ち回りにした\n",
+    "expected_page_group": [
+      "# 勉強会運営の1年",
+      "![参加者の推移](https://example.com/members.png)",
+      "## 振り返り",
+      "## 続けられた理由\n- 毎月第2水曜と決めた\n  - 場所は固定\n  - 告知は前週に出す\n- 登壇者を持ち回りにした"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>勉強会運営の1年</Str></title></CoverPage>",
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/members.png\" alt=\"参加者の推移\" /></FigurePage>",
+      "<HeadingPage id=\"p2\"><title><Str>振り返り</Str></title></HeadingPage>",
+      "<GeneralPage id=\"p3\"><title><Str>続けられた理由</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎月第2水曜と決めた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>場所は固定</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>告知は前週に出す</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>登壇者を持ち回りにした</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-02",
+    "input_text": "## 運営のコツ\n参加のハードルは**低く**、準備は*軽く*する\nルールは`3つ`だけ。詳細は[運営メモ](https://example.com/memo)を見る\n- 全**部**は決めない\n- [**重要**な資料](https://example.com/doc)は前日に送る\n",
+    "expected_page_group": [
+      "## 運営のコツ\n参加のハードルは**低く**、準備は*軽く*する\nルールは`3つ`だけ。詳細は[運営メモ](https://example.com/memo)を見る\n- 全**部**は決めない\n- [**重要**な資料](https://example.com/doc)は前日に送る"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>運営のコツ</Str></title><blocks><TextBlock><Paragraph><Str>参加のハードルは</Str><Strong><Str>低く</Str></Strong><Str>、準備は</Str><Em><Str>軽く</Str></Em><Str>する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ルールは</Str><Code>3つ</Code><Str>だけ。詳細は</Str><Anchor href=\"https://example.com/memo\"><Str>運営メモ</Str></Anchor><Str>を見る</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>全</Str><Strong><Str>部</Str></Strong><Str>は決めない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Anchor href=\"https://example.com/doc\"><Strong><Str>重要</Str></Strong><Str>な資料</Str></Anchor><Str>は前日に送る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-03",
+    "input_text": "## 進め方\n1. 事前に告知する\n2. 当日は受付をする\n- 終わったら懇親会\n",
+    "expected_page_group": [
+      "## 進め方\n1. 事前に告知する\n2. 当日は受付をする\n- 終わったら懇親会"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>進め方</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>事前に告知する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>当日は受付をする</Str></Paragraph></TextBlock></Cluster><Cluster marker=\"true\"><TextBlock><Paragraph><Str>終わったら懇親会</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-04",
+    "input_text": "## 会場\n- 駅から近い\n- 机が動かせる\n※ ただし19時に退出\n- 空調が強い\n",
+    "expected_page_group": [
+      "## 会場\n- 駅から近い\n- 机が動かせる\n※ ただし19時に退出\n- 空調が強い"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>会場</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>駅から近い</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>机が動かせる</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>※ ただし19時に退出</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>空調が強い</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-05",
+    "input_text": "## 1. 背景\n1. 参加者が減っていた\n2. 運営が疲れていた\n\n## 2) 対策\n- 回数を減らした\n",
+    "expected_page_group": [
+      "## 1. 背景\n1. 参加者が減っていた\n2. 運営が疲れていた",
+      "## 2) 対策\n- 回数を減らした"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>1. 背景</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>参加者が減っていた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>運営が疲れていた</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>2) 対策</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>回数を減らした</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-06",
+    "input_text": "## 気づき\n運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。\n- 短くまとめると、続けることが大事\n",
+    "expected_page_group": [
+      "## 気づき\n運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。\n- 短くまとめると、続けることが大事"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>気づき</Str></title><blocks><TextBlock><Paragraph><Str>運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。運営を続けるうえで一番効いたのは、完璧を目指さないことだった。</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>短くまとめると、続けることが大事</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-07",
+    "input_text": "![会場の様子](https://example.com/room_(2).png)\n## 会場の写真\n- 40人入った\n",
+    "expected_page_group": [
+      "![会場の様子](https://example.com/room_(2).png)",
+      "## 会場の写真\n- 40人入った"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/room_(2).png\" alt=\"会場の様子\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>会場の写真</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>40人入った</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-08",
+    "input_text": "## 注意\n**閉じていない太字\n- 連絡は前日までに\n",
+    "expected_page_group": [
+      "## 注意\n**閉じていない太字\n- 連絡は前日までに"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Str>**閉じていない太字</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>連絡は前日までに</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-09",
+    "input_text": "勉強会運営の1年\n==========\n\n運営の見直し\n------\n- 参加者アンケートを取った\n",
+    "expected_page_group": [
+      "勉強会運営の1年\n==========",
+      "運営の見直し\n------\n- 参加者アンケートを取った"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>勉強会運営の1年</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>運営の見直し</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>参加者アンケートを取った</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112409-10",
+    "input_text": "## 次回 🗓️\n- 12/20 に開催\n- テーマは「失敗談」🙏\n",
+    "expected_page_group": [
+      "## 次回 🗓️\n- 12/20 に開催\n- テーマは「失敗談」🙏"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>次回 🗓️</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>12/20 に開催</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>テーマは「失敗談」🙏</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
