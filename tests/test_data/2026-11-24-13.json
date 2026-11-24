@@ -1,0 +1,114 @@
+[
+    {
+        "test_data_id": "2026112413-01",
+        "input_text": "# dotfiles管理のはじめ方\n\n## 動機\nPC買い替えのたびに設定をやり直していた\n\n## 方法\n- Gitで管理する\n- シンボリックリンクで配置する\n\n## 結果\n",
+        "expected_page_group": [
+            "# dotfiles管理のはじめ方",
+            "## 動機\nPC買い替えのたびに設定をやり直していた",
+            "## 方法\n- Gitで管理する\n- シンボリックリンクで配置する",
+            "## 結果"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>dotfiles管理のはじめ方</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>動機</Str></title><blocks><TextBlock><Paragraph><Str>PC買い替えのたびに設定をやり直していた</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>方法</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>Gitで管理する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>シンボリックリンクで配置する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>結果</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-02",
+        "input_text": "![設定の全体図](https://example.com/map.png?v=2&size=l)\n\n## 配置のルール\n- 共通設定\n  - `.zshrc` は共有\n  - `.gitconfig` は共有\n- 端末ごとの設定\n  - `.ssh/config` は含めない\n",
+        "expected_page_group": [
+            "![設定の全体図](https://example.com/map.png?v=2&size=l)",
+            "## 配置のルール\n- 共通設定\n  - `.zshrc` は共有\n  - `.gitconfig` は共有\n- 端末ごとの設定\n  - `.ssh/config` は含めない"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/map.png?v=2&amp;size=l\" alt=\"設定の全体図\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>配置のルール</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>共通設定</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>.zshrc</Code><Str> は共有</Str></Paragraph></TextBlock><TextBlock><Paragraph><Code>.gitconfig</Code><Str> は共有</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>端末ごとの設定</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Code>.ssh/config</Code><Str> は含めない</Str></Paragraph></TextBlock></Cluster></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-03",
+        "input_text": "## 手順\n1. リポジトリを作る\n2. 設定を移す\n3. リンクを張る\n作業は30分で終わった\n",
+        "expected_page_group": [
+            "## 手順\n1. リポジトリを作る\n2. 設定を移す\n3. リンクを張る\n作業は30分で終わった"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>リポジトリを作る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>設定を移す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>リンクを張る</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>作業は30分で終わった</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-04",
+        "input_text": "## Result<T> の設計\n- 成功 & 失敗を型で表す\n",
+        "expected_page_group": [
+            "## Result<T> の設計\n- 成功 & 失敗を型で表す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>Result&lt;T&gt; の設計</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>成功 &amp; 失敗を型で表す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-05",
+        "input_text": "## 道具\n- エディタ\n\n- ターミナル\n\n\n\n- シェル\n\n## 補足\n全部入れる必要はない",
+        "expected_page_group": [
+            "## 道具\n- エディタ\n\n- ターミナル\n\n\n\n- シェル",
+            "## 補足\n全部入れる必要はない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>道具</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>エディタ</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>ターミナル</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>シェル</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>補足</Str></title><blocks><TextBlock><Paragraph><Str>全部入れる必要はない</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-06",
+        "input_text": "## 優先順位\n9. 設定を移す\n10. 確認する\n11. 公開する\n",
+        "expected_page_group": [
+            "## 優先順位\n9. 設定を移す\n10. 確認する\n11. 公開する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>優先順位</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>設定を移す</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>確認する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>公開する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-07",
+        "input_text": "## 記号の扱い\n- 掛け算は 3 \\* 4 と書く\n",
+        "expected_page_group": [
+            "## 記号の扱い\n- 掛け算は 3 \\* 4 と書く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>記号の扱い</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>掛け算は 3 * 4 と書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-08",
+        "input_text": "# **新**CIの話\n\n## 背景\n- 毎回遅かった\n",
+        "expected_page_group": [
+            "# **新**CIの話",
+            "## 背景\n- 毎回遅かった"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Strong><Str>新</Str></Strong><Str>CIの話</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>背景</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>毎回遅かった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-09",
+        "input_text": "## 参考\n詳細は[検索](https://example.com/s?q=a&lang=ja)にある\n",
+        "expected_page_group": [
+            "## 参考\n詳細は[検索](https://example.com/s?q=a&lang=ja)にある"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>参考</Str></title><blocks><TextBlock><Paragraph><Str>詳細は</Str><Anchor href=\"https://example.com/s?q=a&amp;lang=ja\"><Str>検索</Str></Anchor><Str>にある</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112413-10",
+        "input_text": "✅ 設計を終えた\n🚧 実装は途中\n❌ 公開はまだ",
+        "expected_page_group": [
+            "✅ 設計を終えた\n🚧 実装は途中\n❌ 公開はまだ"
+        ],
+        "expected_slideir_page": [
+            "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>✅ 設計を終えた</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>🚧 実装は途中</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>❌ 公開はまだ</Str></Paragraph></TextBlock></blocks></BodyPage>"
+        ]
+    }
+]
