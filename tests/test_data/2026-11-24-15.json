@@ -1,0 +1,110 @@
+[
+  {
+    "test_data_id": "2026112415-01",
+    "input_text": "# 社内LT会を立ち上げた話\n\n## 始めたきっかけ\n- 部署間の交流が少なかった\n- 発表の場がなかった\n\n## 運営のコツ\n- 5分で必ず終える\n  - タイマーを置く\n- 司会は持ち回り\n\n## おわり\n",
+    "expected_page_group": [
+      "# 社内LT会を立ち上げた話",
+      "## 始めたきっかけ\n- 部署間の交流が少なかった\n- 発表の場がなかった",
+      "## 運営のコツ\n- 5分で必ず終える\n  - タイマーを置く\n- 司会は持ち回り",
+      "## おわり"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>社内LT会を立ち上げた話</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>始めたきっかけ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>部署間の交流が少なかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>発表の場がなかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>運営のコツ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>5分で必ず終える</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>タイマーを置く</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>司会は持ち回り</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>おわり</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-02",
+    "input_text": "## 発表の流れ\n1. 司会が挨拶する\n2. 発表者が話す\n\n質疑は最後にまとめて行う\n",
+    "expected_page_group": [
+      "## 発表の流れ\n1. 司会が挨拶する\n2. 発表者が話す\n質疑は最後にまとめて行う"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>発表の流れ</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>司会が挨拶する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>発表者が話す</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>質疑は最後にまとめて行う</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-03",
+    "input_text": "## 本日のゴール\n\n## 進め方\n\n\n## 質問\n",
+    "expected_page_group": [
+      "## 本日のゴール",
+      "## 進め方",
+      "## 質問"
+    ],
+    "expected_slideir_page": [
+      "<HeadingPage id=\"p1\"><title><Str>本日のゴール</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p2\"><title><Str>進め方</Str></title></HeadingPage>",
+      "<HeadingPage id=\"p3\"><title><Str>質問</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-04",
+    "input_text": "## 注意\n**時間厳守**でお願いします\n*遅刻*は事前連絡\n- 欠席も連絡する\n",
+    "expected_page_group": [
+      "## 注意\n**時間厳守**でお願いします\n*遅刻*は事前連絡\n- 欠席も連絡する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意</Str></title><blocks><TextBlock><Paragraph><Strong><Str>時間厳守</Str></Strong><Str>でお願いします</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>遅刻</Str></Em><Str>は事前連絡</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>欠席も連絡する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-05",
+    "input_text": "## 申込み\n- 申込みは**[フォーム](https://example.com/form)**から\n",
+    "expected_page_group": [
+      "## 申込み\n- 申込みは**[フォーム](https://example.com/form)**から"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>申込み</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>申込みは</Str><Strong><Anchor href=\"https://example.com/form\"><Str>フォーム</Str></Anchor></Strong><Str>から</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-06",
+    "input_text": "## 理由\nLT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。\n- 続けたい\n",
+    "expected_page_group": [
+      "## 理由\nLT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。\n- 続けたい"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>理由</Str></title><blocks><TextBlock><Paragraph><Str>LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。LT会は発表者と聞き手の双方に学びがあるので続けたい。</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>続けたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-07",
+    "input_text": "#　LT会の運営ノート\n\n## 目的\n- 交流を増やす\n",
+    "expected_page_group": [
+      "#　LT会の運営ノート",
+      "## 目的\n- 交流を増やす"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>LT会の運営ノート</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>目的</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>交流を増やす</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-08",
+    "input_text": "\n \n　\n\t\n",
+    "expected_page_group": [],
+    "expected_slideir_page": []
+  },
+  {
+    "test_data_id": "2026112415-09",
+    "input_text": "## 候補日\n- 第1週\n  * 月曜\n  + 火曜\n- 第2週\n",
+    "expected_page_group": [
+      "## 候補日\n- 第1週\n  * 月曜\n  + 火曜\n- 第2週"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>候補日</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>第1週</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>月曜</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>火曜</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>第2週</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112415-10",
+    "input_text": "## 準備\n1) 会場を押さえる\n2) 登壇者を募る\n3) 告知する\n",
+    "expected_page_group": [
+      "## 準備\n1) 会場を押さえる\n2) 登壇者を募る\n3) 告知する"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>会場を押さえる</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>登壇者を募る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>告知する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
