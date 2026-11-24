@@ -1,0 +1,112 @@
+[
+  {
+    "test_data_id": "2026112412-01",
+    "input_text": "# Slack Bot自作で学んだこと\n\n## きっかけ\n問い合わせ対応が属人化していた\n- 同じ質問が毎週来る\n- 担当者が休むと止まる\n\n## 設計\n- 受付\n  - 質問を分類する\n  - 担当に振る\n- 回答\n\n## まとめ\n",
+    "expected_page_group": [
+      "# Slack Bot自作で学んだこと",
+      "## きっかけ\n問い合わせ対応が属人化していた\n- 同じ質問が毎週来る\n- 担当者が休むと止まる",
+      "## 設計\n- 受付\n  - 質問を分類する\n  - 担当に振る\n- 回答",
+      "## まとめ"
+    ],
+    "expected_slideir_page": [
+      "<CoverPage id=\"cover\"><title><Str>Slack Bot自作で学んだこと</Str></title></CoverPage>",
+      "<GeneralPage id=\"p1\"><title><Str>きっかけ</Str></title><blocks><TextBlock><Paragraph><Str>問い合わせ対応が属人化していた</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>同じ質問が毎週来る</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>担当者が休むと止まる</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<GeneralPage id=\"p2\"><title><Str>設計</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>受付</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>質問を分類する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>担当に振る</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>回答</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+      "<HeadingPage id=\"p3\"><title><Str>まとめ</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-02",
+    "input_text": "![障害の時系列](https://example.com/timeline.png)\n\n## 復旧の手順\n1. 影響範囲を確認する\n2. 原因を切り分ける\n3. 切り戻す\n",
+    "expected_page_group": [
+      "![障害の時系列](https://example.com/timeline.png)",
+      "## 復旧の手順\n1. 影響範囲を確認する\n2. 原因を切り分ける\n3. 切り戻す"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/timeline.png\" alt=\"障害の時系列\" /></FigurePage>",
+      "<GeneralPage id=\"p2\"><title><Str>復旧の手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>影響範囲を確認する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>原因を切り分ける</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>切り戻す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-03",
+    "input_text": "## 結論\n小さく始める\n続けることが大事\n\n## 次の一歩\n",
+    "expected_page_group": [
+      "## 結論\n小さく始める\n続けることが大事",
+      "## 次の一歩"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>結論</Str></title><blocks><TextBlock><Paragraph><Str>小さく始める</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>続けることが大事</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+      "<HeadingPage id=\"p2\"><title><Str>次の一歩</Str></title></HeadingPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-04",
+    "input_text": "## 注意点\n- **大事なのは *続ける* こと**\n- 完璧は目指さない\n",
+    "expected_page_group": [
+      "## 注意点\n- **大事なのは *続ける* こと**\n- 完璧は目指さない"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>注意点</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>大事なのは </Str><Em><Str>続ける</Str></Em><Str> こと</Str></Strong></Paragraph></TextBlock><TextBlock><Paragraph><Str>完璧は目指さない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-05",
+    "input_text": "## *async* と `await`\n- 並行処理を書きやすくする\n",
+    "expected_page_group": [
+      "## *async* と `await`\n- 並行処理を書きやすくする"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Em><Str>async</Str></Em><Str> と </Str><Code>await</Code></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>並行処理を書きやすくする</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-06",
+    "input_text": "![ロゴ](http://example.com/logo.png)",
+    "expected_page_group": [
+      "![ロゴ](http://example.com/logo.png)"
+    ],
+    "expected_slideir_page": [
+      "<FigurePage id=\"p1\"><ImageFigure src=\"http://example.com/logo.png\" alt=\"ロゴ\" /></FigurePage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-07",
+    "input_text": "## まとめ   \n- 以上\n",
+    "expected_page_group": [
+      "## まとめ\n- 以上"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>以上</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-08",
+    "input_text": "## 数値\n- 稼働率 99.9% & 応答 <200ms\n",
+    "expected_page_group": [
+      "## 数値\n- 稼働率 99.9% & 応答 <200ms"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>数値</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>稼働率 99.9% &amp; 応答 &lt;200ms</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-09",
+    "input_text": "## 持ち物\n- 財布\n-\n- 鍵\n",
+    "expected_page_group": [
+      "## 持ち物\n- 財布\n-\n- 鍵"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>持ち物</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>財布</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>鍵</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  },
+  {
+    "test_data_id": "2026112412-10",
+    "input_text": "   \n## まとめ\n- 以上\n",
+    "expected_page_group": [
+      "## まとめ\n- 以上"
+    ],
+    "expected_slideir_page": [
+      "<GeneralPage id=\"p1\"><title><Str>まとめ</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>以上</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+    ]
+  }
+]
