@@ -1,0 +1,110 @@
+[
+    {
+        "test_data_id": "2026112411-01",
+        "input_text": "# オンコール当番の振り返り\n\n## 当番の仕組み\n- 週替わりで交代\n- **一次対応**は新人も担当\n\n## まとめ\n",
+        "expected_page_group": [
+            "# オンコール当番の振り返り",
+            "## 当番の仕組み\n- 週替わりで交代\n- **一次対応**は新人も担当",
+            "## まとめ"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>オンコール当番の振り返り</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>当番の仕組み</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>週替わりで交代</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>一次対応</Str></Strong><Str>は新人も担当</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<HeadingPage id=\"p2\"><title><Str>まとめ</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-02",
+        "input_text": "![アラートの流れ](https://example.com/alert-flow.png)\n\n## 呼び出し後の動き\n最初の5分で状況を見る\n- 影響範囲を確認\n  - 利用者への影響\n  - 他サービスへの影響\n- 一次対応を実施\n",
+        "expected_page_group": [
+            "![アラートの流れ](https://example.com/alert-flow.png)",
+            "## 呼び出し後の動き\n最初の5分で状況を見る\n- 影響範囲を確認\n  - 利用者への影響\n  - 他サービスへの影響\n- 一次対応を実施"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/alert-flow.png\" alt=\"アラートの流れ\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>呼び出し後の動き</Str></title><blocks><TextBlock><Paragraph><Str>最初の5分で状況を見る</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>影響範囲を確認</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>利用者への影響</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>他サービスへの影響</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>一次対応を実施</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-03",
+        "input_text": "- 夜間の呼び出しは月に3回\n- 深夜は翌日に休める\n\n補足は別紙に書く\n",
+        "expected_page_group": [
+            "- 夜間の呼び出しは月に3回\n- 深夜は翌日に休める\n補足は別紙に書く"
+        ],
+        "expected_slideir_page": [
+            "<BodyPage id=\"p1\"><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>夜間の呼び出しは月に3回</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>深夜は翌日に休める</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>補足は別紙に書く</Str></Paragraph></TextBlock></blocks></BodyPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-04",
+        "input_text": "## 引き継ぎの手順\n1. 現状を共有する\n  1. 未解決のアラート\n  2. 実施中の対応\n2. 連絡先を渡す\n",
+        "expected_page_group": [
+            "## 引き継ぎの手順\n1. 現状を共有する\n  1. 未解決のアラート\n  2. 実施中の対応\n2. 連絡先を渡す"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>引き継ぎの手順</Str></title><blocks><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>現状を共有する</Str></Paragraph></TextBlock><Cluster ordered=\"true\" marker=\"true\"><TextBlock><Paragraph><Str>未解決のアラート</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>実施中の対応</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>連絡先を渡す</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-05",
+        "input_text": "##  通知の設定\n- 重要度で分ける\n",
+        "expected_page_group": [
+            "##  通知の設定\n- 重要度で分ける"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>通知の設定</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>重要度で分ける</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-06",
+        "input_text": "##\t休むための工夫\n- 翌日は会議を入れない\n",
+        "expected_page_group": [
+            "##\t休むための工夫\n- 翌日は会議を入れない"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>休むための工夫</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>翌日は会議を入れない</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-07",
+        "input_text": "## 学んだこと\n- **要点**: 通知は減らす\n- **注意**: 手順書は更新する\n",
+        "expected_page_group": [
+            "## 学んだこと\n- **要点**: 通知は減らす\n- **注意**: 手順書は更新する"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>学んだこと</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Strong><Str>要点</Str></Strong><Str>: 通知は減らす</Str></Paragraph></TextBlock><TextBlock><Paragraph><Strong><Str>注意</Str></Strong><Str>: 手順書は更新する</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-08",
+        "input_text": "## 読む資料\n詳しくは[**運用ガイド**](https://example.com/guide)を参照\n",
+        "expected_page_group": [
+            "## 読む資料\n詳しくは[**運用ガイド**](https://example.com/guide)を参照"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>読む資料</Str></title><blocks><TextBlock><Paragraph><Str>詳しくは</Str><Anchor href=\"https://example.com/guide\"><Strong><Str>運用ガイド</Str></Strong></Anchor><Str>を参照</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-09",
+        "input_text": "＃ 当番表の作り方\n\n＃＃ 決めること\n- 交代の周期\n- 代役の探し方\n",
+        "expected_page_group": [
+            "＃ 当番表の作り方",
+            "＃＃ 決めること\n- 交代の周期\n- 代役の探し方"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>当番表の作り方</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>決めること</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>交代の周期</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>代役の探し方</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112411-10",
+        "input_text": "## 準備\n-　携帯を充電する\n-　手順書を開く\n",
+        "expected_page_group": [
+            "## 準備\n-　携帯を充電する\n-　手順書を開く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>準備</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>携帯を充電する</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>手順書を開く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
