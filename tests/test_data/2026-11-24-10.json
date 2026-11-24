@@ -1,0 +1,114 @@
+[
+    {
+        "test_data_id": "2026112410-01",
+        "input_text": "# ペアプロ導入の失敗談\n\n## 始めた理由\n- 属人化を減らしたかった\n- 新人の立ち上がりを早くしたい\n\n## 結果\n実は逆効果だった\n\n## 学び\n",
+        "expected_page_group": [
+            "# ペアプロ導入の失敗談",
+            "## 始めた理由\n- 属人化を減らしたかった\n- 新人の立ち上がりを早くしたい",
+            "## 結果\n実は逆効果だった",
+            "## 学び"
+        ],
+        "expected_slideir_page": [
+            "<CoverPage id=\"cover\"><title><Str>ペアプロ導入の失敗談</Str></title></CoverPage>",
+            "<GeneralPage id=\"p1\"><title><Str>始めた理由</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>属人化を減らしたかった</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>新人の立ち上がりを早くしたい</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>",
+            "<GeneralPage id=\"p2\"><title><Str>結果</Str></title><blocks><TextBlock><Paragraph><Str>実は逆効果だった</Str></Paragraph></TextBlock></blocks></GeneralPage>",
+            "<HeadingPage id=\"p3\"><title><Str>学び</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-02",
+        "input_text": "![ペアの座席図](https://example.com/seat.png)\n\n## ルール\n- 30分で交代\n- 迷ったら声に出す\n\n実施は週2回\n",
+        "expected_page_group": [
+            "![ペアの座席図](https://example.com/seat.png)",
+            "## ルール\n- 30分で交代\n- 迷ったら声に出す\n実施は週2回"
+        ],
+        "expected_slideir_page": [
+            "<FigurePage id=\"p1\"><ImageFigure src=\"https://example.com/seat.png\" alt=\"ペアの座席図\" /></FigurePage>",
+            "<GeneralPage id=\"p2\"><title><Str>ルール</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>30分で交代</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>迷ったら声に出す</Str></Paragraph></TextBlock></Cluster><TextBlock><Paragraph><Str>実施は週2回</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-03",
+        "input_text": "ペアプロは万能ではない\n- 向く作業と向かない作業がある\n\n## 向く作業\n## 向かない作業\n",
+        "expected_page_group": [
+            "ペアプロは万能ではない\n- 向く作業と向かない作業がある",
+            "## 向く作業",
+            "## 向かない作業"
+        ],
+        "expected_slideir_page": [
+            "<BodyPage id=\"p1\"><blocks><TextBlock><Paragraph><Str>ペアプロは万能ではない</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>向く作業と向かない作業がある</Str></Paragraph></TextBlock></Cluster></blocks></BodyPage>",
+            "<HeadingPage id=\"p2\"><title><Str>向く作業</Str></title></HeadingPage>",
+            "<HeadingPage id=\"p3\"><title><Str>向かない作業</Str></title></HeadingPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-04",
+        "input_text": "##　進め方\n- 交代は30分ごと\n",
+        "expected_page_group": [
+            "##　進め方\n- 交代は30分ごと"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>進め方</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>交代は30分ごと</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-05",
+        "input_text": "## C# と F# の比較\n- どちらも関数型寄り\n",
+        "expected_page_group": [
+            "## C# と F# の比較\n- どちらも関数型寄り"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>C# と F# の比較</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>どちらも関数型寄り</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-06",
+        "input_text": "## 方針\n**~~旧ルール~~**は廃止した\n",
+        "expected_page_group": [
+            "## 方針\n**~~旧ルール~~**は廃止した"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>方針</Str></title><blocks><TextBlock><Paragraph><Strong><Strike><Str>旧ルール</Str></Strike></Strong><Str>は廃止した</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-07",
+        "input_text": "## 書き方\n`**太字**` と書くと太字になる\n- 例: `## 見出し` を書く\n",
+        "expected_page_group": [
+            "## 書き方\n`**太字**` と書くと太字になる\n- 例: `## 見出し` を書く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>書き方</Str></title><blocks><TextBlock><Paragraph><Code>**太字**</Code><Str> と書くと太字になる</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Str>例: </Str><Code>## 見出し</Code><Str> を書く</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-08",
+        "input_text": "## 用語\n*ペアプロ*は二人で書くこと\n- *ドライバー*が書く\n- *ナビゲーター*が見る\n",
+        "expected_page_group": [
+            "## 用語\n*ペアプロ*は二人で書くこと\n- *ドライバー*が書く\n- *ナビゲーター*が見る"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>用語</Str></title><blocks><TextBlock><Paragraph><Em><Str>ペアプロ</Str></Em><Str>は二人で書くこと</Str></Paragraph></TextBlock><Cluster marker=\"true\"><TextBlock><Paragraph><Em><Str>ドライバー</Str></Em><Str>が書く</Str></Paragraph></TextBlock><TextBlock><Paragraph><Em><Str>ナビゲーター</Str></Em><Str>が見る</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-09",
+        "input_text": "## 根拠\n効果は $E = mc^2$ のように説明できない\n根拠[^1]は後で書く\n",
+        "expected_page_group": [
+            "## 根拠\n効果は $E = mc^2$ のように説明できない\n根拠[^1]は後で書く"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>根拠</Str></title><blocks><TextBlock><Paragraph><Str>効果は $E = mc^2$ のように説明できない</Str></Paragraph></TextBlock><TextBlock><Paragraph><Str>根拠[^1]は後で書く</Str></Paragraph></TextBlock></blocks></GeneralPage>"
+        ]
+    },
+    {
+        "test_data_id": "2026112410-10",
+        "input_text": "﻿## 反省\n- 目的を決めなかった\n",
+        "expected_page_group": [
+            "## 反省\n- 目的を決めなかった"
+        ],
+        "expected_slideir_page": [
+            "<GeneralPage id=\"p1\"><title><Str>反省</Str></title><blocks><Cluster marker=\"true\"><TextBlock><Paragraph><Str>目的を決めなかった</Str></Paragraph></TextBlock></Cluster></blocks></GeneralPage>"
+        ]
+    }
+]
