@@ -50,6 +50,9 @@ SETEXT_UNDERLINE_RE = re.compile(r"^[ \t　]*(?:(?P<cover>[=＝]{2,})|(?P<headin
 # コードブロックの囲み（```・~~~ を 3 つ以上）。開きの後には言語名などを書ける。
 # 閉じは、開きと同じ記号を開きと同じ数以上並べ、後ろに何も書かない行
 FENCE_RE = re.compile(r"^[ \t　]*(?P<fence>`{3,}|~{3,})(?P<info>.*)$")
+# 文字のない箇条書きの項目（記号だけの行。`- 財布` と `- 鍵` の間の `-`）。
+# 箇条書きの途中・直前にあれば、空の項目として読み飛ばし、箇条書きを続ける
+EMPTY_BULLET_RE = re.compile(r"^[ \t　]*(?:[-*+－＊＋・･•◦‣]|\d+[.)．）])[ \t　]*$")
 
 
 # テキストの先頭のバイト順マーク（BOM, U+FEFF）。ほかのアプリで保存したメモの先頭に付くことがある。
@@ -343,12 +346,18 @@ def _build_blocks(lines: list[str]) -> ET.Element:
     """本文の行を `<blocks>` にする
 
     - 図だけの行は ImageFigure、箇条書きは Cluster（字下げは入れ子）、それ以外は段落 1 行で TextBlock 1 つ
+    - 箇条書きの途中・直前の、記号だけの行（空の項目）は読み飛ばす
     """
     blocks = ET.Element("blocks")
     # 箇条書きの入れ子: (Cluster 要素, 番号付きか, その段の最初の項目の字下げ) の配列。添字が段
     # 段は字下げの絶対値ではなく、上の段より深いかで決める（全体が字下げされた箇条書きも 1 段目にする）
     stack: list[tuple[ET.Element, bool, int]] = []
-    for line in lines:
+    for index, line in enumerate(lines):
+        if EMPTY_BULLET_RE.match(line):
+            following = lines[index + 1] if index + 1 < len(lines) else ""
+            following_bullet = BULLET_RE.match(following)
+            if stack or (following_bullet and following_bullet["text"].strip()):
+                continue
         bullet = BULLET_RE.match(line)
         if bullet and bullet["text"].strip():
             ordered = bullet["number"] is not None or bullet["wide_number"] is not None
